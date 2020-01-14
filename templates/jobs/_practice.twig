@@ -1,0 +1,26 @@
+{% extends "_layout" %}
+
+{# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
+{
+
+{# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE ENTRY PAGE 
+UP UNTILL THE FOOTER --> #}
+{% block main %}
+<div class="container-fluid bg-light">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <h3>{{entry.attorneyName}}</h3>
+
+                <div class="row">
+                    <ul>
+                        <li>{{entry.attorneyPracticeArea}}</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-sm-12 col-md-4"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

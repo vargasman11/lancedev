@@ -1,0 +1,48 @@
+{% extends "_layout" %}
+
+{# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
+{% block SEO %}
+<meta name="keywords" content="{{entry.keywords}}">
+<meta name="description" content="{{entry.metaDescription}}">
+<title>{{entry.titleTag}}</title>
+{% endblock %}
+
+{# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE ENTRY PAGE 
+UP UNTILL THE FOOTER --> #}
+{% block main %}
+<div class="container-fluid bg-light">
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-4">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <h3>{{entry.jobTitle}}</h3>
+                <div class="row">
+                    <p>{{entry.jobOverview}}</p>
+                </div>
+                <div class="row">
+                    <ul>
+                        <li>{{entry.city}}</li>
+                        <li>{{entry.truckType}}</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <p><strong> Benefits include:</strong>
+                        {% for option in entry.jobBenefits %}
+                        {# Label: {{ option.label }} #}
+                        {{ option.label }},
+                        {% endfor %}
+                    </p>
+                </div>
+                <div class="row">
+                    <a class="btn btn-success btn-large" href="{{entry.jobApplicationLink}}">Apply Now!</a>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4"></div>
+        </div>
+    </div>
+</div>
+{% endblock %}

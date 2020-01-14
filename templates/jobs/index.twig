@@ -1,0 +1,73 @@
+{% extends "_layout" %}
+
+{# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
+{% block SEO %}
+{% for entry in craft.entries.section('home') %}
+<meta name="keywords" content="{{entry.keywords}}">
+<meta name="description" content="{{entry.metaDescription}}">
+<title>{{entry.titleTag}}</title>
+{% endfor %}
+{% endblock %}
+
+
+
+{# THIS IS THE CONTENT UNDER THE NAV #}
+{% block main %}
+<div class="container-fluid p-4">
+    <div class="row">
+        <img class="d-block mx-auto" src="/images/logo-2.png" alt="">
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center pt-4">SEARCH FOR TRUCK DRIVING OPPORTUNITIES</h1>
+        </div>
+    </div>
+    <div class="row">
+        {% include "searchjobs/index" %}
+    </div>
+</div>
+
+{# CONTENT UNDER "SEARCH FOR TRUCK JOBS" #}
+<div class="container-fluid pt-5 pb-1">
+    {% set query = craft.entries()
+    .section('jobListings')
+    .limit(2) %}
+
+    {% paginate query as pageInfo, pageEntries %}
+
+    {% for entry in pageEntries %}
+    <div class="row my-3">
+        <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 bg-light">
+            <div class="row p-3">
+                <div class="col-sm-6">
+                    <h2 class="text-center">{{entry.jobTitle}}</h2>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn-small btn-info" href="/jobs/{{entry.slug}}">View Job</a>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-4 text">
+                    <p> <strong><em>Truck:</em></strong> {{entry.truckType}}</p>
+                </div>
+                <div class="col-4 text">
+                    <p><strong><em>State</em></strong> {{entry.state}}</p>
+                </div>
+                <div class="col-4 text">
+                    <p><strong><em>City</em></strong> {{entry.city}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class="container text-center">
+        {% if pageInfo.prevUrl %}<a class="btn btn-small btn-success text-center" href="{{ pageInfo.prevUrl }}">Previous
+            Page</a> &nbsp; &nbsp;{% endif %}
+        {% if pageInfo.nextUrl %}<a class="btn btn-small btn-success text-center" href="{{ pageInfo.nextUrl }}">Next
+            Page</a>{% endif %}
+    </div>
+
+
+</div>
+{% endblock %}

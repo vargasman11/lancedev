@@ -1,0 +1,52 @@
+{% extends "_layout" %}
+
+{# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
+{% block SEO %}
+<meta name="keywords" content="{{entry.keywords}}">
+<meta name="description" content="{{entry.metaDescription}}">
+<title>{{entry.titleTag}}</title>
+{% endblock %}
+
+
+
+{# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE ENTRY PAGE 
+UP UNTILL THE FOOTER --> #}
+{% block main %}
+<div class="container-fluid p-5" id="header-bg">
+        <h1 class="text-center text-white mt-5">{{entry.homeHeadline}}</h1>
+        <img class="mx-auto d-block pt-4" src="/images/logo.png" alt="">
+</div>
+
+<!-- TOP ROW -->
+<div class="container-fluid bg-primary">
+    <div class="container">
+        <div class="row">
+            {# left #}
+            <div class="col-sm-12 col-md-6">
+                <h2 class="wow headline fadeInLeftBig">{{entry.headerFade}}</h2>
+            </div>
+            {# Right #}
+            <div class="col-sm-12 col-md-6">
+                <p>{{entry.companyDetails}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- BOTTOM ROW -->
+<div class="container-fluid bg-light">
+<div class="container">
+    <div class="row">
+        {# left #}
+        <div class="col-sm-12 col-md-6">
+            <p>{{entry.benefits}}</p>
+        </div>
+        {# Right #}
+        <div class="col-sm-12 col-md-6">
+            <p>{{entry.qualification}}</p>
+        </div>
+    </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+@import 'sections/nav.scss';
+@import 'sections/homepage.scss';
+
+// utlitly functions
+.show{
+    display: block !important;
+    margin: 0 auto;
+}
+.show-tabs{
+    display: flex !important;
+}

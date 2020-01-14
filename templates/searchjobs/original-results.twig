@@ -1,0 +1,51 @@
+{% extends "_layout" %}
+
+{% block main %}
+<h1>Search Results</h1>
+
+
+{% set cityParam = craft.app.request.getParam('city') %}
+{% set truckParam = craft.app.request.getParam('trucktype') %}
+
+{# {% set queryParams = cityParam ~", " ~ truckParam %} #}
+
+{% set queryParams = [] %}
+
+{# add the city from the url param #}
+{% if cityParam is defined and cityParam is not empty %}
+{% set queryParams = queryParams|merge({
+        search:{
+            query: 'city:' ~ cityParam ,
+        }
+    }) %}
+{% endif %}
+
+{# add the truck param #}
+{% if truckParam  is defined and truckParam is not empty%}
+{% set queryParams = queryParams|merge({
+        search:{
+            query: 'truckType:' ~ truckParam,
+        }
+    }) %}
+{% endif %}
+
+
+{% set pageEntries = craft.entries.section('jobListings').search(queryParams).all() %}
+
+{% if pageEntries is defined and pageEntries|length %}
+<p>{{pageEntries|length}} results:</p>
+
+{% for entry in pageEntries %}
+<div class="search-result">
+    <h3><a href="{{entry.url}}">{{entry.title}}</a></h3>
+
+</div>
+{% endfor %}
+
+{% else %}
+<p>Your search for "{{queryParams}} " didnt return any results</p>
+
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,18 @@
+.jumbo{
+    background-image: url('/images/header.jpg');
+    background-position: center center;
+    background-size: cover;
+
+    #blur-bg{
+        margin-top: 400px;
+        margin-bottom: 100px;
+        background-color: rgba(93, 93, 93, .8);
+        padding: 30px 80px;
+
+        h1,
+        h4{
+            color: #fff;
+            font-weight: 700;
+        }
+    }
+}
