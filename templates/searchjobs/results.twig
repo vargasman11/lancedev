@@ -5,21 +5,23 @@
 
 
 {# Set variables for each possible param: #}
-{% set city = craft.app.request.getParam('city') %}
-{# {% set sectionHandle = craft.app.request.getParam('section') %} #}
+{% set state = craft.app.request.getParam('state') %}
 {% set trucktype = craft.app.request.getParam('trucktype') %}
 
 {# Create an object to collect criteria, starting with the `sectionHandle`, defaulting (`??`) to "any" section (`null`): #}
-{% set criteria = {
+{# {% set criteria = {
     section: sectionHandle ?? null
-} %}
+} %} #}
 
 {# By default, "Search" works across any attributes and field content, so we don't need to do anything with the incoming param. It should narrow results pretty intelligently, with zero config: #}
-{% if city %}
-{% set criteria = criteria | merge({
-        search: city
-    }) %}
-{% endif %}
+{# {% if state %} #}
+{% set criteria ={
+        
+        state:state,
+        truckType: trucktype
+
+    } %}
+{# {% endif %} #}
 
 {# If we want to match things specifically in the title, you can merge in a `title` param, inserting it between two `*` characters to ensure it doesn't have to be an exact match: #}
 {# {% if name %}
@@ -28,11 +30,11 @@
     }) %}
 {% endif %} #}
 
-{% if trucktype %}
+{# {% if trucktype %}
 {% set criteria = criteria | merge({
         search: trucktype
     }) %}
-{% endif %}
+{% endif %} #}
 
 {# Pass the criteria object to the query builder: #}
 {% set query = craft.entries(criteria) %}
