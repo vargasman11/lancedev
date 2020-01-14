@@ -1,0 +1,33 @@
+#video-container {
+
+    .video-header-row {
+        background-color: #9B000D;
+        padding: 20px 10px;
+
+        h4 {
+            color: #fff;
+            font-weight: bold;
+            // margin: 0 auto;
+        }
+    }
+
+    .video-row {
+        background: rgb(155,0,13);
+        background: -moz-linear-gradient(180deg, rgba(155,0,13,1) 0%, rgba(205,4,25,1) 50%, rgba(155,0,13,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(155,0,13,1) 0%, rgba(205,4,25,1) 50%, rgba(155,0,13,1) 100%);
+        background: linear-gradient(180deg, rgba(155,0,13,1) 0%, rgba(205,4,25,1) 50%, rgba(155,0,13,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9b000d",endColorstr="#9b000d",GradientType=1);
+
+        padding: 10px 0 50px;
+    }
+}
+
+// Extra small devices (portrait phones, less than 345px)
+// CELL PHONE
+@media (max-width: 767px) {
+    #video-container {     
+        .video-row {            
+            padding: 0px;
+        }
+    }
+}

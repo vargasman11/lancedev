@@ -16,10 +16,13 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
+        
 
         #blur-bg {
             background-color: rgba(93, 93, 93, .8);
             width: 100%;
+            padding: 10px;
+            border-radius: 30px;
             // padding: 30px 80px;
 
             h1,
@@ -51,7 +54,8 @@
                 transform: translateX(10%);
                 background-color: rgba(93, 93, 93, .5);
                 width: 90%;
-                padding: 20px;
+                // padding: 20px;
+                border-radius: 0px !important;
 
                 h1 {
                     font-size: 1.3em;
@@ -80,7 +84,40 @@
 
             // display: block;
             #blur-bg {
-                margin-top: 28%;
+                margin-top: 25%;
+                background-color: rgba(93, 93, 93, .5);
+                // width: 100%;
+                padding: 5px;
+                border-radius: 0px !important;
+
+                h1 {
+                    font-size: 1.8em;
+                }
+
+                h4 {
+                    font-size: 1.1em;
+                }
+            }
+        }
+    }
+
+}
+
+@media (min-width: 501px) and (max-width: 1000px) {
+    .jumbo {
+        // background-image: url('/images/header.jpg');
+        background-position: center right;
+        background-size: initial;
+
+        .img-row {}
+
+        .heading-row {
+            transform: translateX(-45%) !important;
+            width: 86%;
+
+            // display: block;
+            #blur-bg {
+                margin-top: 0%;
                 background-color: rgba(93, 93, 93, .5);
                 // width: 100%;
                 // padding: 30px 80px;
@@ -95,8 +132,8 @@
             }
         }
     }
-
 }
+
 
 // // Small devices (landscape phones, 576px and up)
 // @media (min-width: 576px) and (max-width: 767.98px) { ... }

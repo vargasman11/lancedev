@@ -3,6 +3,7 @@
     "craftcms/ckeditor": "1.0.0-beta.2",
     "craftcms/cms": "^3.0.0",
     "craftcms/contact-form": "2.2.6",
+    "fortrabbit/craft-copy": "^1.0.0-beta",
     "rynpsc/craft-phone-number": "1.2.5",
     "vlucas/phpdotenv": "^3.4.0"
   },
