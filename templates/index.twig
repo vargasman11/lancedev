@@ -2,11 +2,11 @@
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
-{% for entry in craft.entries.section('home') %}
+{# {% for entry in craft.entries.section('home') %} #}
 <meta name="keywords" content="{{entry.keywords}}">
 <meta name="description" content="{{entry.metaDescription}}">
 <title>{{entry.titleTag}}</title>
-{% endfor %}
+{# {% endfor %} #}
 {% endblock %}
 
 
