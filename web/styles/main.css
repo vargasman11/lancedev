@@ -172,7 +172,26 @@
 
 @media (max-width: 767px) {
   #video-container .video-row {
-    padding: 0px; } }
+    padding: 0 !important; } }
+
+#jobs-benefits .jobs-benefits-col {
+  background-color: #292F31; }
+  #jobs-benefits .jobs-benefits-col .jobs-benefits-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #707070;
+    color: #fff; }
+  #jobs-benefits .jobs-benefits-col .jobs-benefits-content {
+    color: #fff;
+    font-weight: bold;
+    width: 80%; }
+
+footer {
+  background-color: #192326; }
+  footer img {
+    max-height: 150px; }
 
 .show {
   display: block !important;

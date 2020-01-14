@@ -1,0 +1,19 @@
+#jobs-benefits {
+    .jobs-benefits-col {
+        background-color: #292F31;
+        .jobs-benefits-header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #707070;
+            color: #fff;
+        }
+
+        .jobs-benefits-content {            
+            color: #fff;
+            font-weight: bold;
+            width: 80%;
+        }
+    }
+}
