@@ -31,7 +31,7 @@
 <div class="container-fluid pt-5 pb-1">
     {% set query = craft.entries()
     .section('jobListings')
-    .limit(2) %}
+    .limit(5) %}
 
     {% paginate query as pageInfo, pageEntries %}
 
