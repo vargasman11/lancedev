@@ -2,7 +2,14 @@
 <form action="{{ url('searchjobs/results') }}">
 
    {# Select City #}
-    <input type="search" name="city" placeholder="city" title="city" class="form-control">
+    {# <input type="search" name="city" placeholder="city" title="city" class="form-control"> #}
+
+    {# SELECT STATE #}
+    <select name="state" class="form-control" id="">
+        <option value="alabama">alabama</option>
+        <option value="tennessee">tennessee</option>
+        <option value="illinois">illinois</option>
+    </select>
 
     {# Select Truck Type #}
     <select name="trucktype" class="from-control" id="">
