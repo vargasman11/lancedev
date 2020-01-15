@@ -1,0 +1,38 @@
+  {# The styles for this controller are in the _controller.scss file under jobs folder in the SCSS Directory #}
+  <div class="container-fluid" id="search-controller">
+      <div class="row">
+          <div class="col-sm-10 offset-sm-1 col-md-4 offset-md-4">
+
+              <form action="{{ url('searchjobs/results') }}">
+                  <div class="form-group">
+                      {# SELECT STATE #}
+                      <select name="state" class="form-control bg-gray" id="">
+                          <option value="">Select a State</option>
+                          <option value="alabama">alabama</option>
+                          <option value="tennessee">tennessee</option>
+                          <option value="illinois">illinois</option>
+                      </select>
+                  </div>
+
+                  {# Select Truck Type #}
+                  <div class="form-group">
+                      <select name="trucktype" class="form-control bg-gray" id="">
+                          <option value="">Select truck type</option>
+                          <option value="tanker">tanker</option>
+                          <option value="van">van</option>
+                          <option value="reefer">reefer</option>
+                      </select>
+                  </div>
+
+                  {# Select Radius #}
+
+                  {# select zipcode #}
+                  {# <input type="text" "zipcode" placeholder="zipcode" title="zipcode" class="form-control"> #}
+                  {# <input type="tel" name="zipcode" pattern="[0-9]*" placeholder="Zip Code" title="zipcode" max="99999" class="form-control" /> #}
+
+                  <button type="submit" value="Search" class="btn btn-lg" id="search-jobs-btn"> <i class="fas fa-search"></i> Search Jobs</button>
+              </form>
+
+          </div>
+      </div>
+  </div>

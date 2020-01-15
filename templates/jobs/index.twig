@@ -13,19 +13,24 @@
 
 {# THIS IS THE CONTENT UNDER THE NAV #}
 {% block main %}
-<div class="container-fluid p-4">
-    <div class="row">
-        <img class="d-block mx-auto" src="/images/logo-2.png" alt="">
-    </div>
-    <div class="row">
-        <div class="col">
-            <h1 class="text-center pt-4">SEARCH FOR TRUCK DRIVING OPPORTUNITIES</h1>
-        </div>
-    </div>
-    <div class="row">
-        {% include "searchjobs/index" %}
+<div class="container-fluid" id="map">
+<div class="row">
+{# map placeholder #}
+    <img class="img-fluid" src="/images/map.JPG" alt="">
     </div>
 </div>
+<div class="container-fluid" id="search-header">
+    <div class="row">
+    <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
+        <h3 class="text-center">Search For Truck Driving Opportunities</h3>
+        </div>
+    </div>
+</div>
+
+    {# This is where the search form lives #}
+    {# The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory #}
+    {% include "searchjobs/search-controller" %}
+  
 
 {# CONTENT UNDER "SEARCH FOR TRUCK JOBS" #}
 <div class="container-fluid pt-5 pb-1">

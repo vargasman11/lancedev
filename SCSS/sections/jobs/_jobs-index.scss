@@ -1,0 +1,14 @@
+#map{
+    max-height: 300px;
+    overflow: hidden;
+}
+#search-header{
+    background-color: #5c5c5c;
+    h3{
+        color: #fff;
+        font-weight: bold;
+        padding: 10px 0px;
+    }
+}
+
+// The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory

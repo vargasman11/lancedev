@@ -190,8 +190,27 @@
 
 footer {
   background-color: #192326; }
-  footer img {
-    max-height: 150px; }
+
+#map {
+  max-height: 300px;
+  overflow: hidden; }
+
+#search-header {
+  background-color: #5c5c5c; }
+  #search-header h3 {
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 0px; }
+
+#search-controller {
+  padding: 30px 0px 10px; }
+  #search-controller .form-group .bg-gray {
+    background-color: #E2E2E2; }
+  #search-controller #search-jobs-btn {
+    background-color: #5D5D5D !important;
+    color: #fff;
+    display: block;
+    margin: 0 auto; }
 
 .show {
   display: block !important;
