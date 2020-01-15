@@ -10,42 +10,24 @@
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE ENTRY PAGE 
 UP UNTILL THE FOOTER --> #}
 {% block main %}
-<div class="container-fluid bg-light">
-    <div class="container p-5">
-        <div class="row">
-            <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-4">
-                {{ entry.jobLocation.embed({
-    id: 'map',
-    markers: [{}],
-}) }}
+<div class="container-fluid pt-5 pb-1 jobs-index">
+    <div class="container-fluid bg-light">
+        <div class="row p-4">
+            <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 bg-light p-2">
+                <h3 class="job-header">{{entry.jobTitle}}</h3>
+                <p>{{entry.jobOverview}}</p>
+                {{entry.city}}
+                {{entry.truckType}}
+
+                <p><strong> Benefits include:</strong>
+                    {% for option in entry.jobBenefits %}
+                    {# Label: {{ option.label }} #}
+                    {{ option.label }},
+                    {% endfor %}
+                </p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-8">
-                <h3>{{entry.jobTitle}}</h3>
-                <div class="row">
-                    <p>{{entry.jobOverview}}</p>
-                </div>
-                <div class="row">
-                    <ul>
-                        <li>{{entry.city}}</li>
-                        <li>{{entry.truckType}}</li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <p><strong> Benefits include:</strong>
-                        {% for option in entry.jobBenefits %}
-                        {# Label: {{ option.label }} #}
-                        {{ option.label }},
-                        {% endfor %}
-                    </p>
-                </div>
-                <div class="row">
-                    <a class="btn btn-success btn-large" href="{{entry.jobApplicationLink}}">Apply Now!</a>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-4"></div>
         </div>
     </div>
 </div>
+
 {% endblock %}

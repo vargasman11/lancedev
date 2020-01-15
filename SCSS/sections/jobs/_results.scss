@@ -1,0 +1,11 @@
+// Most of the styling for the results page is in the _jobs-index.scss file. This file only edits the search again button
+
+.search-again{
+    padding: 20px 0px;
+    .search-again-btn{
+        display: block !important;
+        margin: 0 auto;
+        margin-top: 30px;
+        max-width: 200px;
+    }   
+}

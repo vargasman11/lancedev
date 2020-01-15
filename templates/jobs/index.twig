@@ -14,26 +14,27 @@
 {# THIS IS THE CONTENT UNDER THE NAV #}
 {% block main %}
 <div class="container-fluid" id="map">
-<div class="row">
-{# map placeholder #}
-    <img class="img-fluid" src="/images/map.JPG" alt="">
+    <div class="row">
+        {# map placeholder #}
+        <img class="img-fluid" src="/images/map.JPG" alt="">
     </div>
 </div>
 <div class="container-fluid" id="search-header">
     <div class="row">
-    <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-        <h3 class="text-center">Search For Truck Driving Opportunities</h3>
+        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
+            <h3 class="text-center">Search For Truck Driving Opportunities</h3>
         </div>
     </div>
 </div>
 
-    {# This is where the search form lives #}
-    {# The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory #}
-    {% include "searchjobs/search-controller" %}
-  
+{# This is where the search form lives #}
+{# The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory #}
+{% include "searchjobs/search-controller" %}
+
 
 {# CONTENT UNDER "SEARCH FOR TRUCK JOBS" #}
-<div class="container-fluid pt-5 pb-1">
+<div class="container-fluid pt-5 pb-1 jobs-index">
+    <h3 class="text-center">Available Opportunities</h3>
     {% set query = craft.entries()
     .section('jobListings')
     .limit(5) %}
@@ -41,27 +42,20 @@
     {% paginate query as pageInfo, pageEntries %}
 
     {% for entry in pageEntries %}
-    <div class="row my-3">
-        <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2 bg-light">
-            <div class="row p-3">
-                <div class="col-sm-6">
-                    <h2 class="text-center">{{entry.jobTitle}}</h2>
-                </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-small btn-info" href="/jobs/{{entry.slug}}">View Job</a>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-4 text">
-                    <p> <strong><em>Truck:</em></strong> {{entry.truckType}}</p>
-                </div>
-                <div class="col-4 text">
-                    <p><strong><em>State</em></strong> {{entry.state}}</p>
-                </div>
-                <div class="col-4 text">
-                    <p><strong><em>City</em></strong> {{entry.city}}</p>
-                </div>
-            </div>
+    <div class="row p-4">
+        <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 bg-light p-2">
+
+                <h3 class="job-header">{{entry.jobTitle}}</h3>
+                <p> <strong><em>Truck:</em></strong> {{entry.truckType}}</p>
+                <p><strong><em>State</em></strong> {{entry.state}}</p>
+                <p><strong><em>City</em></strong> {{entry.city}}</p>
+                <a class="btn btn-small btn-details" href="/jobs/{{entry.slug}}">Get More Details &nbsp; <i class="fas fa-arrow-right"></i> </a>
+                <p class="pt-2"><strong>Benefits: </strong>
+                    {% for option in entry.jobBenefits %}
+                    {{ option.value }}
+                    {# Value: {{ option }} or {{ option.value }} #}
+                    {% endfor %}
+                </p>         
         </div>
     </div>
     {% endfor %}

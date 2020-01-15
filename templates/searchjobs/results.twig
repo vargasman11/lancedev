@@ -1,58 +1,47 @@
 {% extends "_layout" %}
 
 {% block main %}
-<h1>Search Results</h1>
+<div class="container-fluid pt-5 pb-1 jobs-index">
+    <h1 class="text-center">Search Results</h1>
 
 
-{# Set variables for each possible param: #}
-{% set state = craft.app.request.getParam('state') %}
-{% set trucktype = craft.app.request.getParam('trucktype') %}
+    {# Set variables for each possible param: #}
+    {% set state = craft.app.request.getParam('state') %}
+    {% set trucktype = craft.app.request.getParam('trucktype') %}
 
-{# Create an object to collect criteria, starting with the `sectionHandle`, defaulting (`??`) to "any" section (`null`): #}
-{# {% set criteria = {
-    section: sectionHandle ?? null
-} %} #}
-
-{# By default, "Search" works across any attributes and field content, so we don't need to do anything with the incoming param. It should narrow results pretty intelligently, with zero config: #}
-{# {% if state %} #}
-{% set criteria ={
-        
+    {% set criteria ={   
+        section: 'jobListings',     
         state:state,
         truckType: trucktype
-
     } %}
-{# {% endif %} #}
 
-{# If we want to match things specifically in the title, you can merge in a `title` param, inserting it between two `*` characters to ensure it doesn't have to be an exact match: #}
-{# {% if name %}
-{% set criteria = criteria | merge({
-        title: "*#{name}*"
-    }) %}
-{% endif %} #}
+    {# Pass the criteria object to the query builder: #}
+    {% set query = craft.entries(criteria) %}
 
-{# {% if trucktype %}
-{% set criteria = criteria | merge({
-        search: trucktype
-    }) %}
-{% endif %} #}
-
-{# Pass the criteria object to the query builder: #}
-{% set query = craft.entries(criteria) %}
-
-{# Set up pagination, and let it grab the current page's results: #}
-{% paginate query as pageInfo, results %}
+    {# Set up pagination, and let it grab the current page's results: #}
+    {% paginate query as pageInfo, results %}
 
 
-{% for result in results %}
-<div class="container">
-    <ul>
-        <li>{{ result.title }}</li>
-        <li>{{ result.truckType }}</li>
-        <li>{{ result.state}}</li>
-    </ul>
+    {% for result in results %}
+    <div class="row p-4">
+        <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 bg-light p-2">
+            <h3 class="job-header">{{ result.title }}</h3>
+            <p><strong><em>Truck:</em></strong> {{ result.truckType }}</p>
+            <p><strong><em>State</em></strong>{{ result.state}}</p>
+            <a class="btn btn-small btn-details" href="/jobs/{{result.slug}}">Get More Details &nbsp; <i
+                    class="fas fa-arrow-right"></i> </a>
+            <p class="pt-2"><strong>Benefits: </strong>
+                {% for option in result.jobBenefits %}
+                {{ option.value }}
+                {# Value: {{ option }} or {{ option.value }} #}
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="search-again">
+        <h3 class="text-center">Didn't find what you're looking for?</h3>
+        <a class="btn btn-lg btn-success search-again-btn" href="/jobs">Search Again</a>
+    </div>
 </div>
-{% endfor %}
-
-
-
 {% endblock %}

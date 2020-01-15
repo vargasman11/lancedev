@@ -1,13 +1,33 @@
-#map{
+#map {
     max-height: 300px;
     overflow: hidden;
 }
-#search-header{
+
+#search-header {
     background-color: #5c5c5c;
-    h3{
+
+    h3 {
         color: #fff;
         font-weight: bold;
         padding: 10px 0px;
+        font-family: sans-serif;
+    }
+}
+
+.jobs-index {
+    background-color: #E2E2E2;
+
+    h3 {
+        font-weight: bold;
+    }
+    .job-header{
+        color: #999999;
+        font-family: sans-serif;    
+    }
+
+    .btn-details{
+        background-color: #B91822;
+        color: #fff;
     }
 }
 

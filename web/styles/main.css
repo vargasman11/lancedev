@@ -191,6 +191,14 @@
 footer {
   background-color: #192326; }
 
+.search-again {
+  padding: 20px 0px; }
+  .search-again .search-again-btn {
+    display: block !important;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 200px; }
+
 #map {
   max-height: 300px;
   overflow: hidden; }
@@ -200,7 +208,19 @@ footer {
   #search-header h3 {
     color: #fff;
     font-weight: bold;
-    padding: 10px 0px; }
+    padding: 10px 0px;
+    font-family: sans-serif; }
+
+.jobs-index {
+  background-color: #E2E2E2; }
+  .jobs-index h3 {
+    font-weight: bold; }
+  .jobs-index .job-header {
+    color: #999999;
+    font-family: sans-serif; }
+  .jobs-index .btn-details {
+    background-color: #B91822;
+    color: #fff; }
 
 #search-controller {
   padding: 30px 0px 10px; }
