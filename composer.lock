@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8950f366a6ceefb2c27751830d750144",
+    "content-hash": "91dbb38039b4021f8d84369a5856a8f5",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -48,6 +48,56 @@
                 "rsync library"
             ],
             "time": "2018-01-13T20:13:12+00:00"
+        },
+        {
+            "name": "bolden/google-maps-api",
+            "version": "1.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/boldenamsterdam/googlemapsapi/zipball/3dab2128ec3551f4c2ee2c6773238e5eed25874d",
+                "reference": "3dab2128ec3551f4c2ee2c6773238e5eed25874d",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Google Maps API",
+                "handle": "google-maps-api",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "class": "bolden\\googlemapsapi\\GoogleMapsApi"
+            },
+            "autoload": {
+                "psr-4": {
+                    "bolden\\googlemapsapi\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bolden B.V.",
+                    "homepage": "https://www.bolden.nl"
+                }
+            ],
+            "description": "Bolden's free plugin for Google Maps server-side web services on Craft CMS 3",
+            "keywords": [
+                "api",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "google maps"
+            ],
+            "support": {
+                "docs": "https://github.com/boldenamsterdam/google-maps-api/blob/master/README.md",
+                "issues": "https://github.com/boldenamsterdam/google-maps-api/issues"
+            },
+            "time": "2019-07-09T11:48:31+00:00"
         },
         {
             "name": "cebe/markdown",

@@ -13,6 +13,14 @@ UP UNTILL THE FOOTER --> #}
 <div class="container-fluid pt-5 pb-1 jobs-index">
     <div class="container-fluid bg-light">
         <div class="row p-4">
+
+
+<img src="{{ entry.jobLocation.img({
+    width: 800,
+    height: 600,
+    markers: [{ color: 'blue'}]
+    }) }}" alt="">
+
             <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 bg-light p-2">
                 <h3 class="job-header">{{entry.jobTitle}}</h3>
                 <p>{{entry.jobOverview}}</p>
