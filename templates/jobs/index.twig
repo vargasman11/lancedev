@@ -67,10 +67,7 @@
                 <div class="col-sm-12 col-md-6">
                     {% set city = entry.city %}
                     {% set state = entry.state %}
-                    <img src="
-                        {{ craft.maps.img({
-                            center: city  ~ state,
-                        }) }}"
+                    <img src="{{ craft.maps.img({center: city  ~ state, }) }}"
                     class="img-fluid">
                 </div>
             </div>
