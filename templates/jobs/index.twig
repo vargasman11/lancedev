@@ -16,7 +16,18 @@
 <div class="container-fluid" id="map">
     <div class="row">
         {# map placeholder #}
-        <img class="img-fluid" src="/images/map.JPG" alt="">
+        {# <img class="img-fluid" src="/images/map.JPG" alt=""> #}
+        {% set locations = craft.entries.section('jobListings').all() %}
+        {% set options = {
+                width:700,
+                height:300,            
+                zoom: 3,
+               markerOptions: {
+                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                    }
+            } %}
+
+        <img class="img-fluid" src="{{ craft.smartMap.imgSrc(locations, options) }}" />    
 
     </div>
 </div>
@@ -67,8 +78,7 @@
                 <div class="col-sm-12 col-md-6">
                     {% set city = entry.city %}
                     {% set state = entry.state %}
-                    <img src="{{ craft.maps.img({center: city  ~ state, }) }}"
-                    class="img-fluid">
+                    <img src="{{ craft.maps.img({center: city  ~ state, }) }}" class="img-fluid">
                 </div>
             </div>
         </div>

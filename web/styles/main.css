@@ -199,10 +199,6 @@ footer {
     margin-top: 30px;
     max-width: 200px; }
 
-#map {
-  max-height: 300px;
-  overflow: hidden; }
-
 #search-header {
   background-color: #5c5c5c; }
   #search-header h3 {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "91dbb38039b4021f8d84369a5856a8f5",
+    "content-hash": "e52931267ec95334d44a2ac273a05d2f",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -835,6 +835,58 @@
                 "php"
             ],
             "time": "2019-10-30T14:39:59+00:00"
+        },
+        {
+            "name": "doublesecretagency/craft-smartmap",
+            "version": "3.2.2.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/doublesecretagency/craft-smartmap/zipball/ec0b826a57d9ca4c762a130ce11456fab9c272e8",
+                "reference": "ec0b826a57d9ca4c762a130ce11456fab9c272e8",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Smart Map",
+                "handle": "smart-map",
+                "class": "doublesecretagency\\smartmap\\SmartMap"
+            },
+            "autoload": {
+                "psr-4": {
+                    "doublesecretagency\\smartmap\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Double Secret Agency",
+                    "homepage": "https://www.doublesecretagency.com/plugins"
+                }
+            ],
+            "description": "The most comprehensive proximity search and mapping tool for Craft.",
+            "keywords": [
+                "address",
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "geolocation",
+                "google-maps",
+                "locations",
+                "map",
+                "proximity-search",
+                "smart-map"
+            ],
+            "support": {
+                "docs": "https://www.doublesecretagency.com/plugins/smart-map/docs",
+                "issues": "https://github.com/doublesecretagency/craft-smartmap/issues"
+            },
+            "time": "2019-04-09T03:40:19+00:00"
         },
         {
             "name": "egulias/email-validator",
