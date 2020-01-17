@@ -14,21 +14,25 @@
 {# THIS IS THE CONTENT UNDER THE NAV #}
 {% block main %}
 <div class="container-fluid" id="map">
-    <div class="row">
-        {# map placeholder #}
-        {# <img class="img-fluid" src="/images/map.JPG" alt=""> #}
+    <div class="row bg-secondary">
+        <div class="col-sm-12 p-0">
         {% set locations = craft.entries.section('jobListings').all() %}
-        {% set options = {
-                width:700,
-                height:300,            
-                zoom: 3,
+        {% set options = {     
+                center: {lat: 39.8283, lng:-98.5795},                   
+                height:300,
+                width:1200,            
+                zoom: 4,
                markerOptions: {
                 icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
                     }
             } %}
 
-        <img class="img-fluid" src="{{ craft.smartMap.imgSrc(locations, options) }}" />    
+        <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" />    
 
+        {# <img src="{{ craft.smartMap.map(locations, options) }}" /> #}
+        {# {{ craft.smartMap.map(locations, options) }}              #}
+        
+</div>
     </div>
 </div>
 
