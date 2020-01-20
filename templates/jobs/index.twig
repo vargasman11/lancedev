@@ -20,6 +20,7 @@
         <div class="col-sm-12 p-0">
             {% set locations = craft.entries.section('jobListings').all() %}
             {% set options = {     
+                'markerInfo': 'jobs/infoBubble',
                 height:400,                                         
                 zoom: 4,
                markerOptions: {
