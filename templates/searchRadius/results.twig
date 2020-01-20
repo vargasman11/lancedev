@@ -12,10 +12,32 @@
  {# Pass the criteria object to the query builder: #}
 {% set entries = craft.entries.jobAddress(params).orderBy('distance').all() %}
 
+
+{# We build the map location based on criteria #}
+<div class="container-fluid" id="map">
+    <div class="row bg-secondary">
+        <div class="col-sm-12 p-0">            
+            {% set locations = entries %}
+            {% set options = {     
+                center: {lat: 39.8283, lng:-98.5795},                   
+                height:300,
+                width:1200,            
+                zoom: 4,
+               markerOptions: {
+                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                    }
+            } %}
+
+            <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" />
+
+        </div>
+    </div>
+</div>
+
+
+
 <div class="container-fluid pt-5 pb-1 jobs-index">
 <h1 class="text-center">Search Results</h1>
-
-
 
 {% for entry in entries %}
 <div class="row p-4">
