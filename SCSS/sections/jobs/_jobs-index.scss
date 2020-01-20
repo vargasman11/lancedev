@@ -31,4 +31,49 @@
     }
 }
 
+.search-controller-container{
+    #or{
+        height: 30%;
+        display: block;
+        transform: translateY(25%);
+    }
+    #topLeftLine,
+    #topRightLine{
+        border: solid 2px black;
+        width: 2px;
+        height: 30%;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+    }
+    #topLeftLine{}
+    #topRightLine{}
+}
+
 // The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory
+
+
+
+// Media Query
+@media (max-width: 767px) { 
+    .search-controller-container{
+        padding:20px;
+        text-align: center;
+        #or{
+            display: inline;
+        }
+        #topLeftLine,
+        #topRightLine{
+            border: solid 2px black;
+            width: 30%;
+            height: 2px;
+            text-align: center;
+            display: inline-block;
+            margin: 0 auto;
+            transform: translateY(-200%);
+        }
+        #topLeftLine{}
+        #topRightLine{}
+    }
+    
+ }

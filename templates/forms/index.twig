@@ -1,0 +1,16 @@
+ {% include "_layout" %}
+
+{% block main %}
+
+{% if craft.app.request.param('status') == 'true' %}
+<p>Your submission was recieved! </p>
+{% endif %}
+<div class="container">
+{{ craft.freeform.form('test',{
+    labelClass:"form-control-label",
+    inputClass:"form-control"
+}).render() }}
+</div>
+
+
+{% endblock %} 

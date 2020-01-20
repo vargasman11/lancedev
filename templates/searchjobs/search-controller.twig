@@ -1,9 +1,10 @@
   {# The styles for this controller are in the _controller.scss file under jobs folder in the SCSS Directory #}
-  <div class="container-fluid" id="search-controller">
+  <div class="container-fluid search-controller">
       <div class="row">
-          <div class="col-sm-10 offset-sm-1 col-md-4 offset-md-4">
+          <div class="col-8 offset-2">
 
-              <form action="{{ url('searchjobs/results') }}">
+              {# <form action="{{ url('searchjobs/results') }}"> #}
+                            <form action="{{ url('searchjobs/results') }}">
                   <div class="form-group">
                       {# SELECT STATE #}
                       <select name="state" class="form-control bg-gray" id="">
@@ -24,13 +25,14 @@
                       </select>
                   </div>
 
-                  {# Select Radius #}
 
-                  {# select zipcode #}
-                  {# <input type="text" "zipcode" placeholder="zipcode" title="zipcode" class="form-control"> #}
-                  {# <input type="tel" name="zipcode" pattern="[0-9]*" placeholder="Zip Code" title="zipcode" max="99999" class="form-control" /> #}
+                  {# select city #}
+                  <div class="form-group">
+                      <input id="city" name="city" type="text"  class="form-control bg-gray" placeholder="city"/>
+                  </div>
 
-                  <button type="submit" value="Search" class="btn btn-lg" id="search-jobs-btn"> <i class="fas fa-search"></i> Search Jobs</button>
+
+                  <button type="submit" value="Search" class="btn btn-lg search-jobs-btn"> <i class="fas fa-search"></i> Search Jobs</button>
               </form>
 
           </div>

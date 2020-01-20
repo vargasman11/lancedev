@@ -16,8 +16,8 @@
 <div class="container-fluid" id="map">
     <div class="row bg-secondary">
         <div class="col-sm-12 p-0">
-        {% set locations = craft.entries.section('jobListings').all() %}
-        {% set options = {     
+            {% set locations = craft.entries.section('jobListings').all() %}
+            {% set options = {     
                 center: {lat: 39.8283, lng:-98.5795},                   
                 height:300,
                 width:1200,            
@@ -27,12 +27,9 @@
                     }
             } %}
 
-        <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" />    
+            <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" />
 
-        {# <img src="{{ craft.smartMap.map(locations, options) }}" /> #}
-        {# {{ craft.smartMap.map(locations, options) }}              #}
-        
-</div>
+        </div>
     </div>
 </div>
 
@@ -47,9 +44,30 @@
     </div>
 </div>
 
+
 {# This is where the search form lives #}
-{# The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory #}
-{% include "searchjobs/search-controller" %}
+{# The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory 
+#}
+<div class="container-fluid search-controller-container">
+    <div class="row">
+        <div class="col-sm-12 col-md-5">
+            <h3 class="text-center">Search by city, <br> state and/or truck type</h3>
+            {% include "searchjobs/search-controller" %}
+        </div>
+
+        <div class="col-sm-12 col-md-2 pt-4">
+            <span id="topLeftLine"></span>
+            <h2 class="text-center" id="or">OR</h2>
+            <span id="topRightLine"></span>
+        </div>
+
+        <div class="col-sm-12 col-md-5">
+            <br>
+            <h3 class="text-center">Search by radius</h3> <br>
+            {% include "searchRadius/search-controller" %}
+        </div>
+    </div>
+</div>
 
 
 {# CONTENT UNDER "SEARCH FOR TRUCK JOBS" #}
@@ -70,6 +88,7 @@
                     <p> <strong><em>Truck:</em></strong> {{entry.truckType}}</p>
                     <p><strong><em>State</em></strong> {{entry.state}}</p>
                     <p><strong><em>City</em></strong> {{entry.city}}</p>
+                    <p><strong><em>Address Field</em></strong> {{entry.jobAddress.zip}}</p>
                     <a class="btn btn-small btn-details" href="/jobs/{{entry.slug}}">Get More Details &nbsp; <i
                             class="fas fa-arrow-right"></i> </a>
                     <p class="pt-2"><strong>Benefits: </strong>

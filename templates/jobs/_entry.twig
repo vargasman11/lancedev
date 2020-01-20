@@ -22,6 +22,7 @@ UP UNTILL THE FOOTER --> #}
                         <p>{{entry.jobOverview}}</p>
                         {{entry.city}}
                         {{entry.truckType}}
+                        {{entry.jobAddress.zip}}
                         <p><strong> Benefits include:</strong>
                             {% for option in entry.jobBenefits %}
                             {# Label: {{ option.label }} #}

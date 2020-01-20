@@ -218,11 +218,41 @@ footer {
     background-color: #B91822;
     color: #fff; }
 
-#search-controller {
+.search-controller-container #or {
+  height: 30%;
+  display: block;
+  transform: translateY(25%); }
+
+.search-controller-container #topLeftLine,
+.search-controller-container #topRightLine {
+  border: solid 2px black;
+  width: 2px;
+  height: 30%;
+  text-align: center;
+  display: block;
+  margin: 0 auto; }
+
+@media (max-width: 767px) {
+  .search-controller-container {
+    padding: 20px;
+    text-align: center; }
+    .search-controller-container #or {
+      display: inline; }
+    .search-controller-container #topLeftLine,
+    .search-controller-container #topRightLine {
+      border: solid 2px black;
+      width: 30%;
+      height: 2px;
+      text-align: center;
+      display: inline-block;
+      margin: 0 auto;
+      transform: translateY(-200%); } }
+
+.search-controller {
   padding: 30px 0px 10px; }
-  #search-controller .form-group .bg-gray {
-    background-color: #E2E2E2; }
-  #search-controller #search-jobs-btn {
+  .search-controller .form-group .bg-gray {
+    background-color: #E2E2E2 !important; }
+  .search-controller .search-jobs-btn {
     background-color: #5D5D5D !important;
     color: #fff;
     display: block;

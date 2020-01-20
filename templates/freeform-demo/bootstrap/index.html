@@ -1,0 +1,56 @@
+{% extends "freeform-demo/_layout" %}
+
+{% set pageTitle = "Bootstrap" %}
+{% set page = "bootstrap" %}
+
+{% block content %}
+
+<div class="container">
+
+    {% set forms = craft.freeform.forms %}
+
+    <h2>Forms <small class="text-muted">(Bootstrap Example)</small></h2>
+    <p>
+        This section of the demo templates will showcase any of your forms with direct page template formatting with Bootstrap 4.
+        It will override any formatting template you've specified for the form, and only look at the markup in this template directly.
+        This section is best for quickly getting a taste for Freeform's features, and troubleshooting forms that may not be working correctly.
+        For real world usage, we encourage you to use a <a href="{{ siteUrl }}freeform-demo/custom">Custom Formatting Template</a> with the <code>render()</code> template tag instead.
+    </p>
+    <br />
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Form Name</th>
+            <th>Handle</th>
+            {% if currentUser and currentUser.admin %}
+            <th>Submissions</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for form in forms %}
+            <tr>
+                <td>{{ form.id }}</td>
+                <td>
+                    <a href="{{ siteUrl }}freeform-demo/bootstrap/{{ form.handle }}">
+                        {{ form.name }}
+                    </a>
+                </td>
+                <td class="code">{{ form.handle }}</td>
+                {% if currentUser and currentUser.admin %}
+                    <td>
+                        <a href="{{ siteUrl }}freeform-demo/bootstrap/{{ form.handle }}/submissions">
+                            {{ craft.freeform.submissions({formId: form.id}).count }} submissions
+                        </a>
+                    </td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+
+{% endblock %}
