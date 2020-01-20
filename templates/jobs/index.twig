@@ -20,16 +20,15 @@
         <div class="col-sm-12 p-0">
             {% set locations = craft.entries.section('jobListings').all() %}
             {% set options = {     
-                center: {lat: 39.8283, lng:-98.5795},                   
-                height:300,
-                width:1200,            
+                height:400,                                         
                 zoom: 4,
                markerOptions: {
                 icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                    }
+                    },
             } %}
 
-            <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" />
+            {# <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" /> #}
+            {{ craft.smartMap.map(locations, options) }}
 
         </div>
     </div>
@@ -103,7 +102,7 @@
                 <div class="col-sm-12 col-md-6">
                     {% set city = entry.city %}
                     {% set state = entry.state %}
-                    <img src="{{ craft.maps.img({center: city  ~ state, }) }}" class="img-fluid">
+                    {# <img src="{{ craft.maps.img({center: city  ~ state, }) }}" class="img-fluid"> #}
                 </div>
             </div>
         </div>

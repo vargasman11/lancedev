@@ -1,0 +1,21 @@
+{% set segments = craft.request.segments %}
+
+{% set moreInfoUrl = '/'~segments[0]~'/'~segments[1]~'/'~element.slug~'/' %}
+{% set directionsUrl = craft.smartMap.directions(element.jobAddress, element.title) %}
+
+<h1>{{ element.title }}</h1>
+<div>
+    {# Your address fields #}
+    {{ element.jobAddress.street1 }}<br>
+    {{ element.jobAddress.city }}, {{ element.jobAddress.state }} {{ element.jobAddress.zip }}
+</div>
+
+<div>
+    {# "More Info" and "Get Directions" links #}
+    <a href="{{ moreInfoUrl }}">More Info</a> | 
+    <a href="{{ directionsUrl }}" target="_blank">Get Directions</a>
+</div>
+<div>
+    {# Special "zoomOnMarker" JavaScript function #}
+    <span onclick="smartMap.zoomOnMarker('{{ marker.mapId }}', '{{ marker.markerName }}', 15)">Zoom On Marker</span>
+</div>
