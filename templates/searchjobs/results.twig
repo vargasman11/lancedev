@@ -2,26 +2,51 @@
 
 {% block main %}
 
-    {# Set variables for each possible param: #}
-    {% set state = craft.app.request.getParam('state') %}
-    {% set trucktype = craft.app.request.getParam('trucktype') %}
-    {% set city = craft.app.request.getParam('city') %}
+{# Set variables for each possible param: #}
+{% set state = craft.app.request.getParam('state') %}
+{% set trucktype = craft.app.request.getParam('trucktype') %}
+{% set city = craft.app.request.getParam('city') %}
 
-    {% set criteria ={   
+{% set criteria ={   
         section: 'jobListings',     
         state: state,
         truckType: trucktype,
         city: city,
     } %}
 
-    {# Pass the criteria object to the query builder: #}
-    {% set query = craft.entries(criteria) %}
+{# Pass the criteria object to the query builder: #}
+{% set query = craft.entries(criteria) %}
+
+
+
+{# We build the map location based on criteria #}
+<div class="container-fluid" id="map">
+    <div class="row bg-secondary">
+        <div class="col-sm-12 p-0">            
+            {% set locations = query %}
+            {% set options = {     
+                center: {lat: 39.8283, lng:-98.5795},                   
+                height:300,
+                width:1200,            
+                zoom: 4,
+               markerOptions: {
+                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                    }
+            } %}
+
+            <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" />
+
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container-fluid pt-5 pb-1 jobs-index">
+    <h1 class="text-center">Search Results</h1>
 
     {# Set up pagination, and let it grab the current page's results: #}
     {% paginate query as pageInfo, results %}
-
-    <div class="container-fluid pt-5 pb-1 jobs-index">
-    <h1 class="text-center">Search Results</h1>
 
     {% for result in results %}
     <div class="row p-4">
@@ -29,7 +54,7 @@
             <h3 class="job-header">{{ result.title }}</h3>
             <p><strong><em>Truck:</em></strong> {{ result.truckType }}</p>
             <p><strong><em>State</em></strong>{{ result.state}}</p>
-             <p><strong><em>City:</em></strong> {{ result.city}}</p>
+            <p><strong><em>City:</em></strong> {{ result.city}}</p>
             <a class="btn btn-small btn-details" href="/jobs/{{result.slug}}">Get More Details &nbsp; <i
                     class="fas fa-arrow-right"></i> </a>
             <p class="pt-2"><strong>Benefits: </strong>
