@@ -1,6 +1,6 @@
-{% extends "_layout" %}
+{# {% extends "_layout" %}
 
-{% block main %}
+{% block main %} #}
 {% set form = craft.freeform.form('shortform') %}
 
 {{ form.renderTag }}
@@ -19,11 +19,8 @@
 </div>
 {% endif %}
 
-
-
-
 {# FORM #}
-
+{# DEFINE VARIABLES #}
 {% set firstName = form.get("firstName") %}
 {% set lastName = form.get("lastName") %}
 {% set recipients = form.get("recipients") %}
@@ -32,17 +29,21 @@
 {% set city = form.get('city') %}
 {% set zipcode = form.get('zipCode') %}
 {% set state = form.get('state') %}
-{% set cdla = form.get('doYouHaveAValidCdlA') %}
+
+{# Variables that dont show for some reason #}
+{% set cdlA = form.get("validCdlA") %}
 {% set drivingrecord = form.get('doYouHaveACleanDrivingRecord') %}
 {% set exp = form.get('howManyYearsOfCdlADriverExperienceDoYouHave') %}
 
-<div class="container-fluid">
+<div class="container-fluid" id="shortform">
     <div class="bxslider">
 
         {# Slide 1 #}
-        <div class="form-group">
+        <div class="form-group bg-secondary" id="form-container">
             <div class="row">
-                <div class="col-sm-1 offset-1 col-md-6 offset-3">
+                <div class="col-sm-10 offset-1 col-md-6 offset-3">
+
+
                     <h3>What can you expect after you apply?</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis esse adipisci corrupti harum
                         doloremque
@@ -76,24 +77,91 @@
         </div>
 
         {# Slide 2 #}
-        <div class="form-group">
+        <div class="form-group bg-light">
             <div class="row">
-                <div class="col-sm-1 offset-1 col-md-6 offset-3">
-                <h3>Did you know?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus in optio odio, cum magni hic qui dicta, quia est possimus eveniet voluptatem reiciendis sed excepturi aut, cupiditate accusamus tempora consectetur. Officiis, voluptatem!</p>
+                <div class="col-sm-10 offset-1 col-md-6 offset-3">
+                    <h3>Did you know?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ducimus in optio odio, cum
+                        magni hic qui dicta, quia est possimus eveniet voluptatem reiciendis sed excepturi aut,
+                        cupiditate accusamus tempora consectetur. Officiis, voluptatem!</p>
+
+                    {# <div class="form-group">
+                        <label>{{ cldA.label }}</label>                        
+                        {% for option in cdlA.options %}
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="yourFieldHandle" value="{{ option.value }}"
+                                    {{ option.checked ? "checked" }} />
+                                {{ option.label|raw }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div> #}
+
+                    <div class="form-group">
+                        {# <label>{{ lastName.label }}</label> #}
+                        <input name="{{ lastName.handle }}" value="{{ lastName.value }}" class="form-control"
+                            placeholder="{{ lastName.handle }}" />
+                        {{ lastName.renderErrors() }}
+                    </div>
+
+                    <div class="form-group">
+                        {# <label>{{ lastName.label }}</label> #}
+                        <input name="{{ lastName.handle }}" value="{{ lastName.value }}" class="form-control"
+                            placeholder="{{ lastName.handle }}" />
+                        {{ lastName.renderErrors() }}
+                    </div>
+                    <div class="form-group">
+                        {# <label>{{ lastName.label }}</label> #}
+                        <input name="{{ lastName.handle }}" value="{{ lastName.value }}" class="form-control"
+                            placeholder="{{ lastName.handle }}" />
+                        {{ lastName.renderErrors() }}
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        {# Slide 3 #}
+        <div class="form-group bg-success">
+            <div class="row">
+                <div class="col-sm-10 offset-1 col-md-6 offset-3">
+
+
+                    <h3>What can you expect after you apply?</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis esse adipisci corrupti harum
+                        doloremque
+                        hic repudiandae aspernatur quia! Quibusdam eum sint quia odit quae fuga consequatur fugit? Quasi
+                        dolorum
+                        ipsam veritatis molestias explicabo numquam, labore adipisci nihil, eligendi repellendus
+                        assumenda rerum
+                        porro in nesciunt fuga?</p>
+                    {# First Name #}
+                    <div class="form-group">
+                        {# <label>{{ firstName.label }}</label> #}
+                        <input name="{{ firstName.handle }}" value="{{ firstName.value }}" class="form-control"
+                            placeholder="{{ firstName.label }}" />
+                        {{ firstName.renderErrors() }}
+                    </div>
+                    {# Last Name #}
+                    <div class="form-group">
+                        {# <label>{{ lastName.label }}</label> #}
+                        <input name="{{ lastName.handle }}" value="{{ lastName.value }}" class="form-control"
+                            placeholder="{{ lastName.handle }}" />
+                        {{ lastName.renderErrors() }}
+                    </div>
+                    {# Email #}
+                    <div class="form-group">
+                        {# <label>Email Address</label> #}
+                        <input name="email" class="form-control" placeholder="{{ email.handle }}" />
+                        {{ form.get("email").renderErrors() }}
+                    </div>
                 </div>
             </div>
         </div>
-
-
-
-        
-
     </div>
 
-    <button type="submit">Submit</button>
-</div>
+    {{ form.renderClosingTag }}
 
-{{ form.renderClosingTag }}
-
-{% endblock %}
+    {# {% endblock %} #}
