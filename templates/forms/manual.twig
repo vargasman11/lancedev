@@ -5,7 +5,8 @@
 {# {% set form = craft.freeform.form('shortform') %} #}
 {% set form = craft.freeform.form('shortform',{
             inputClass: "form-control",        
-            submitClass: "btn btn-lg btn-success",
+            submitClass: "btn btn-lg btn-success ml-2",
+            labelClass: "ml-2"
         }) %}
 
 
@@ -18,14 +19,20 @@
 {% for row in form %}
     {% for field in row %}
         {% set columnClass = "form-group" ~ form.customAttributes.columnClass %}
+        {% set labelClass = "hello" ~ form.customAttributes.labelClass %}
         {# {{ field.renderLabel({
             inputClass: "form-control",        
             submitClass: "btn btn-lg btn-success",
         }) }} #}
         
-        {% if field.type == "submit" %}
-            {% set columnClass = columnClass ~ " submit-column" %}              
+        {% if field.type == "radio_group" %}
+                     
         {% endif %}  
+
+         {% if field.type == "submit" %}
+            {% set columnClass = columnClass ~ " submit-column" %}
+        {% endif %}  
+
 
         <div class="{{columnClass}}">
             {{ field.render() }}

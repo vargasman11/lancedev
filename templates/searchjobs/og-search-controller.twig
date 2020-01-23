@@ -3,7 +3,8 @@
       <div class="row">
           <div class="col-8 offset-2">
 
-              <form action="{{ url('searchjobs/results') }}">
+              {# <form action="{{ url('searchjobs/results') }}"> #}
+                    <form action="{{ url('searchjobs/results') }}">
                   <div class="form-group">
                       {# SELECT STATE #}
                       <select name="state" class="form-control bg-gray" id="">
@@ -24,21 +25,12 @@
                       </select>
                   </div>
 
+
                   {# select city #}
                   <div class="form-group">
                       <input id="city" name="city" type="text"  class="form-control bg-gray" placeholder="city"/>
                   </div>
 
-                   {# select zipcode #}
-                  <div class="form-group">
-                      <input id="zip" name="zip" type="number" pattern="[0-9]*" class="form-control bg-gray"
-                          placeholder="zip code"  />
-                  </div>
-
-                     {# select range #}
-                  <div class="form-group">
-                      <input id="range" name="range" type="number" pattern="[0-9]*" class="form-control bg-gray" placeholder="range in miles" />
-                  </div>
 
                   <button type="submit" value="Search" class="btn btn-lg search-jobs-btn"> <i class="fas fa-search"></i> Search Jobs</button>
               </form>
@@ -46,3 +38,7 @@
           </div>
       </div>
   </div>
+
+
+
+  

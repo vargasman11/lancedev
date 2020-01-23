@@ -6,39 +6,23 @@
 {% set state = craft.app.request.getParam('state') %}
 {% set trucktype = craft.app.request.getParam('trucktype') %}
 {% set city = craft.app.request.getParam('city') %}
-{% set target = craft.app.request.getParam('zip') %}
-{% set range = craft.app.request.getParam('range') %}
 
 {% set criteria ={   
         section: 'jobListings',     
         state: state,
         truckType: trucktype,
-        city: city,   
-        jobAddress:{
-            target:target,
-            range: range
-        }            
+        city: city,
     } %}
 
 {# Pass the criteria object to the query builder: #}
 {% set query = craft.entries(criteria) %}
-
-{# SEARCH BY RADIUS #}
-{# zipcode #}
-{# {% set target = craft.app.request.getParam('zip') %} #}
-{# {% if target is not empty %}
-    {% set query = query|merge({
-        jobLocation:target
-    }) %}
-{% endif %} #}
-
 
 
 
 {# We build the map location based on criteria #}
 <div class="container-fluid" id="map">
     <div class="row bg-secondary">
-        <div class="col-sm-12 p-0">
+        <div class="col-sm-12 p-0">            
             {% set locations = query %}
             {% set options = {     
                 height:400,
@@ -57,8 +41,10 @@
 </div>
 
 
+
 <div class="container-fluid pt-5 pb-1 jobs-index">
     <h1 class="text-center">Search Results</h1>
+
     {# Set up pagination, and let it grab the current page's results: #}
     {% paginate query as pageInfo, results %}
 
@@ -77,13 +63,9 @@
                 {# Value: {{ option }} or {{ option.value }} #}
                 {% endfor %}
             </p>
-            <p><strong>{{ result.jobAddress.distance | number_format(1) }} miles away</strong></p>
-
         </div>
     </div>
     {% endfor %}
-
-
     <div class="search-again">
         <h3 class="text-center">Didn't find what you're looking for?</h3>
         <a class="btn btn-lg btn-success search-again-btn" href="/jobs">Search Again</a>

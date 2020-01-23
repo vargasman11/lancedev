@@ -52,22 +52,10 @@
 #}
 <div class="container-fluid search-controller-container">
     <div class="row">
-        <div class="col-sm-12 col-md-5">
+        <div class="col-sm-12 col-md-10 offset-md-1">
             <h3 class="text-center">Search by city, <br> state and/or truck type</h3>
             {% include "searchjobs/search-controller" %}
-        </div>
-
-        <div class="col-sm-12 col-md-2 pt-4">
-            <span id="topLeftLine"></span>
-            <h2 class="text-center" id="or">OR</h2>
-            <span id="topRightLine"></span>
-        </div>
-
-        <div class="col-sm-12 col-md-5">
-            <br>
-            <h3 class="text-center">Search by radius</h3> <br>
-            {% include "searchRadius/search-controller" %}
-        </div>
+        </div>   
     </div>
 </div>
 
