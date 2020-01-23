@@ -9,6 +9,7 @@
 {% set target = craft.app.request.getParam('zip') %}
 {% set range = craft.app.request.getParam('range') %}
 
+{# Here we set the criteria and combine all the parameter variables #}
 {% set criteria ={   
         section: 'jobListings',     
         state: state,
@@ -21,19 +22,7 @@
     } %}
 
 {# Pass the criteria object to the query builder: #}
-{% set query = craft.entries(criteria) %}
-
-{# SEARCH BY RADIUS #}
-{# zipcode #}
-{# {% set target = craft.app.request.getParam('zip') %} #}
-{# {% if target is not empty %}
-    {% set query = query|merge({
-        jobLocation:target
-    }) %}
-{% endif %} #}
-
-
-
+{% set query = craft.entries(criteria).orderBy('score') %}
 
 {# We build the map location based on criteria #}
 <div class="container-fluid" id="map">
@@ -48,8 +37,6 @@
                 icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
                     }
             } %}
-
-            {# <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" /> #}
             {{ craft.smartMap.map(locations, options) }}
 
         </div>
