@@ -1,0 +1,29 @@
+{% extends "_layout" %}
+
+{% block main %}
+<div class="container-fluid shortform gray-form p-4">
+{% set form = craft.freeform.form('shortform', {
+    inputClass: "form-control",        
+    submitClass: "btn btn-lg btn-success",
+}) %}
+
+{{ form.renderTag}}
+
+{% for row in form %}
+    {% for field in row %}
+        {% set columnClass = "form-group" ~ form.customAttributes.columnClass %}
+        
+        {% if field.type == "submit" %}
+            {% set columnClass = columnClass ~ " submit-column" %}
+        {% endif %}  
+
+        <div class="{{columnClass}}">
+            {{ field.render() }}
+        </div>
+    {% endfor %}
+{% endfor %}
+
+{{ form.renderClosingTag }}
+</div>
+
+{% endblock %}
