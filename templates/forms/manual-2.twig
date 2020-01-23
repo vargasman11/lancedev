@@ -1,0 +1,80 @@
+{% extends "_layout" %}
+
+{% block main %}
+{# Grab the form #}
+{% set form = craft.freeform.form('shortform') %}
+
+{# Declare all variable #}
+{% set firstName = form.get("firstName") %}
+{% set lastName  = form.get("lastName") %}
+{% set cellPhone = form.get("cellPhone") %}
+{% set city = form.get("city") %}
+{% set state = form.get("state") %}
+{% set cdla = form.get("cdla") %}
+{% set cdlaYears = form.get("cdlaYears") %}
+{% set drivingRecord = form.get("doYouHaveACleanDrivingRecord") %}
+{% set terminal = form.get("terminal") %}
+{% set consent = form.get("consent") %}
+
+{{ form.renderTag}}
+<div class="container-fluid shortform gray-form p-4">
+    <div class="row">
+        <div class="col-sm-8">
+            {# firstName #}
+            <label> {{ firstName.label }}</label>
+            <input type="text" name="{{firstName.handle}}" value="{{firstName.value}}">
+
+            {# lastName #}
+            <label> {{ lastName.label }}</label>
+            <input type="text" name="{{lastName.handle}}" value="{{lastName.value}}">
+
+            {# cellPhone #}
+            <label> {{ cellPhone.label }}</label>
+            <input type="text" name="{{cellPhone.handle}}" value="{{cellPhone.value}}">
+
+            {# city #}
+            <label> {{ city.label }}</label>
+            <input type="text" name="{{city.handle}}" value="{{city.value}}">
+
+            {# state #}
+            <label>{{state.label}}</label>
+            <select name="{{state.label}}" id="">
+                {% for options in state.options %}
+                <option value="{{options.value}}" id="">{{ options.label}}</option>
+                {% endfor %}
+            </select>
+
+            {# Submit #}
+            <button class="btn btn-lg btn-success" data-submit-button="1" type="submit"
+                name="form_page_submit">Next</button>
+
+        </div>
+    </div>
+</div>
+{{ form.renderClosingTag }}
+
+{# ---------END OF PAGE ONE------------- #}
+{{ form.renderTag}}
+
+<div class="container-fluid shortform gray-form p-4">
+    <div class="row">
+        <div class="col-sm-8">
+            {# Valid CDLA #}
+            <div class="form-">
+                <label for="">{{cdla.label}}</label>
+                {% for option in cdla.options %}
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" id="{{option.value}}" value="{{option.value}}">
+                    <label class="form-check-label" for="{{option.value}}">{{option.label}}</label>
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{{ form.renderClosingTag }}
+
+{% endblock %}
