@@ -277,6 +277,27 @@ footer {
   background: -webkit-linear-gradient(45deg, #5C5C5C 0%, #637076 100%);
   background: linear-gradient(45deg, #5C5C5C 0%, #637076 100%); }
 
+#form-styles .nav {
+  display: none; }
+
+#form-styles .form-group h2,
+#form-styles .form-group h3,
+#form-styles .form-group p {
+  color: #fff; }
+
+#form-styles .btn-primary {
+  color: #fff;
+  background-color: #D30000;
+  border-color: #fff; }
+
+#form-styles .form-group .form-label {
+  color: #fff;
+  font-weight: 500; }
+
+#form-styles .form-check-label {
+  margin-bottom: 0;
+  color: #fff; }
+
 .show {
   display: block !important;
   margin: 0 auto; }
