@@ -55,7 +55,7 @@
         <div class="col-sm-12 col-md-10 offset-md-1">
             <h3 class="text-center">Search by city, <br> state and/or truck type</h3>
             {% include "searchjobs/search-controller" %}
-        </div>   
+        </div>
     </div>
 </div>
 
@@ -71,27 +71,32 @@
 
     {% for entry in pageEntries %}
     <div class="row p-4">
-        <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 bg-light p-2">
+        <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 bg-light p-2">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
-                    <h3 class="job-header">{{entry.jobTitle}}</h3>
-                    <p> <strong><em>Truck:</em></strong> {{entry.truckType}}</p>
+                    <h3 class="job-header">{{entry.jobType}}</h3>
                     <p><strong><em>State</em></strong> {{entry.state}}</p>
-                    <p><strong><em>City</em></strong> {{entry.city}}</p>
-                    <p><strong><em>Address Field</em></strong> {{entry.jobAddress.zip}}</p>
+                    <p><strong><em>City</em></strong> {{entry.city}}</p>                   
                     <a class="btn btn-small btn-details" href="/jobs/{{entry.slug}}">Get More Details &nbsp; <i
-                            class="fas fa-arrow-right"></i> </a>
-                    <p class="pt-2"><strong>Benefits: </strong>
-                        {% for option in entry.jobBenefits %}
-                        {{ option.value }}
-                        {# Value: {{ option }} or {{ option.value }} #}
-                        {% endfor %}
-                    </p>
+                            class="fas fa-arrow-right"></i></a>
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    {% set city = entry.city %}
-                    {% set state = entry.state %}
-                    {# <img src="{{ craft.maps.img({center: city  ~ state, }) }}" class="img-fluid"> #}
+                    <div class="container">
+                    <div class="row">
+                        <p><strong>Driver Type:</strong> <br>{{entry.driverType}} </p> &nbsp;&nbsp;&nbsp;
+                        <p><strong>Truck Type:</strong><br>{{entry.truckType}}</p> &nbsp;&nbsp;&nbsp;
+                        <p><strong> Job Type:</strong><br>{{entry.jobType}}</p> &nbsp;&nbsp;&nbsp;
+                    </div>
+                    </div>
+                    <div class="container">
+                    <div class="row">
+                        <p class="pt-2"><strong>Benefits: </strong> <br>
+                            {% for option in entry.jobBenefits %}
+                            {{ option.label }}, 
+                            {% endfor %}
+                        </p>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>

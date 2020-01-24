@@ -12,28 +12,27 @@
 UP UNTILL THE FOOTER --> #}
 {% block main %}
 <div class="container-fluid pt-5 pb-1 jobs-index">
-    <div class="container-fluid bg-light">
-        <div class="row p-4">
-            <div class="col-sm-8 offset-sm-2 col-md-6 offset-md-3 bg-light p-2">
-                <div class="row">
-                {# left side of entry, top on Mobile #}
-                    <div class="col-sm-12 col-md-6">
-                        <h3 class="job-header">{{entry.jobTitle}}</h3>
-                        <p>{{entry.jobOverview}}</p>
-                        {{entry.city}}
-                        {{entry.truckType}}
-                        <strong>{{entry.jobAddress.zip}}</strong>
-                        <p><strong> Benefits include:</strong>
-                            {% for option in entry.jobBenefits %}
-                            {# Label: {{ option.label }} #}
-                            {{ option.label }},
-                            {% endfor %}
-                        </p>
+    <div class="row p-4">
+        <div class="col-sm-8 offset-sm-2 col-md-8 bg-light p-2">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 offset-md-1">
+                    {# global company overview #}
+                    <div class="container pt-2">{{global.companyOverview}}
+                        {{entry.jobOverview}}
+                        <a href="{{entry.jobApplicationLink}}" class="btn btn-lg btn-success d-block mx-auto">Apply
+                            Now!!</a>                            
                     </div>
-                    {# Right side of entry, Bottom on Mobile #}
-                    <div class="col-sm-12 col-md-6">
-                     
-                    </div>
+                        <div class="container pt-5 text-center">
+                        <a class="btn text-danger" href="/jobs">Back to jobs</a>
+                        </div>
+                    {# <div class="container p-3">{{entry.city}}, &nbsp;
+                        {{entry.truckType}}, &nbsp;
+                        <strong>{{entry.jobAddress.zip}}</strong> <br>
+                        <strong> Benefits include:</strong>
+                        {% for option in entry.jobBenefits %}
+                        {{ option.label }},
+                        {% endfor %}
+                    </div> #}
                 </div>
             </div>
         </div>

@@ -1,9 +1,10 @@
 {
   "require": {
     "craftcms/ckeditor": "1.0.0-beta.2",
-    "craftcms/cms": "^3.0.0",
+    "craftcms/cms": "3.3.20.1",
     "craftcms/contact-form": "2.2.6",
     "doublesecretagency/craft-smartmap": "3.2.2.1",
+    "froala/craft-froala-wysiwyg": "2.9.5",
     "rynpsc/craft-phone-number": "1.2.5",
     "solspace/craft-freeform": "3.5.10",
     "vlucas/phpdotenv": "^3.4.0"

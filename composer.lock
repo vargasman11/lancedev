@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5051ded98707e640195d41ee31d550c3",
+    "content-hash": "e10c2e972c4cbc4802cc4fcfecaaf871",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -444,11 +444,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.19",
+            "version": "3.3.20.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/49e143d4f866ce477b4a8b4c97f61a8d23fb3dc7",
-                "reference": "49e143d4f866ce477b4a8b4c97f61a8d23fb3dc7",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/4d11acc31e4820a56fcc4f9f6b15e6936fe0f174",
+                "reference": "4d11acc31e4820a56fcc4f9f6b15e6936fe0f174",
                 "shasum": ""
             },
             "require": {
@@ -496,16 +496,6 @@
                 "bower-asset/punycode": "1.3.*",
                 "bower-asset/yii2-pjax": "~2.0.1"
             },
-            "require-dev": {
-                "codeception/codeception": "^3.1.0",
-                "codeception/mockery-module": "^0.3",
-                "codeception/phpunit-wrapper": "^7.7",
-                "codeception/specify": "^0.4",
-                "codeception/verify": "^1.0",
-                "fzaninotto/faker": "^1.8",
-                "league/factory-muffin": "^3.0",
-                "vlucas/phpdotenv": "^3.0"
-            },
             "suggest": {
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
                 "ext-imagick": "Adds support for more image processing formats and options.",
@@ -518,7 +508,6 @@
                     "crafttests\\fixtures\\": "tests/fixtures/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -529,7 +518,15 @@
                 "craftcms",
                 "yii2"
             ],
-            "time": "2019-12-30T22:17:21+00:00"
+            "support": {
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "forum": "https://craftcms.stackexchange.com/",
+                "source": "https://github.com/craftcms/cms",
+                "docs": "https://docs.craftcms.com/v3/",
+                "rss": "https://github.com/craftcms/cms/releases.atom"
+            },
+            "time": "2020-01-14T21:16:40+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -667,11 +664,11 @@
         },
         {
             "name": "craftcms/server-check",
-            "version": "1.1.7",
+            "version": "1.1.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/server-check/zipball/b379bbcdd32f2db78d204bc4d6f3f97e63fa8e04",
-                "reference": "b379bbcdd32f2db78d204bc4d6f3f97e63fa8e04",
+                "url": "https://api.github.com/repos/craftcms/server-check/zipball/a7b6c172b631ec822fbdccbe011dbcf77395a9ee",
+                "reference": "a7b6c172b631ec822fbdccbe011dbcf77395a9ee",
                 "shasum": ""
             },
             "type": "library",
@@ -680,7 +677,6 @@
                     "server/requirements"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -692,7 +688,7 @@
                 "requirements",
                 "yii2"
             ],
-            "time": "2019-01-31T19:59:15+00:00"
+            "time": "2020-01-17T22:23:26+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -1037,6 +1033,86 @@
                 "development"
             ],
             "time": "2019-09-27T11:53:16+00:00"
+        },
+        {
+            "name": "froala/craft-froala-wysiwyg",
+            "version": "2.9.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/Craft-3-Froala-WYSIWYG/zipball/31802b6335c148ba2055e16909f7704dcc688591",
+                "reference": "31802b6335c148ba2055e16909f7704dcc688591",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "froala/wysiwyg-editor": "2.9.5"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Froala WYSIWYG Editor",
+                "handle": "froala-editor",
+                "hasSettings": true,
+                "developer": "Bert Oost",
+                "developerUrl": "https://bertoost.com",
+                "documentationUrl": "https://github.com/froala/Craft-3-Froala-WYSIWYG/blob/master/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "froala\\craftfroalawysiwyg\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Craft 3 CMS plugin for Froala WYSIWYG HTML Rich Text Editor.",
+            "homepage": "https://github.com/froala/Craft-3-Froala-WYSIWYG",
+            "keywords": [
+                "craft",
+                "craftcms",
+                "craftcms plugin",
+                "froala",
+                "plugin",
+                "wysiwyg"
+            ],
+            "time": "2019-06-08T09:03:30+00:00"
+        },
+        {
+            "name": "froala/wysiwyg-editor",
+            "version": "v2.9.5",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/froala/wysiwyg-editor/zipball/e9d09c486c927d2646064b82e26307e8fee75700",
+                "reference": "e9d09c486c927d2646064b82e26307e8fee75700",
+                "shasum": ""
+            },
+            "type": "component",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Froala Labs",
+                    "email": "support@froala.com"
+                }
+            ],
+            "description": "A beautiful jQuery WYSIWYG HTML rich text editor. High performance and modern design make it easy to use for developers and loved by users.",
+            "homepage": "https://www.froala.com/wysiwyg-editor",
+            "keywords": [
+                "editor",
+                "froala",
+                "froala-editor",
+                "froala-wysiwyg",
+                "html",
+                "javascript",
+                "jquery",
+                "jquery-plugin",
+                "rich editor",
+                "rich text editor",
+                "rte",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2019-04-12T09:45:52+00:00"
         },
         {
             "name": "geoip2/geoip2",
@@ -1457,23 +1533,19 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.46",
+            "version": "1.0.63",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
-                "reference": "f3e0d925c18b92cf3ce84ea5cc58d62a1762a2b2",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8132daec326565036bc8e8d1876f77ec183a7bd6",
+                "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6",
                 "shasum": ""
             },
             "require": {
+                "ext-fileinfo": "*",
                 "php": ">=5.5.9"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
-            },
-            "require-dev": {
-                "ext-fileinfo": "*",
-                "phpspec/phpspec": "^3.4",
-                "phpunit/phpunit": "^5.7.10"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -1502,7 +1574,6 @@
                     "League\\Flysystem\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1532,7 +1603,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2018-08-22T07:45:22+00:00"
+            "time": "2020-01-04T16:30:31+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -3001,11 +3072,11 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.2",
+            "version": "v4.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/82437719dab1e6bdd28726af14cb345c2ec816d0",
-                "reference": "82437719dab1e6bdd28726af14cb345c2ec816d0",
+                "url": "https://api.github.com/repos/symfony/console/zipball/e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f",
+                "reference": "e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f",
                 "shasum": ""
             },
             "require": {
@@ -3022,15 +3093,6 @@
             },
             "provide": {
                 "psr/log-implementation": "1.0"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "^3.4|^4.0|^5.0",
-                "symfony/dependency-injection": "^3.4|^4.0|^5.0",
-                "symfony/event-dispatcher": "^4.3",
-                "symfony/lock": "^4.4|^5.0",
-                "symfony/process": "^3.4|^4.0|^5.0",
-                "symfony/var-dumper": "^4.3|^5.0"
             },
             "suggest": {
                 "psr/log": "For using the console logger",
@@ -3052,7 +3114,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3068,7 +3129,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-17T10:32:23+00:00"
+            "time": "2020-01-10T21:54:01+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -3190,11 +3251,11 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.4.2",
+            "version": "v4.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/40c2606131d56eff6f193b6e2ceb92414653b591",
-                "reference": "40c2606131d56eff6f193b6e2ceb92414653b591",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/266c9540b475f26122b61ef8b23dd9198f5d1cfd",
+                "reference": "266c9540b475f26122b61ef8b23dd9198f5d1cfd",
                 "shasum": ""
             },
             "require": {
@@ -3215,7 +3276,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3231,15 +3291,15 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-26T23:16:41+00:00"
+            "time": "2020-01-21T08:20:44+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.2",
+            "version": "v4.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/ce8743441da64c41e2a667b8eb66070444ed911e",
-                "reference": "ce8743441da64c41e2a667b8eb66070444ed911e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/3a50be43515590faf812fbd7708200aabc327ec3",
+                "reference": "3a50be43515590faf812fbd7708200aabc327ec3",
                 "shasum": ""
             },
             "require": {
@@ -3259,7 +3319,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3275,7 +3334,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-11-17T21:56:56+00:00"
+            "time": "2020-01-04T13:00:46+00:00"
         },
         {
             "name": "symfony/inflector",
@@ -3765,11 +3824,11 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.2",
+            "version": "v4.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/b84501ad50adb72a94fb460a5b5c91f693e99c9b",
-                "reference": "b84501ad50adb72a94fb460a5b5c91f693e99c9b",
+                "url": "https://api.github.com/repos/symfony/process/zipball/f5697ab4cb14a5deed7473819e63141bf5352c36",
+                "reference": "f5697ab4cb14a5deed7473819e63141bf5352c36",
                 "shasum": ""
             },
             "require": {
@@ -3789,7 +3848,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3805,7 +3863,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-06T10:06:46+00:00"
+            "time": "2020-01-09T09:50:08+00:00"
         },
         {
             "name": "symfony/property-access",
@@ -4031,11 +4089,11 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.2",
+            "version": "v4.4.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/a08832b974dd5fafe3085a66d41fe4c84bb2628c",
-                "reference": "a08832b974dd5fafe3085a66d41fe4c84bb2628c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/cd014e425b3668220adb865f53bff64b3ad21767",
+                "reference": "cd014e425b3668220adb865f53bff64b3ad21767",
                 "shasum": ""
             },
             "require": {
@@ -4044,9 +4102,6 @@
             },
             "conflict": {
                 "symfony/console": "<3.4"
-            },
-            "require-dev": {
-                "symfony/console": "^3.4|^4.0|^5.0"
             },
             "suggest": {
                 "symfony/console": "For validating YAML files using the lint command"
@@ -4065,7 +4120,6 @@
                     "/Tests/"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4081,7 +4135,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-12-10T10:33:21+00:00"
+            "time": "2020-01-21T11:12:16+00:00"
         },
         {
             "name": "true/punycode",
@@ -4934,11 +4988,11 @@
         },
         {
             "name": "yiisoft/yii2-debug",
-            "version": "2.1.12",
+            "version": "2.1.13",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/bf9234ba1369116d12ebe266d98006416a5ae304",
-                "reference": "bf9234ba1369116d12ebe266d98006416a5ae304",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/696712a2a3565b1a072ad3c9d298e262967e8282",
+                "reference": "696712a2a3565b1a072ad3c9d298e262967e8282",
                 "shasum": ""
             },
             "require": {
@@ -4946,11 +5000,6 @@
                 "opis/closure": "^3.3",
                 "php": ">=5.4",
                 "yiisoft/yii2": "~2.0.13"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "<7",
-                "yiisoft/yii2-coding-standards": "~2.0",
-                "yiisoft/yii2-swiftmailer": "*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -4963,7 +5012,6 @@
                     "yii\\debug\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -4983,7 +5031,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2019-11-19T20:09:08+00:00"
+            "time": "2020-01-17T13:40:32+00:00"
         },
         {
             "name": "yiisoft/yii2-queue",
