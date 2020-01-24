@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>{{ siteName }}</title>
+    <link href="{{ siteUrl }}" />
+    <link type="application/atom+xml" rel="self" href="{{ craft.app.request.absoluteUrl }}" />
+    <updated>{{ now|atom }}</updated>
+    <id>{{ craft.app.request.absoluteUrl }}</id>
+    <author>
+        <name>{{ global.feedAuthorName }}</name>
+        <email>{{ global.feedAuthorEmail }}</email>
+    </author>
+
+    {% for entry in craft.entries.all() %}
+        <entry>
+            <id>{{ entry.url }}</id>
+            <link type="text/html" rel="alternate" href="{{ entry.url }}" />
+            <title>{{ entry.title }}</title>
+            <published>{{ entry.postDate|atom }}</published>
+            <updated>{{ entry.dateUpdated|atom }}</updated>
+            <author>
+                <uri>{{ siteUrl }}</uri>
+            </author>
+            
+        </entry>
+    {% endfor %}
+</feed>
