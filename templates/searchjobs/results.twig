@@ -6,8 +6,8 @@
 {% set state = craft.app.request.getParam('state') %}
 {% set trucktype = craft.app.request.getParam('trucktype') %}
 {% set city = craft.app.request.getParam('city') %}
-{% set range = craft.app.request.getParam('range') %}
 {% set target = craft.app.request.getParam('zip') %}
+{% set range = craft.app.request.getParam('range') %}
 
 {# Here we set the criteria and combine all the parameter variables #}
 {% set criteria ={   
@@ -23,15 +23,15 @@
 {# Pass the criteria object to the query builder: #}
 {% set query = craft.entries(criteria)%}
 
-
 {% if target is not empty and range is not empty %}
-    {% set query = query|merge({    
-        jobAddress:{
-            range: range    
-        }   }) %}
+{% set params = {
+    target: target,
+    range: range
+} %}
+{% set query = craft.entries.jobAddress(params).orderBy('distance')
+%}
+
 {% endif %}
-
-
 
 
 {# We build the map location based on criteria #}
@@ -52,7 +52,6 @@
         </div>
     </div>
 </div>
-
 {# DISPLAY Search Results #}
 <div class="container-fluid pt-5 pb-1 jobs-index">
     <h1 class="text-center">Search Results</h1>
@@ -74,9 +73,10 @@
                 {# Value: {{ option }} or {{ option.value }} #}
                 {% endfor %}
             </p>
+                {# Show the Radius #}
+                {% if target is not empty and range is not empty %}
             <p><strong>{{ result.jobAddress.distance | number_format(1) }} miles away</strong></p>
-            
-
+                {% endif %}
         </div>
     </div>
     {% endfor %}
