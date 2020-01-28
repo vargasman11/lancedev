@@ -36,12 +36,22 @@
         <i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
+
+
+    {% set pages = craft.entries.section('navigation').all() %}
     <ul id="driver-tabs">
-        <li><a href="/otr">OTR</a></li>
-        <li><a href="/local">Local</a></li>
-        <li><a href="#">Warehouse</a></li>
-        </ul>
-  </div>
-  
-   
+        {% nav page in pages %}
+            <li>
+                <a href="/{{page.slug}}">{{page.slug}}</a>                
+                {% ifchildren %}
+                    <ul>
+                        {% children %}
+                    </ul>
+                {% endifchildren %}
+            </li>
+        {% endnav %}
+    </ul>
+
+
+  </div>   
 </div>
