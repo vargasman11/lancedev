@@ -68,6 +68,9 @@
                     <p><strong><em>City</em></strong> {{result.city}}</p>
                     <a class="btn btn-small btn-details" href="/jobs/{{result.slug}}">Get More Details &nbsp; <i
                             class="fas fa-arrow-right"></i></a>
+                    
+                    {# zip #}
+                    <p><strong> zip:</strong><br>{{result.jobAddress.zip}}</p> 
 
                     {# Show the Radius #}
                     {% if target is not empty and range is not empty %}

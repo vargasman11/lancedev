@@ -1,4 +1,4 @@
-{% set segments = craft.request.segments %}
+{% set segments = craft.app.request.segments %}
 
 {# {% set moreInfoUrl = '/'~segments[0]~'/'~segments[1]~'/'~element.slug~'/' %} #}
 {% set directionsUrl = craft.smartMap.directions(element.jobAddress, element.title) %}
