@@ -192,6 +192,14 @@
 footer {
   background-color: #192326; }
 
+#apply-bottom {
+  background-color: #5D5D5D;
+  display: none; }
+
+@media (max-width: 576px) {
+  #apply-bottom {
+    display: block; } }
+
 .search-again {
   padding: 20px 0px; }
   .search-again .search-again-btn {
@@ -259,12 +267,6 @@ footer {
     display: block;
     margin: 0 auto; }
 
-.shortform {
-  min-height: 400px; }
-
-.green-form {
-  background-color: #76C168; }
-
 .black-form {
   background: #3e4040;
   background: -moz-linear-gradient(25deg, #3e4040 0%, #192326 100%);
@@ -278,25 +280,10 @@ footer {
   background: -webkit-linear-gradient(45deg, #5C5C5C 0%, #637076 100%);
   background: linear-gradient(45deg, #5C5C5C 0%, #637076 100%); }
 
-#form-styles .nav {
-  display: none; }
+.green-form {
+  background-color: #76C168; }
 
-#form-styles .form-group h2,
-#form-styles .form-group h3,
-#form-styles .form-group p {
-  color: #fff; }
-
-#form-styles .btn-primary {
-  color: #fff;
-  background-color: #D30000;
-  border-color: #fff; }
-
-#form-styles .form-group .form-label {
-  color: #fff;
-  font-weight: 500; }
-
-#form-styles .form-check-label {
-  margin-bottom: 0;
+.form-style label {
   color: #fff; }
 
 .show {
@@ -310,6 +297,7 @@ footer {
 .sticky {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%; }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */

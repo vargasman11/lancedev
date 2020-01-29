@@ -1,0 +1,204 @@
+{% extends "_layout" %}
+{% block main %}
+       
+
+{% set form = craft.freeform.form("shortform") %}
+
+{# RENDER FORM #}
+{{ form.renderTag({returnUrl: "pages/thanks"}) }}
+
+	{% if form.hasErrors %}
+		<div class="freeform-form-has-errors">
+			{{ "There was an error submitting this form"|t }}
+			{% if form.errors|length %}
+				<ul>
+					{% for error in form.errors %}
+						<li>{{ error }}</li>
+					{% endfor %}
+				</ul>
+			{% endif %}
+		</div>
+	{% endif %}
+
+{# SELECT FORM ELEMENTS INTO VARIABLES #}
+{% set firstName = form.get("firstName") %}
+{% set lastName = form.get("lastName") %}
+{% set cellPhone = form.get('cellPhone') %}
+{% set city = form.get('city') %}
+{% set state = form.get('state') %}
+{% set cdla = form.get('cdla') %}
+{% set cdlaYears = form.get('cdlaYears') %}
+{% set driveRecord = form.get('driveRecord') %}
+{% set terminal = form.get('terminal') %}
+{% set consent = form.get('consent') %}
+
+{# PAGE1 #}
+{% if form.currentPage.index == 0 %} 
+    <div class="black-form form-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 pt-5 pb-5">
+    
+    <div class="form-group">
+    {{ form.get('wgvMEmpVq').render }}
+    </div>
+
+    <div class="form-group">
+	<label>{{ firstName.label }}</label>
+	<input class="form-control" name="{{ firstName.handle }}" value="{{ firstName.value }}" />
+	{{ firstName.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+	<label>{{ lastName.label }}</label>
+	<input class="form-control" name="{{ lastName.handle }}" value="{{ lastName.value }}" />
+	{{ lastName.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+    <label>{{ cellPhone.label }}</label>
+	<input class="form-control" name="{{ cellPhone.handle }}" value="{{ cellPhone.value }}" />
+	{{ cellPhone.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+ 	<label>{{ city.label }}</label>
+	<input class="form-control" name="{{ city.handle }}" value="{{ city.value }}" />
+	{{ city.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+    <label>{{ state.label }}</label>
+	<select class="custom-select" name="{{state.handle}}" id="{{state.handle}}">
+        {% for option in state.options %}        
+            <option value="{{option.value}}">{{option.label}}</option>
+        {% endfor %}
+    </select>
+	{{ city.renderErrors() }}
+    </div>
+
+    <div class="form-group text-center">
+        {{ form.get('nd8rlG5Gv').render({
+              class: "btn btn-lg btn-success",
+        }) }}
+    </div>
+    
+    </div>
+    </div>
+    </div>
+    </div>
+{% endif %}
+    
+    
+{# PAGE 2 #}
+{% if form.currentPage.index == 1 %}    
+     <div class="gray-form form-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 pt-5 pb-5">
+
+    <div class="form-group">
+ 	<label>{{ cdla.label }}</label>
+     <br>
+	{% for option in cdla.options %}
+        <input type="radio" name="cdla" value="{{option.value}}">&nbsp; <span class="text-white">{{option.label}}</span> &nbsp;
+    {% endfor %}
+	{{ cdla.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+  <label>{{ cdlaYears.label }}</label>
+	<select class="custom-select" name="{{cdlaYears.handle}}" id="{{cdlaYears.handle}}">
+        {% for option in cdlaYears.options %}        
+            <option value="{{option.value}}">&nbsp; {{option.label}}</option>
+        {% endfor %}
+    </select>
+	{{ cdlaYears.renderErrors() }}
+    </div>
+
+
+	 <div class="form-group text-center">
+        {{ form.get('avQwb6jMd').render({
+              class: "btn btn-lg btn-success mx-2",
+        }) }}
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+{% endif %}
+
+
+{# PAGE 3 #}
+{% if form.currentPage.index == 2 %}
+    <div class="black-form form-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 pt-5 pb-5">
+
+    <div class="form-group">
+    <label>{{ driveRecord.label }}</label> <br> 
+	{% for option in driveRecord.options %}
+        <input type="radio" name="driveRecord" value="{{option.value}}"> &nbsp;<span class="text-white">{{option.label}}</span> &nbsp;
+    {% endfor %}
+	{{ driveRecord.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+    <label>{{ terminal.label }}</label>
+	<select class="custom-select" name="{{terminal.handle}}" id="{{terminal.handle}}">
+        {% for option in terminal.options %}        
+            <option value="{{option.value}}">{{option.label}}</option>
+        {% endfor %}
+    </select>
+	{{ terminal.renderErrors() }}
+    </div>
+
+    <div class="form-group text-center">
+        {{ form.get('wgvkLK3Qa').render({
+              class: "btn btn-lg btn-success mx-2",
+        }) }}
+    </div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+{% endif %}
+
+{# PAGE 4 #}
+{% if form.currentPage.index == 3 %}
+<div class="gray-form form-style">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 offset-md-4 pt-5 pb-5">
+
+    <div class="form-group">
+    <label for="{{consent}}">{{consent.label}}</label>
+    <input type="checkbox" name="{{consent}}" value="{{consent.value}}">
+    </div>
+
+      <div class="form-group text-center">
+        {{ form.get('qlL2KyDK2').render({
+              class: "btn btn-lg btn-success mx-2",
+        }) }}
+    </div>
+
+</div>
+</div>
+</div>
+</div>
+{% endif %}    
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ form.renderClosingTag }}
+
+
+
+{% endblock %}

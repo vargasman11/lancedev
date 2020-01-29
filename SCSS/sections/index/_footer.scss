@@ -1,4 +1,15 @@
 footer{
     background-color: #192326;
-    
+}
+
+#apply-bottom{
+    background-color: #5D5D5D;
+    display: none;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 576px) { 
+    #apply-bottom{
+        display: block;
+    }
 }

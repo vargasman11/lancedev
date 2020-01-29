@@ -1,0 +1,17 @@
+{% extends "_layout" %}
+{% block main %}
+<div class="black-form">
+    <div class="container">
+        <div class="row">
+            <div id="form-styles" class="col-md-8 offset-md-2 pt-5 pb-5">
+            {{ craft.freeform.form("shortform", {
+                labelClass: "form-label",
+                inputClass: "form-control",
+                errorClass:"hello",
+                instructionsBelowField: true,              
+            }).render() }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

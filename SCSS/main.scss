@@ -1,7 +1,7 @@
 @import 'sections/index/index.scss';
 @import 'sections/jobs/index.scss';
 @import 'sections/shortform/index.scss';
-@import 'sections/shortform/lance.scss';
+// @import 'sections/shortform/lance.scss';
 
 // utlitly functions
 .show{
@@ -17,6 +17,7 @@
 .sticky {
     position: fixed;
     top: 0;
+    left: 0;    
     width: 100%
   }
   
