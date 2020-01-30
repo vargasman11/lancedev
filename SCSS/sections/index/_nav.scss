@@ -5,32 +5,26 @@
     #nav-top {
         background-color: #373737;
         min-height: 75px;
-
         ul {
             padding: 0;
             display: flex;
             justify-content: space-between;
             transform: translateY(70%);
-
             li {
                 display: inline;
                 color: #fff;
-
                 .fa-phone {
                     color: green;
                 }
-
                 a {
                     color: gray;
                     font-size: 1.2em;
                 }
             }
-
             #seach-trigger {
                 color: #fff !important;
             }
         }
-
         #general-search {
             padding: 20px !important;
             display: none;
@@ -45,11 +39,9 @@
         min-height: 75px;
         padding-top: 15px;
         z-index: 1000;
-
         img {
             height: 30px !important;
         }
-
         a {
             color: #fff;
             border-color: gray;
@@ -59,7 +51,6 @@
             border: solid 1px gray;
             border-radius: 10px;
         }
-
         // Driver Tab Drop Down
         #driver-tabs {
             position: absolute;
@@ -71,10 +62,8 @@
             display: none;
             z-index: 100;
             border-radius: 10px;
-
             li {
                 padding: 5px;
-
                 a {
                     color: #fff;
                     font-weight: bold;
@@ -92,9 +81,7 @@
         // TOP HALF OF NAVIGATION
         #nav-top {
             ul {
-
                 li {
-
                     a {
                         font-size: 1em;
                     }
@@ -104,14 +91,14 @@
     }
 }
 
-    // // Small devices (landscape phones, 576px and up)
-    // @media (min-width: 576px) and (max-width: 767.98px) { ... }
+// // Small devices (landscape phones, 576px and up)
+// @media (min-width: 576px) and (max-width: 767.98px) { ... }
 
-    // // Medium devices (tablets, 768px and up)
-    // @media (min-width: 768px) and (max-width: 991.98px) { ... }
+// // Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) and (max-width: 991.98px) { ... }
 
-    // // Large devices (desktops, 992px and up)
-    // @media (min-width: 992px) and (max-width: 1199.98px) { ... }
+// // Large devices (desktops, 992px and up)
+// @media (min-width: 992px) and (max-width: 1199.98px) { ... }
 
-    // // Extra large devices (large desktops, 1200px and up)
-    // @media (min-width: 1200px) { ... }
+// // Extra large devices (large desktops, 1200px and up)
+// @media (min-width: 1200px) { ... }
