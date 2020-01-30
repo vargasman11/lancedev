@@ -6,3 +6,4 @@
 
 # ignore node
 /node_modules
+/forms
