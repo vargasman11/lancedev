@@ -38,20 +38,15 @@
       border: solid 1px gray;
       border-radius: 10px; }
     #nav-container #nav-bottom #driver-tabs {
-      position: absolute;
-      background-color: gray;
-      list-style: none;
-      right: 12%;
-      bottom: -50%;
       padding: 15px;
       display: none;
       z-index: 100;
       border-radius: 10px; }
-      #nav-container #nav-bottom #driver-tabs li {
-        padding: 5px; }
-        #nav-container #nav-bottom #driver-tabs li a {
-          color: #fff;
-          font-weight: bold; }
+      #nav-container #nav-bottom #driver-tabs a {
+        color: #fff;
+        font-weight: bold; }
+    #nav-container #nav-bottom #driver-tabs:hover {
+      background-color: inherit; }
 
 @media (max-width: 345px) {
   #nav-container {

@@ -52,23 +52,18 @@
             border-radius: 10px;
         }
         // Driver Tab Drop Down
-        #driver-tabs {
-            position: absolute;
-            background-color: gray;
-            list-style: none;
-            right: 12%;
-            bottom: -50%;
+        #driver-tabs {           
             padding: 15px;
             display: none;
             z-index: 100;
             border-radius: 10px;
-            li {
-                padding: 5px;
                 a {
                     color: #fff;
                     font-weight: bold;
-                }
-            }
+                }            
+        }
+        #driver-tabs:hover {
+            background-color: inherit;
         }
     }
 }

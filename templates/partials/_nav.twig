@@ -21,36 +21,32 @@
     <div class="row">
       <div class="col-sm-12 col-md-8 offset-md-2">
         <img src="/images/conversion-logo.png" alt="">
-        <a href="#" id="driver-tab-trigger">
-
+        <a href="#" class="dropdown" id="driver-tab-trigger">
        {# Get the requested category slug from the URL #}
           {% set slug = craft.app.request.getSegment(1) %}    
             {% if slug %}            
               {{ slug }}
             {% else %}
             Company Driver   
-            {% endif %}
-         
-        {# Company Driver&nbsp; #}
-        
+            {% endif %}         
+        {# Company Driver&nbsp; #}        
         <i class="fas fa-chevron-down"></i></a>
       </div>
     </div>
 
 
     {% set pages = craft.entries.section('navigation').all() %}
-    <ul id="driver-tabs">
+    <div id="driver-tabs" class="dropdown-item">
         {% nav page in pages %}
-            <li>
                 <a href="/{{page.slug}}">{{page.slug}}</a>                
                 {% ifchildren %}
                     <ul>
                         {% children %}
                     </ul>
                 {% endifchildren %}
-            </li>
+            
         {% endnav %}
-    </ul>
+    </div>
 
 
   </div>   
