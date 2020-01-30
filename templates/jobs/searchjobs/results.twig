@@ -20,16 +20,16 @@
         }                
     } %}
 
-{# Pass the criteria object to the query builder: #}
-{% set query = craft.entries(criteria)%}
+    {# Pass the criteria object to the query builder: #}
+    {% set query = craft.entries(criteria)%}
 
 {% if target is not empty and range is not empty %}
-{% set params = {
-    target: target,
-    range: range
-} %}
-{% set query = craft.entries.jobAddress(params).orderBy('distance')
-%}
+    {% set params = {
+        target: target,
+        range: range
+    } %}
+        {% set query = craft.entries.jobAddress(params).orderBy('distance')
+        %}
 
 {% endif %}
 
@@ -52,6 +52,8 @@
         </div>
     </div>
 </div>
+
+
 {# DISPLAY Search Results #}
 <div class="container-fluid pt-5 pb-1 jobs-index">
     <h1 class="text-center">Search Results</h1>

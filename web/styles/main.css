@@ -83,6 +83,8 @@
       .jumbo .heading-row #blur-bg h4 {
         color: #fff;
         font-weight: 700; }
+      .jumbo .heading-row #blur-bg .button_row {
+        width: 100%; }
 
 @media (max-width: 345px) {
   .jumbo {
@@ -99,9 +101,7 @@
       .jumbo .heading-row #blur-bg h1 {
         font-size: 1.3em; }
       .jumbo .heading-row #blur-bg h4 {
-        font-size: 1em; }
-    .jumbo .heading-row .button_row {
-      width: 100%; } }
+        font-size: 1em; } }
 
 @media (min-width: 346px) and (max-width: 500px) {
   .jumbo {
@@ -195,7 +195,7 @@ footer {
   background-color: #192326; }
 
 #apply-bottom {
-  background-color: #19D419;
+  background-color: #28a745;
   display: none; }
 
 @media (max-width: 576px) {
