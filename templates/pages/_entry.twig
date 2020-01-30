@@ -2,12 +2,17 @@
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
- {# keywords #}
-    {% if entry.keywords %}
-            <meta name="keywords" content="{{entry.keywords}}">
-        {% else %}
-            <meta name="keywords" content="{{global.keywords}}">
+
+     {# keywords #}
+    {% if entry.keywordTags is not empty %}      
+        {% set entries = entry %}
+            <meta name="keywords" content="{% for tag in craft.tags.relatedTo(entries) %}{{ tag.title }} {% endfor %}">
+        {% else %}   
+            {% set myTagQuery = craft.tags().group('globalTags') %}
+            {% set tags = myTagQuery.all() %} 
+            <meta name="keywords"  content="{% for tag in tags %} {{ tag.title }} {% endfor %}">
     {% endif %}
+
 
     {# meta description #}
     {% if entry.metaDescription %}
@@ -29,6 +34,7 @@
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
 {# UP UNTILL THE FOOTER --> #}
 {% block main %}
+
 {# JUMBOTRON #}
 <div class="container-fluid p-0 jumbo">
     <div class="img-row"></div>
