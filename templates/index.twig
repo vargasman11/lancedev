@@ -2,13 +2,29 @@
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
-{# {% for entry in craft.entries.section('home') %} #}
-<meta name="keywords" content="{{entry.keywords}}">
-<meta name="description" content="{{entry.metaDescription}}">
-<title>{{entry.titleTag}}</title>
-{# {% endfor %} #}
-{% endblock %}
 
+    {# keywords #}
+    {% if entry.keywords %}
+            <meta name="keywords" content="{{entry.keywords}}">
+        {% else %}
+            <meta name="keywords" content="{{global.keywords}}">
+    {% endif %}
+
+    {# meta description #}
+    {% if entry.metaDescription %}
+            <meta name="description" content="{{entry.metaDescription}}">
+        {% else %}
+            <meta name="description" content="{{global.metaDescription}}">
+    {% endif %}
+
+    {# title tag #}
+    {% if entry.titleTag %}
+            <title>{{entry.titleTag}}</title>
+        {% else %}
+            <title>{{global.titleTag}}</title>
+    {% endif %}
+            
+{% endblock %}
 
 
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
@@ -65,8 +81,7 @@
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe width="560" height="315" src="{{entry.videoEmbed}}" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-                {# <iframe width="560" height="315" src="https://www.youtube.com/embed/q_N7telJgRA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> #}
+                    allowfullscreen></iframe>             
             </div>
         </div>
     </div>
@@ -93,8 +108,6 @@
         </div>
     </div>
 </div>
-
-{# {{ craft.freeform.form("shortform").render() }} #}
 
 
 {% endblock %}

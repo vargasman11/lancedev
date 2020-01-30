@@ -99,7 +99,9 @@
       .jumbo .heading-row #blur-bg h1 {
         font-size: 1.3em; }
       .jumbo .heading-row #blur-bg h4 {
-        font-size: 1em; } }
+        font-size: 1em; }
+    .jumbo .heading-row .button_row {
+      width: 100%; } }
 
 @media (min-width: 346px) and (max-width: 500px) {
   .jumbo {
