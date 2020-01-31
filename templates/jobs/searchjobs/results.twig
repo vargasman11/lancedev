@@ -35,6 +35,11 @@
 
 {% endif %}
 
+    {# Set up pagination, and let it grab the current page's results: #}
+    {% paginate query as pageInfo, results %}
+        
+    {# CONDITIONAL IF THERE ARE RESULTS #}
+    {% if results|length %}
 
 {# We build the map location based on criteria #}
 <div class="container-fluid" id="map">
@@ -54,15 +59,12 @@
         </div>
     </div>
 </div>
-
-
-{# DISPLAY Search Results #}
+    {# DISPLAY Search Results #}
 <div class="container-fluid pt-5 pb-1 jobs-index">
     <h1 class="text-center">Search Results</h1>
-    {# Set up pagination, and let it grab the current page's results: #}
-    {% paginate query as pageInfo, results %}
 
-    {% for result in results %}
+    {% for result in results %}    
+
     <div class="row p-4">
         <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 bg-light p-4">
             <div class="row">
@@ -103,14 +105,17 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </div>    
     {% endfor %}
+</div>
 
-
+    {% else %}
+        
+    
     <div class="search-again">
         <h3 class="text-center">Didn't find what you're looking for?</h3>
         <a class="btn btn-lg btn-success search-again-btn" href="/jobs">Search Again</a>
     </div>
-</div>
+
+{% endif %}
 {% endblock %}
