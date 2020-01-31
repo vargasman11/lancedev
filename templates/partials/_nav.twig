@@ -36,17 +36,16 @@
 
 
     {% set pages = craft.entries.section('navigation').all() %}
-    <div id="driver-tabs" class="dropdown-item">
+    <ul id="driver-tabs" class="dropdown-menu">
         {% nav page in pages %}
-                <a href="/{{page.slug}}">{{page.slug}}</a>                
+                <li><a class="dropdown-item" class="d-block" href="/{{page.slug}}">{{page.slug}}</a> </li>
                 {% ifchildren %}
                     <ul>
                         {% children %}
                     </ul>
                 {% endifchildren %}
-            
         {% endnav %}
-    </div>
+    </ul>
 
 
   </div>   

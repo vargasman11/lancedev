@@ -57,6 +57,10 @@
             display: none;
             z-index: 100;
             border-radius: 10px;
+            background-color: inherit;
+            position: relative !important;
+            float: right;
+            margin-right: 5%;
                 a {
                     color: #fff;
                     font-weight: bold;

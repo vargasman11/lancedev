@@ -41,7 +41,11 @@
       padding: 15px;
       display: none;
       z-index: 100;
-      border-radius: 10px; }
+      border-radius: 10px;
+      background-color: inherit;
+      position: relative !important;
+      float: right;
+      margin-right: 5%; }
       #nav-container #nav-bottom #driver-tabs a {
         color: #fff;
         font-weight: bold; }
@@ -288,7 +292,7 @@ footer {
   margin: 0 auto; }
 
 .show-tabs {
-  display: flex !important; }
+  display: block !important; }
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
 .sticky {
