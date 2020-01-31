@@ -3,14 +3,18 @@
     {% block SEO %}  
     {% endblock %}
   </head>
+  <div class="site-container site-content">
   <body class="container-fluid p-0">
 {% include "partials/_nav" %}
 
 {% block main %}
 {% endblock %}
 
-<div class="sticky-logo-apply-container sticky-bottom">
+<div class="sticky-logo-apply-container">
 {% include "partials/_conversion-logo" %}
 {% include "partials/_apply-bottom" %}
 </div>
+
+</div>
+
 {% include "partials/_footer" %}
