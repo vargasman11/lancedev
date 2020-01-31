@@ -211,6 +211,11 @@ footer {
     margin: 0 auto;
     margin-top: 30px;
     max-width: 200px; }
+  .search-again #search-again-image {
+    height: 400px;
+    background-image: url("/images/truck-jobs-2.jpg");
+    background-position: bottom center;
+    background-size: cover; }
 
 #search-header {
   height: 400px;
