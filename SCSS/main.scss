@@ -1,22 +1,7 @@
 @import 'sections/partials/index.scss';
 @import 'sections/jobs/index.scss';
 @import 'sections/shortform/index.scss';
-// @import 'sections/shortform/lance.scss';
+@import 'sections/utility/index.scss';
 
-// utlitly functions
-.show{
-    display: block !important;
-    margin: 0 auto;
-}
-.show-tabs{
-    display: block !important;
-}
 
-.site-container {
-  display: flex !important;
-  flex-direction: column !important;
-  min-height: 100vh !important;
-}
-.site-content {
-  flex: 1 !important;
-}
+
