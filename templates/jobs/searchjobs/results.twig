@@ -5,6 +5,7 @@
 {# Set variables for each possible param: #}
 {% set state = craft.app.request.getParam('state') %}
 {% set trucktype = craft.app.request.getParam('trucktype') %}
+{% set jobtype = craft.app.request.getParam('jobtype') %}
 {% set city = craft.app.request.getParam('city') %}
 {% set target = craft.app.request.getParam('zip') %}
 {% set range = craft.app.request.getParam('range') %}
@@ -14,6 +15,7 @@
         section: 'jobListings',     
         state: state,
         truckType: trucktype,
+        jobType: jobtype,
         city: city,   
         jobAddress:{
             zip:target
