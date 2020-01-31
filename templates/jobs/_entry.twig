@@ -39,37 +39,37 @@ UP UNTILL THE FOOTER --> #}
         <div class="col-sm-8 offset-sm-2 col-md-8 bg-light p-2">
             <div class="row">
                 <div class="col-sm-12 col-md-10 offset-md-1">
-                    {# global company overview #}
-                    <div class="container pt-2">{{global.companyOverview}}
-                        {{entry.jobOverview}}
-                        <div class="">
-                        {% if entry.jobRequirements %}
-                            {{entry.jobRequirements}}
+
+                    <div class="container pt-2">
+                    {# Company Overview #}
+                        {% if entry.jobOverview %}
+                            {{entry.jobOverview}} 
                         {% else %}
-                        {{global.jobRequirements}}
+                            {{global.companyOverview}}
                         {% endif %}
+                                          
+                        {# JOB REQUIREMENTS #}
+                        <div class="">
+                            {% if entry.jobRequirements %}
+                                {{entry.jobRequirements}}
+                            {% else %}
+                                {{global.jobRequirements}}
+                            {% endif %}
                         </div>
 
 
 
                         {% if entry.jobApplicationLink %}
-                        <a class="btn btn-lg btn-success d-block mx-auto" href="{{entry.jobApplicationLink}}" >Apply Now!!</a> 
+                            <a class="btn btn-lg btn-success d-block mx-auto" href="{{entry.jobApplicationLink}}" >Apply Now!!</a> 
                         {% else %}
-                        <a class="btn btn-lg btn-success d-block mx-auto" href="{{global.jobApplicationLink}}" >Apply Now!!</a> 
+                            <a class="btn btn-lg btn-success d-block mx-auto" href="{{global.jobApplicationLink}}" >Apply Now!!</a> 
                         {% endif %}                                    
 
                     </div>
                         <div class="container pt-5 text-center">
                         <a class="btn text-danger" href="/jobs">Back to jobs</a>
                         </div>
-                    {# <div class="container p-3">{{entry.city}}, &nbsp;
-                        {{entry.truckType}}, &nbsp;
-                        <strong>{{entry.jobAddress.zip}}</strong> <br>
-                        <strong> Benefits include:</strong>
-                        {% for option in entry.jobBenefits %}
-                        {{ option.label }},
-                        {% endfor %}
-                    </div> #}
+                                           
                 </div>
             </div>
         </div>
