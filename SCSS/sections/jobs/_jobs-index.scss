@@ -4,13 +4,19 @@
 }
 
 #search-header {
-    background-color: #5c5c5c;
+    // background-color: #5c5c5c;
+    height: 400px;
+    background-image: url("/images/truck-jobs.jpg");
+    background-position: center;
 
     h3 {
         color: #fff;
+        // color: #e5111b;
         font-weight: bold;
         padding: 10px 0px;
         font-family: sans-serif;
+        font-size: 40px;
+        text-shadow: 0px 0px 12px #000000;
     }
 }
 

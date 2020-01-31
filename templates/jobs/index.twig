@@ -35,7 +35,7 @@
 {% block main %}
 
 {# This renders the map with a job locations currently listed and placed #}
-<div class="container-fluid" id="map">
+{# <div class="container-fluid" id="map">
     <div class="row bg-secondary">
         <div class="col-sm-12 p-0">
             {% set locations = craft.entries.section('jobListings').all() %}
@@ -47,13 +47,12 @@
                 icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
                     },
             } %}
-
-            {# <img class="img-fluid d-block mx-auto" src="{{ craft.smartMap.imgSrc(locations, options) }}" /> #}
             {{ craft.smartMap.map(locations, options) }}
 
         </div>
     </div>
-</div>
+</div> #}
+
 
 
 
@@ -61,7 +60,7 @@
 <div class="container-fluid" id="search-header">
     <div class="row">
         <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-            <h3 class="text-center">Search For Truck Driving Opportunities</h3>
+            <h3 class="text-center">Kick Start Your Career</h3>
         </div>
     </div>
 </div>
