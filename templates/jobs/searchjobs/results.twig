@@ -25,13 +25,13 @@
     {# Pass the criteria object to the query builder: #}
     {% set query = craft.entries(criteria)%}
 
-{% if target is not empty and range is not empty %}
-    {% set params = {
-        target: target,
-        range: range
-    } %}
-        {% set query = craft.entries.jobAddress(params).orderBy('distance')
-        %}
+        {% if target is not empty and range is not empty %}
+            {% set params = {
+                target: target,
+                range: range
+            } %}
+
+    {% set query = craft.entries.jobAddress(params).orderBy('distance') %}
 
 {% endif %}
 
@@ -40,6 +40,8 @@
         
     {# CONDITIONAL IF THERE ARE RESULTS #}
     {% if results|length %}
+
+
 
 {# We build the map location based on criteria #}
 <div class="container-fluid" id="map">
@@ -59,6 +61,8 @@
         </div>
     </div>
 </div>
+
+
     {# DISPLAY Search Results #}
 <div class="container-fluid pt-5 pb-1 jobs-index">
     <h1 class="text-center">Search Results</h1>
