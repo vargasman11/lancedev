@@ -31,22 +31,21 @@
             {% endif %}         
         {# Company Driver&nbsp; #}        
         <i class="fas fa-chevron-down"></i></a>
-      </div>
+
+          {# DROPDOWN MENU #}
+        {% set pages = craft.entries.section('navigation').all() %}
+          <ul id="driver-tabs" class="dropdown-menu">
+              {% nav page in pages %}
+                      <li><a class="dropdown-item" class="d-block" href="/{{page.slug}}">{{page.slug}}</a> </li>
+                      {% ifchildren %}
+                          <ul>
+                              {% children %}
+                          </ul>
+                      {% endifchildren %}
+              {% endnav %}
+          </ul>
+
+      </div>     
     </div>
-
-
-    {% set pages = craft.entries.section('navigation').all() %}
-    <ul id="driver-tabs" class="dropdown-menu">
-        {% nav page in pages %}
-                <li><a class="dropdown-item" class="d-block" href="/{{page.slug}}">{{page.slug}}</a> </li>
-                {% ifchildren %}
-                    <ul>
-                        {% children %}
-                    </ul>
-                {% endifchildren %}
-        {% endnav %}
-    </ul>
-
-
   </div>   
 </div>
