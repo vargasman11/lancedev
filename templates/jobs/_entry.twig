@@ -41,8 +41,22 @@ UP UNTILL THE FOOTER --> #}
                     {# global company overview #}
                     <div class="container pt-2">{{global.companyOverview}}
                         {{entry.jobOverview}}
-                        <a href="{{entry.jobApplicationLink}}" class="btn btn-lg btn-success d-block mx-auto">Apply
-                            Now!!</a>                            
+                        <div class="">
+                        {% if entry.jobRequirements %}
+                            {{entry.jobRequirements}}
+                        {% else %}
+                        {{global.jobRequirements}}
+                        {% endif %}
+                        </div>
+
+
+
+                        {% if entry.jobApplicationLink %}
+                        <a class="btn btn-lg btn-success d-block mx-auto" href="{{entry.jobApplicationLink}}" >Apply Now!!</a> 
+                        {% else %}
+                        <a class="btn btn-lg btn-success d-block mx-auto" href="{{global.jobApplicationLink}}" >Apply Now!!</a> 
+                        {% endif %}                                    
+
                     </div>
                         <div class="container pt-5 text-center">
                         <a class="btn text-danger" href="/jobs">Back to jobs</a>
