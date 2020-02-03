@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<publisher>{{ siteName }}</publisher>
+<publisherurl>{{ siteUrl }}</publisherurl>
+<lastBuildDate>{{ now|atom }}</lastBuildDate>
+
+{% for entry in craft.entries().section('jobListings').all() %}
+<job>
+    <title>{{ entry.title }}</title>
+    <date>{{ entry.postDate|date('M j, Y') }}</date>
+    <photo-url></photo-url>
+    <description>{{ entry.jobOverview }}</description>
+    <job-type>{{ entry.jobType}}</job-type>
+    <company-name></company-name>
+    <company-id></company-id>
+    <company-facebook-url></company-facebook-url>
+    <company-data-policy-url></company-data-policy-url>
+    <company-url></company-url>
+    <city>{{ entry.city}} </city>
+    <region>{{ entry.state }}</region>
+    <country>US</country>
+    <salary-currency>USD</salary-currency>
+    <salary-type>annually</salary-type>
+    <facebook-apply-data>
+        <application-callback-url></application-callback-url>
+        <custom-questions-url></custom-questions-url>
+        <form-config>
+            <email-field>
+                <optional>true</optional>
+            </email-field>
+            <phone-number-field>
+                <optional>true</optional>
+            </phone-number-field>
+            <work-experience-field>
+                <optional>false</optional>
+            </work-experience-field>
+        </form-config>
+    </facebook-apply-data>
+</job>
+{% endfor %}
+</source>

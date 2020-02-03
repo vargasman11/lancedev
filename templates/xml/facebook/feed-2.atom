@@ -1,0 +1,29 @@
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+    <channel>
+        <title />
+        <link />
+        <description />
+
+        {% for entry in craft.entries().section('jobListings').all() %}
+        <item>
+            <g:id>
+                <![CDATA[ 5310227684 ]]>
+            </g:id>
+            <g:title>{{ entry.title }}</g:title>
+            <g:description> {{ entry.jobOverview}} </g:description>
+            <g:link> </g:link>
+            <g:image_link></g:image_link>
+            <g:brand></g:brand>
+            <g:condition></g:condition>
+            <g:availability></g:availability>
+            <g:price></g:price>
+            <g:custom_data>
+                <g:city>{{ entry.city }}</g:city>
+                <g:state>{{ entry.state }}</g:state>
+            </g:custom_data>
+        </item>
+
+        {% endfor %}
+
+    </channel>
+</rss>
