@@ -4,14 +4,17 @@
     {% endblock %}
 
   </head>
-  <body class="container-fluid p-0">
+  <body class="container-fluid p-0 utility-site-container">
 {% include "partials/_nav" %}
        
 
 {% set form = craft.freeform.form("shortform") %}
 
 {# RENDER FORM #}
-{{ form.renderTag({returnUrl: "pages/thanks"}) }}
+{{ form.renderTag({
+    returnUrl: "pages/thanks",
+    class:"utility-site-content"
+    }) }}
 
 	{% if form.hasErrors %}
 		<div class="freeform-form-has-errors">
@@ -40,7 +43,7 @@
 
 {# PAGE1 #}
 {% if form.currentPage.index == 0 %} 
-    <div class="black-form form-style">
+    <div class="black-form form-style utility-site-content">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 pt-5 pb-5">
@@ -103,8 +106,8 @@
     
     
 {# PAGE 2 #}
-{% if form.currentPage.index == 1 %}    
-     <div class="gray-form form-style">
+{% if form.currentPage.index == 1 %}        
+     <div class="gray-form form-style utility-site-content">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 pt-5 pb-5">
@@ -156,7 +159,7 @@
 
 {# PAGE 3 #}
 {% if form.currentPage.index == 2 %}
-    <div class="black-form form-style">
+    <div class="black-form form-style utility-site-content">
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2 pt-5 pb-5">
@@ -201,7 +204,7 @@
 
 {# PAGE 4 #}
 {% if form.currentPage.index == 3 %}
-<div class="gray-form form-style">
+<div class="gray-form form-style utility-site-content">
     <div class="container">
         <div class="row">
             <div class="col-md-4 offset-md-4 pt-5 pb-5">

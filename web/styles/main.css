@@ -280,6 +280,9 @@ footer {
     display: block;
     margin: 0 auto; }
 
+#shortform {
+  display: flex; }
+
 .black-form {
   background: #3e4040;
   background: -moz-linear-gradient(25deg, #3e4040 0%, #192326 100%);
