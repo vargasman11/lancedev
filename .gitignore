@@ -6,4 +6,7 @@
 
 # ignore node
 /node_modules
-/forms
+
+
+#ignore the form templates
+/templates/forms
