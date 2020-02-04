@@ -10,7 +10,7 @@
 <title>{{ entry.title }}</title>
 <date>{{ entry.postDate|date('M j, Y') }}</date>
 <referencenumber><![CDATA[unique123131]]></referencenumber>
-<url>{{ craft.app.request.absoluteUrl }}</url>
+<url>{{ craft.app.request.absoluteUrl }}{{global.rValue}}</url>
 <city>{{ entry.city}}</city>
 <state>{{ entry.state}}</state>
 <country>{{ entry.jobAddress.country}}</country>

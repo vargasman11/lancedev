@@ -61,9 +61,9 @@ UP UNTILL THE FOOTER --> #}
 
 
                         {% if entry.jobApplicationLink %}
-                            <a class="btn btn-lg btn-success d-block mx-auto" href="{{entry.jobApplicationLink}}" >Apply Now!!</a> 
+                            <a class="btn btn-lg btn-success d-block mx-auto" href="{{entry.jobApplicationLink}}{{global.rValue}}" >Apply Now!!</a> 
                         {% else %}
-                            <a class="btn btn-lg btn-success d-block mx-auto" href="{{global.jobApplicationLink}}" >Apply Now!!</a> 
+                            <a class="btn btn-lg btn-success d-block mx-auto" href="{{global.jobApplicationLink}}{{global.rValue}}" >Apply Now!!</a> 
                         {% endif %}                                    
 
                     </div>
