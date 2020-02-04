@@ -9,4 +9,4 @@
 
 
 #ignore the form templates
-/templates/forms
+/templates/forms/**
