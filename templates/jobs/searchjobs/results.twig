@@ -23,52 +23,49 @@
     } %}
 
     {# Pass the criteria object to the query builder: #}
-    {% set query = craft.entries(criteria)%}
+    {% set query = craft.entries(criteria).limit(5)%}
 
         {% if target is not empty and range is not empty %}
             {% set params = {
                 target: target,
                 range: range
             } %}
+        {% set query = craft.entries.jobAddress(params).orderBy('distance') %}
 
-    {% set query = craft.entries.jobAddress(params).orderBy('distance') %}
-
-{% endif %}
+        {% endif %}
 
     {# Set up pagination, and let it grab the current page's results: #}
     {% paginate query as pageInfo, results %}
         
     {# CONDITIONAL IF THERE ARE RESULTS #}
     {% if results|length %}
+    {# We build the map location based on criteria #}
+    <div class="container-fluid" id="map">
+        <div class="row bg-secondary">
+            <div class="col-sm-12 p-0">
+                {% set locations = query %}
+                {% set options = {     
+                    height:400,
+                    zoom: 5,
+                    'markerInfo': 'jobs/searchjobs/infoBubble',
+                markerOptions: {
+                    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                        }
+                } %}
+                {{ craft.smartMap.map(locations, options) }}
 
-
-
-{# We build the map location based on criteria #}
-<div class="container-fluid" id="map">
-    <div class="row bg-secondary">
-        <div class="col-sm-12 p-0">
-            {% set locations = query %}
-            {% set options = {     
-                height:400,
-                zoom: 5,
-                'markerInfo': 'jobs/searchjobs/infoBubble',
-               markerOptions: {
-                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                    }
-            } %}
-            {{ craft.smartMap.map(locations, options) }}
-
+            </div>
         </div>
     </div>
-</div>
-
 
     {# DISPLAY Search Results #}
-<div class="container-fluid pt-5 pb-1 jobs-index">
-    <h1 class="text-center">Search Results</h1>
+    <div class="container-fluid pt-5 pb-1 jobs-index">
+        <div class="text-center">
+            <a href="/jobs" class="btn btn-success btn-sm">Previous Page</a>
+        </div>
+        <h1 class="text-center">Search Results</h1>
 
     {% for result in results %}    
-
     <div class="row p-4">
         <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 bg-light p-4">
             <div class="row">
@@ -111,10 +108,26 @@
         </div>
     </div>    
     {% endfor %}
-</div>
+    <div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-sm-3">
+            {{ craft.pagination.render(pageInfo, 'firstNext', {
+                    ulClass: 'pagination d-flex justify-content-center',
+                    liClass: 'page-item',
+                    aClass: 'page-link',
+                    showPageInfo : true,
+                    prevText: '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev',
+                    nextText: 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>'
+            }) }}       
+        </div> 
+        </div> 
+    </div>
 
-    {% else %}
-        
+
+    </div>    
+
+
+    {% else %}        
     {# SITE CONTENT CLASS IS A UTILITLY CLASS #}
     <div class="search-again conatiner-fluid pt-0 pb-5 utility-site-content">
     <div class="container-fluid p-0" id="search-again-image">
@@ -124,4 +137,6 @@
     </div>
 
 {% endif %}
+
+
 {% endblock %}

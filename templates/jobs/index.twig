@@ -34,27 +34,6 @@
 {# THIS IS THE CONTENT UNDER THE NAV #}
 {% block main %}
 
-{# This renders the map with a job locations currently listed and placed #}
-{# <div class="container-fluid" id="map">
-    <div class="row bg-secondary">
-        <div class="col-sm-12 p-0">
-            {% set locations = craft.entries.section('jobListings').all() %}
-            {% set options = {     
-                'markerInfo': 'jobs/infoBubble',
-                height:400,                                         
-                zoom: 4,
-               markerOptions: {
-                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                    },
-            } %}
-            {{ craft.smartMap.map(locations, options) }}
-
-        </div>
-    </div>
-</div> #}
-
-
-
 {# SEARCH FOR JOBS HEADER #}
 <div class="container-fluid" id="search-header">
     <div class="row">
