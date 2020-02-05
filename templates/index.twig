@@ -46,7 +46,7 @@
                             {% set myCookie = getCookie('su_return') %}
                                 <a href="/forms?{{getCookie('su_return')}}" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
                         {% else %} #}
-                                <a href="/forms" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
+                                <a href="/forms" onclick="app(this.href):return false;" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
                         {# {% endif %} #}
                 </div>
                         {# search jobs #}
