@@ -50,12 +50,12 @@
                 </div>
                         {# search jobs #}
                 <div class="col-sm-12 col-md-6 pt-3">
-                {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
+                {# {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
                         {% if getCookie('su_return') %}
                             <a href="/jobs?{{getCookie('su_return')}}" class="btn btn-lg btn-secondary"><i class="fas fa-search"></i> Search Jobs</a>
-                        {% else %}                            
+                        {% else %}                             #}
                             <a href="/jobs" class="btn btn-lg btn-secondary"><i class="fas fa-search"></i> Search Jobs</a>
-                    {% endif %}
+                    {# {% endif %} #}
                 </div>
             </div>
         </div>
