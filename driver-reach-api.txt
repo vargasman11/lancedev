@@ -1,0 +1,5 @@
+public_key/username: 3pzdugf87kh52eb6yn4wcmsv
+
+secret_key/password: 74xkqgtdj9wvhsy6e35nbcp8
+
+service endpoint: https://staging.driverreachapp.com/api/v1/driver_leads

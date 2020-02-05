@@ -2,8 +2,13 @@
   <div class="container-fluid search-controller">
       <div class="row">
           <div class="col-8 offset-2">
-
+            {# SET COOKIES #}
+            {% if getCookie('su_return') %}
+                {% set myCookie = getCookie('su_return') %}
+                <form action="{{ url('jobs/searchjobs/results')}} ">
+            {% else %}
               <form action="{{ url('jobs/searchjobs/results') }}">
+            {% endif %}
                   {# TOP ROW #}
                   <div class="row">
                       {# Select Truck Type #}

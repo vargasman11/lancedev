@@ -1,7 +1,14 @@
 <footer class="container-fluid p-5" id="conversion-logo">
   <div class="row">
     <div class="col">
-      <a class="d-block text-center" href="/"><img class="" src="/images/conversion-logo.png" alt="" height="50"></a>
+    {# Passing cookie along #}
+    {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
+          {% if getCookie('su_return') %}
+          {% set myCookie = getCookie('su_return') %}
+            <a class="d-block text-center" href="/?{{getCookie('su_return')}}"><img class="" src="/images/conversion-logo.png" alt="" height="50"></a>
+          {% else %}
+            <a class="d-block text-center" href="/"><img class="" src="/images/conversion-logo.png" alt="" height="50"></a>
+          {% endif %}
     </div>
   </div>
 </footer>

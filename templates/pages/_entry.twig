@@ -2,7 +2,6 @@
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
-
      {# keywords #}
     {% if entry.keywordTags is not empty %}      
         {% set entries = entry %}
@@ -12,15 +11,12 @@
             {% set tags = myTagQuery.all() %} 
             <meta name="keywords"  content="{% for tag in tags %} {{ tag.title }} {% endfor %}">
     {% endif %}
-
-
     {# meta description #}
     {% if entry.metaDescription %}
             <meta name="description" content="{{entry.metaDescription}}">
         {% else %}
             <meta name="description" content="{{global.metaDescription}}">
     {% endif %}
-
     {# title tag #}
     {% if entry.titleTag %}
             <title>{{entry.titleTag}}</title>
@@ -43,11 +39,25 @@
             <h1 class="homeHeadline">{{entry.homeHeadline}}</h1>
             <h4 class="subHeadline">{{entry.subHeadline}}</h4>
             <div class="row p-2 button_row">
-                <div class="col-sm-12 col-md-6 pt-3">
-                    <a href="#" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
+                 <div class="col-sm-12 col-md-6 pt-3">
+                    {# SET COOKIE TO CARRYOVER #}
+                        {# apply now button #}
+                    {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
+                        {% if getCookie('su_return') %}
+                            {% set myCookie = getCookie('su_return') %}
+                                <a href="/forms?{{getCookie('su_return')}}" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
+                        {% else %}
+                                <a href="/forms" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
+                        {% endif %}                    
                 </div>
+                        {# search jobs #}
                 <div class="col-sm-12 col-md-6 pt-3">
-                    <a href="/jobs" class="btn btn-lg btn-secondary"><i class="fas fa-search"></i> Search Jobs</a>
+                {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
+                        {% if getCookie('su_return') %}
+                            <a href="/jobs?{{getCookie('su_return')}}" class="btn btn-lg btn-secondary"><i class="fas fa-search"></i> Search Jobs</a>
+                        {% else %}                            
+                            <a href="/jobs" class="btn btn-lg btn-secondary"><i class="fas fa-search"></i> Search Jobs</a>
+                    {% endif %}
                 </div>
             </div>
         </div>
