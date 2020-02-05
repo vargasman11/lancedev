@@ -43,12 +43,12 @@
                     {# SET COOKIE TO CARRYOVER #}
                         {# apply now button #}
                     {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
-                        {% if getCookie('su_return') %}
+                        {# {% if getCookie('su_return') %}
                             {% set myCookie = getCookie('su_return') %}
                                 <a href="/forms?{{getCookie('su_return')}}" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
-                        {% else %}
+                        {% else %} #}
                                 <a href="/forms" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>
-                        {% endif %}                    
+                        {# {% endif %} #}
                 </div>
                         {# search jobs #}
                 <div class="col-sm-12 col-md-6 pt-3">

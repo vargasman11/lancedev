@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col">
     {# Passing cookie along #}
-    {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
+    {# {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
           {% if getCookie('su_return') %}
           {% set myCookie = getCookie('su_return') %}
             <a class="d-block text-center" href="/?{{getCookie('su_return')}}"><img class="" src="/images/conversion-logo.png" alt="" height="50"></a>
-          {% else %}
+          {% else %} #}
             <a class="d-block text-center" href="/"><img class="" src="/images/conversion-logo.png" alt="" height="50"></a>
-          {% endif %}
+          {# {% endif %} #}
     </div>
   </div>
 </footer>
