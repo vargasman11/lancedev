@@ -29,6 +29,8 @@
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
 {# UP UNTILL THE FOOTER --> #}
 {% block main %}
+<h1>{{ craft.app.request.getQueryString() }}</h1>
+<h1>{{ craft.app.basePath()}}{{ craft.app.request.getQueryStringWithoutPath() }} </h1>
 {# JUMBOTRON #}
 <div class="container-fluid p-0 jumbo">
     <div class="img-row"></div>

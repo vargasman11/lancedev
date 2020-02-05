@@ -35,7 +35,6 @@
           {# DROPDOWN MENU #}
         {% set pages = craft.entries.section('navigation').all() %}
           <ul id="driver-tabs" class="dropdown-menu">
-        {# {% do setCookie('su_return', craft.app.request.getQueryStringWithoutPath(), now | date_modify("+1 hour").timestamp) %}
           {% if getCookie('su_return') %}
               {% nav page in pages %}
                <a class="dropdown-item" class="d-block" href="/{{page.slug}}?{{getCookie('su_return')}}">{{page.slug}}</a> 
@@ -45,7 +44,7 @@
                           </ul>
                       {% endifchildren %}
               {% endnav %}
-          {% else %} #}
+          {% else %}
               {% nav page in pages %}
                <a class="dropdown-item" class="d-block" href="/{{page.slug}}">{{page.slug}}</a> 
                  {% ifchildren %}
@@ -54,7 +53,7 @@
                    </ul>
                     {% endifchildren %}
               {% endnav %}
-          {# {% endif %} #}
+          {% endif %}
           </ul>
 
       </div>     
