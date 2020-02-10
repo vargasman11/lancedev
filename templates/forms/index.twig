@@ -30,9 +30,10 @@
 	{% endif %}
 
 {# SELECT FORM ELEMENTS INTO VARIABLES #}
-{% set firstName = form.get("firstName") %}
-{% set lastName = form.get("lastName") %}
-{% set cellPhone = form.get('cellPhone') %}
+{% set firstName = form.get("first_name") %}
+{% set lastName = form.get("last_name") %}
+{% set cellPhone = form.get('primary_phone') %}
+{% set email = form.get('email_address') %}
 {% set city = form.get('city') %}
 {% set state = form.get('state') %}
 {% set cdla = form.get('cdla') %}
@@ -74,6 +75,12 @@
     <label>{{ cellPhone.label }}</label>
 	<input class="form-control" name="{{ cellPhone.handle }}" value="{{ cellPhone.value }}" />
 	{{ cellPhone.renderErrors() }}
+    </div>
+
+    <div class="form-group">
+    <label>{{ email.label }}</label>
+	<input type="email" class="form-control" name="{{ email.handle }}" value="{{ email.value }}" />
+	{{ email.renderErrors() }}
     </div>
 
     <div class="form-group">

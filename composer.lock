@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "45e3f03c4e5b74fc1d93d8d2140664df",
+    "content-hash": "7648f9696ecfafa02582c0ad69cbb3b6",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -535,11 +535,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.1",
+            "version": "3.4.4.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9a9d5a5d1f512105042edb55b2d0468de4e72f3d",
-                "reference": "9a9d5a5d1f512105042edb55b2d0468de4e72f3d",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/f595178873bf02ace57d8bd9d056af5f486d0912",
+                "reference": "f595178873bf02ace57d8bd9d056af5f486d0912",
                 "shasum": ""
             },
             "require": {
@@ -620,7 +620,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-01-29T21:03:20+00:00"
+            "time": "2020-02-06T14:47:41+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -2169,11 +2169,11 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.63",
+            "version": "1.0.64",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/8132daec326565036bc8e8d1876f77ec183a7bd6",
-                "reference": "8132daec326565036bc8e8d1876f77ec183a7bd6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/d13c43dbd4b791f815215959105a008515d1a2e0",
+                "reference": "d13c43dbd4b791f815215959105a008515d1a2e0",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2239,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2020-01-04T16:30:31+00:00"
+            "time": "2020-02-05T18:14:17+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -3697,6 +3697,52 @@
             "time": "2019-12-06T14:19:43+00:00"
         },
         {
+            "name": "putyourlightson/craft-sendgrid",
+            "version": "1.2.0",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sendgrid/zipball/5a7b4e12e5d1104296b5a63fb064c865cbea1d62",
+                "reference": "5a7b4e12e5d1104296b5a63fb064c865cbea1d62",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0",
+                "sendgrid/sendgrid": "^7.3.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "SendGrid",
+                "handle": "sendgrid",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "schemaVersion": "1.0.0",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-sendgrid/v1/CHANGELOG.md",
+                "class": "putyourlightson\\sendgrid\\Sendgrid"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\sendgrid\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "SendGrid mailer adapter for Craft CMS.",
+            "homepage": "https://github.com/putyourlightson/craft-sendgrid",
+            "keywords": [
+                "cms",
+                "craft",
+                "craftcms",
+                "email"
+            ],
+            "support": {
+                "docs": "https://putyourlightson.com/plugins/sendgrid",
+                "source": "https://github.com/putyourlightson/craft-sendgrid",
+                "issues": "https://github.com/putyourlightson/craft-sendgrid/issues"
+            },
+            "time": "2019-10-15T10:04:34+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "dist": {
@@ -3939,12 +3985,100 @@
             "time": "2020-01-13T10:41:09+00:00"
         },
         {
-            "name": "solspace/craft-freeform",
-            "version": "3.6.1",
+            "name": "sendgrid/php-http-client",
+            "version": "3.10.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/fe358fbda376012b6354afcd5e5ba6227b71f5aa",
-                "reference": "fe358fbda376012b6354afcd5e5ba6227b71f5aa",
+                "url": "https://api.github.com/repos/sendgrid/php-http-client/zipball/a3891dfe1130014e46b59e3c76be0c1c9d4fd540",
+                "reference": "a3891dfe1130014e46b59e3c76be0c1c9d4fd540",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SendGrid\\": "lib/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matt Bernier",
+                    "email": "dx@sendgrid.com"
+                },
+                {
+                    "name": "Elmer Thomas",
+                    "email": "ethomas@twilio.com"
+                }
+            ],
+            "description": "HTTP REST client, simplified for PHP",
+            "homepage": "http://github.com/sendgrid/php-http-client",
+            "keywords": [
+                "api",
+                "fluent",
+                "http",
+                "rest",
+                "sendgrid"
+            ],
+            "time": "2020-01-22T20:51:56+00:00"
+        },
+        {
+            "name": "sendgrid/sendgrid",
+            "version": "7.4.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sendgrid/sendgrid-php/zipball/d697c9e1677516314c28d2b946cc3062ee9537ff",
+                "reference": "d697c9e1677516314c28d2b946cc3062ee9537ff",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "ext-openssl": "*",
+                "php": ">=5.6",
+                "sendgrid/php-http-client": "~3.10"
+            },
+            "replace": {
+                "sendgrid/sendgrid-php": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SendGrid\\": "lib/",
+                    "SendGrid\\Mail\\": "lib/mail/",
+                    "SendGrid\\Contacts\\": "lib/contacts/",
+                    "SendGrid\\Stats\\": "lib/stats/"
+                },
+                "files": [
+                    "lib/SendGrid.php"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "This library allows you to quickly and easily send emails through Twilio SendGrid using PHP.",
+            "homepage": "http://github.com/sendgrid/sendgrid-php",
+            "keywords": [
+                "email",
+                "grid",
+                "send",
+                "sendgrid",
+                "twilio sendgrid"
+            ],
+            "time": "2020-01-22T20:59:57+00:00"
+        },
+        {
+            "name": "solspace/craft-freeform",
+            "version": "3.6.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/d34288a2e039536e7c3a550a2f5dace63182560f",
+                "reference": "d34288a2e039536e7c3a550a2f5dace63182560f",
                 "shasum": ""
             },
             "require": {
@@ -3984,7 +4118,7 @@
                 }
             ],
             "description": "The most reliable, intuitive and powerful form builder for Craft.",
-            "time": "2020-01-29T18:25:01+00:00"
+            "time": "2020-02-04T21:45:42+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -4113,11 +4247,11 @@
         },
         {
             "name": "symfony/console",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f",
-                "reference": "e9ee09d087e2c88eaf6e5fc0f5c574f64d100e4f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/f512001679f37e6a042b51897ed24a2f05eba656",
+                "reference": "f512001679f37e6a042b51897ed24a2f05eba656",
                 "shasum": ""
             },
             "require": {
@@ -4170,7 +4304,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2020-01-10T21:54:01+00:00"
+            "time": "2020-01-25T12:44:29+00:00"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -4292,7 +4426,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/filesystem/zipball/266c9540b475f26122b61ef8b23dd9198f5d1cfd",
@@ -4336,7 +4470,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/finder/zipball/3a50be43515590faf812fbd7708200aabc327ec3",
@@ -4379,7 +4513,7 @@
         },
         {
             "name": "symfony/inflector",
-            "version": "v5.0.3",
+            "version": "v5.0.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/inflector/zipball/e375603b6bd12e8e3aec3fc1b640ac18a4ef4cb2",
@@ -4865,7 +4999,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/process/zipball/f5697ab4cb14a5deed7473819e63141bf5352c36",
@@ -4908,7 +5042,7 @@
         },
         {
             "name": "symfony/property-access",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/property-access/zipball/090b4bc92ded1ec512f7e2ed1691210769dffdb3",
@@ -5019,7 +5153,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v5.0.3",
+            "version": "v5.0.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/translation/zipball/28e1054f1ea26c63762d9260c37cb1056ea62dbb",
@@ -5130,11 +5264,11 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/7cfa470bc3b1887a7b2a47c0a702a84ad614fa92",
-                "reference": "7cfa470bc3b1887a7b2a47c0a702a84ad614fa92",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/46b53fd714568af343953c039ff47b67ce8af8d6",
+                "reference": "46b53fd714568af343953c039ff47b67ce8af8d6",
                 "shasum": ""
             },
             "require": {
@@ -5190,11 +5324,11 @@
                 "debug",
                 "dump"
             ],
-            "time": "2020-01-04T13:00:46+00:00"
+            "time": "2020-01-25T12:44:29+00:00"
         },
         {
             "name": "symfony/yaml",
-            "version": "v4.4.3",
+            "version": "v4.4.4",
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/symfony/yaml/zipball/cd014e425b3668220adb865f53bff64b3ad21767",
