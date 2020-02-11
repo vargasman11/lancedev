@@ -32,51 +32,35 @@
         }
     }
 
-    // BOTTOM HALF OF NAVIGATION
-
-    #nav-bottom {
-        background-color: #5C5C5C;
-        min-height: 75px;
-        padding-top: 15px;
-        z-index: 1000;
-        img {
-            height: 30px !important;
-        }
-        a {
-            color: #fff;
-            border-color: gray;
-            display: block;
-            float: right;
-            padding: 5px 9px;
-            border: solid 1px gray;
-            border-radius: 10px;
-        }
-        // Driver Tab Drop Down
-        #driver-tabs {           
-            padding: 15px;
-            display: none;
-            z-index: 100;
-            border-radius: 10px;
-            background-color: #5C5C5C;
-            // position: relative !important;
-            right: 0 !important;
-            left: unset !important;
-            width: 50px;
-            // float: right;
-            // margin-right: 5%;
-                a {
-                    color: #fff;
-                    font-weight: bold;
-                }    
-                a:hover{
-                    background-color: hsl(0, 0%, 51%);
-                    text-decoration: underline;
-                }        
-        }
-        #driver-tabs:hover {
-            background-color: #5C5C5C;
+    // UPDATED bottom NAV
+    #bottom-nav {
+        // position: absolute;
+        z-index: 100;
+        left: 50%;
+        // transform: translateX(-50%);
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            padding: 1rem;
+    
+            li {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+    
+            a {
+                color: white;
+                font-size: 1.2rem;
+                .jumbo__icon {
+                    display: block;
+                    margin: 0 auto;
+                    text-align: center;
+                }
+            }
         }
     }
+
 }
 
 

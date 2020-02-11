@@ -22,38 +22,24 @@
       padding: 20px !important;
       display: none;
       text-align: center; }
-  #nav-container #nav-bottom {
-    background-color: #5C5C5C;
-    min-height: 75px;
-    padding-top: 15px;
-    z-index: 1000; }
-    #nav-container #nav-bottom img {
-      height: 30px !important; }
-    #nav-container #nav-bottom a {
-      color: #fff;
-      border-color: gray;
-      display: block;
-      float: right;
-      padding: 5px 9px;
-      border: solid 1px gray;
-      border-radius: 10px; }
-    #nav-container #nav-bottom #driver-tabs {
-      padding: 15px;
-      display: none;
-      z-index: 100;
-      border-radius: 10px;
-      background-color: #5C5C5C;
-      right: 0 !important;
-      left: unset !important;
-      width: 50px; }
-      #nav-container #nav-bottom #driver-tabs a {
-        color: #fff;
-        font-weight: bold; }
-      #nav-container #nav-bottom #driver-tabs a:hover {
-        background-color: #828282;
-        text-decoration: underline; }
-    #nav-container #nav-bottom #driver-tabs:hover {
-      background-color: #5C5C5C; }
+  #nav-container #bottom-nav {
+    z-index: 100;
+    left: 50%; }
+    #nav-container #bottom-nav ul {
+      display: flex;
+      justify-content: space-evenly;
+      padding: 1rem; }
+      #nav-container #bottom-nav ul li {
+        width: 100%;
+        display: flex;
+        justify-content: center; }
+      #nav-container #bottom-nav ul a {
+        color: white;
+        font-size: 1.2rem; }
+        #nav-container #bottom-nav ul a .jumbo__icon {
+          display: block;
+          margin: 0 auto;
+          text-align: center; }
 
 @media (max-width: 345px) {
   #nav-container {
@@ -279,6 +265,29 @@ footer {
     color: #fff;
     display: block;
     margin: 0 auto; }
+
+#jobs-entry #jobs-entry__parrallax {
+  background-attachment: fixed;
+  background-image: url("/images/truck-at-night.jpg");
+  background-position: left top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: black;
+  min-height: 400px; }
+
+#jobs-entry #jobs-entry__details .negative-margin-row {
+  margin-top: -50px;
+  padding-top: 25px;
+  background-color: #fff; }
+
+#jobs-entry #jobs-entry__details .tabs-column .card ul li {
+  color: green !important;
+  font-weight: bold;
+  font-size: .9rem; }
+
+#jobs-entry #jobs-entry__details .applyBanner {
+  background-color: #707070;
+  color: #fff; }
 
 #shortform {
   display: flex; }

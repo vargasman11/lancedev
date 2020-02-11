@@ -1,0 +1,36 @@
+#jobs-entry {
+    #jobs-entry__parrallax {
+        background-attachment: fixed;
+        background-image: url("/images/truck-at-night.jpg");
+        background-position: left top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: black;
+        min-height: 400px;
+    }
+
+    #jobs-entry__details {
+        .negative-margin-row{
+            margin-top: -50px;   
+            padding-top: 25px;
+            background-color: #fff;
+        }
+
+        .tabs-column {
+            .card {
+                ul {
+                    li {
+                        color: green !important;
+                        font-weight: bold;
+                        font-size: .9rem;
+                    }
+                }
+            }
+        }
+
+        .applyBanner{
+            background-color: #707070;
+            color: #fff;
+        }
+    }
+}
