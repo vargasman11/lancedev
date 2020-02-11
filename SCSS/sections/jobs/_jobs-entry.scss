@@ -6,7 +6,10 @@
         background-size: contain;
         background-repeat: no-repeat;
         background-color: black;
-        min-height: 400px;
+        min-height: 450px;
+        .job-title-container{
+            margin-top: 75px;
+        }
     }
 
     #jobs-entry__details {

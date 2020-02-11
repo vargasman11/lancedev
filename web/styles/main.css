@@ -293,7 +293,9 @@ footer {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: black;
-  min-height: 400px; }
+  min-height: 450px; }
+  #jobs-entry #jobs-entry__parrallax .job-title-container {
+    margin-top: 75px; }
 
 #jobs-entry #jobs-entry__details .negative-margin-row {
   margin-top: -50px;
