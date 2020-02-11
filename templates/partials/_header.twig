@@ -66,7 +66,7 @@
 <!-- End Facebook Pixel Code -->
 
 <script type="text/javascript">
-						$(document).ready(function() {
+			$(document).ready(function() {
 							document.cookie="urlParams=utm_campaign=cd_nashville; path=/";
 							$("a").not(".noR").attr("href", function(i, oldHref) {
 								
@@ -193,4 +193,9 @@
 							//console.log(params);
 							return params;
 						}
-					</script>
+</script>
+
+  </head>
+  {# utility-site-container is a utility class located in utility SCSS folder #}
+  <div class="utility-site-container">
+  <body class="container-fluid p-0 utility-site-content" onload="ReadCookie()">   

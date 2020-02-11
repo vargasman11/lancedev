@@ -1,51 +1,37 @@
-{# THIS IS THE TEMPLATE FOR AN INDUVIDUAL TEMPLATE #}
-{% extends "_layout" %}
+{% include "partials/_header" %}
+{% include "partials/_nav" %}
+{% include "partials/_parallax" %}
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
-       {# keywords #}
+    {# keywords #}
     {% if entry.keywordTags is not empty %}      
         {% set entries = entry %}
             <meta name="keywords" content="{% for tag in craft.tags.relatedTo(entries) %}{{ tag.title }} {% endfor %}">
         {% else %}   
             {% set myTagQuery = craft.tags().group('globalTags') %}
             {% set tags = myTagQuery.all() %} 
-            <meta name="keywords"  content="{% for tag in tags %} {{ tag.title }} {% endfor %}">
+        <meta name="keywords"  content="{% for tag in tags %} {{ tag.title }} {% endfor %}">
     {% endif %}
-
     {# meta description #}
     {% if entry.metaDescription %}
             <meta name="description" content="{{entry.metaDescription}}">
         {% else %}
             <meta name="description" content="{{global.metaDescription}}">
     {% endif %}
-
     {# title tag #}
     {% if entry.titleTag %}
             <title>{{entry.titleTag}}</title>
         {% else %}
             <title>{{global.titleTag}}</title>
-    {% endif %}
-
-
+    {% endif %}            
 {% endblock %}
 
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE ENTRY PAGE 
 UP UNTILL THE FOOTER --> #}
 {% block main %}
 <div id="jobs-entry">
-  {# PARRALLAX #}
-<div class="text-center text-md-right pb-5" id="jobs-entry__parrallax">
-    <div class="container">
-      <div class="row">
-        {# PARRALLAX HEADER #}
-        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-10 col-md-7 job-title-container">
-          <h3 class="h1 text-white">{{entry.title}}</h3>
-          <p class="mb-3 lead text-white">Of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
  {# main row here #}
   <div class="mb-5" style="">
@@ -150,3 +136,8 @@ UP UNTILL THE FOOTER --> #}
 {# end jobs entry #}
 </div>
 {% endblock %}
+
+{# VIDEO INCLUDES #}
+ {% include "partials/_video" %}
+ {# FOOTER INCLUDES #}
+ {% include "partials/_footer" %}

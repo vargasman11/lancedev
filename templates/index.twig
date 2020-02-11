@@ -1,11 +1,6 @@
-{# {% extends "_layout" %} #}
 {% include "partials/_header" %}
-
-  </head>
-  {# utility-site-container is a utility class located in utility SCSS folder #}
-  <div class="utility-site-container">
-  <body class="container-fluid p-0 utility-site-content" onload="ReadCookie()">    
 {% include "partials/_nav" %}
+{% include "partials/_parallax" %}
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
@@ -36,18 +31,6 @@
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
 {# UP UNTILL THE FOOTER --> #}
 {% block main %}
-
-<!-- PARALLAX -->
-  <div class="text-center text-md-right pb-5 parallax">
-    <div class="container">
-      <div class="row">
-        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-8 col-md-7">
-          <h3 class="h1 text-white">OTR Truck Driving Job In Nashville, TN</h3>
-          <p class="mb-3 lead text-white">Of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 
 <!--CARDS-->
   <div class="pb-5 bg-light" style="">
