@@ -136,7 +136,13 @@ UP UNTILL THE FOOTER --> #}
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4">Take the next step in advancing your driving career. Join ABC now.</h1><a class="btn btn-primary" href="#">I WANT THIS JOB</a>
+          <h1 class="display-4">Take the next step in advancing your driving career. Join ABC now.</h1>
+
+            {% if entry.jobApplicationLink %}
+        <a class="btn btn-success" href="{{entry.jobApplicationLink}}">I WANT THIS JOB</a>
+                {% else %}
+        <a class="btn btn-success" href="{{global.jobApplicationLink}}">I WANT THIS JOB</a>
+                {% endif %}
         </div>
       </div>
     </div>

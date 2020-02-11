@@ -292,9 +292,11 @@ footer {
 #jobs-entry .job-video-container .left-video {
   background-color: #fff; }
 
-#jobs-entry .job-video-container .right-video {
-  background-color: #dc3545;
-  color: #fff; }
+#jobs-entry .job-video-container .right-video h1 {
+  color: #dc3545; }
+
+#jobs-entry .callToActionBanner {
+  background-color: #ececec; }
 
 #shortform {
   display: flex; }

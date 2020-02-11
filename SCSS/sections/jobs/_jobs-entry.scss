@@ -39,11 +39,15 @@
             background-color: #fff;
         }
         .right-video{
-            background-color: #dc3545;
-            color: #fff;
+            // background-color: #dc3545;
             h1{
             //  font-weight: 400;   
+            color: #dc3545;
             }           
         }
+    }
+
+    .callToActionBanner{
+        background-color: #ececec;
     }
 }
