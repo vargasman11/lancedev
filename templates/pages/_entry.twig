@@ -1,4 +1,6 @@
-{% extends "_layout" %}
+{% include "partials/_header" %}
+{% include "partials/_nav" %}
+{% include "partials/_parallax" %}
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
@@ -27,97 +29,12 @@
 
 
 
+{% include "partials/_cards" %}
+
+
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
 {# UP UNTILL THE FOOTER --> #}
 {% block main %}
-
-<!-- PARALLAX -->
-  <div class="text-center text-md-right pb-5 parallax">
-    <div class="container">
-      <div class="row">
-        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-8 col-md-7">
-          <h3 class="h1 text-white">{{entry.homeHeadline}}</h3>
-          <p class="mb-3 lead text-white">{{entry.subHeadline}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-<!--CARDS-->
-  <div class="mb-5" style="">
-    <div class="container jobDetails">
-      <div class="row pb-2">
-        <div class="col-md-4" style="">
-          <div class="row py-2 mx-auto" style="">
-            <div class="col-md-12">
-              <h3 class="text-secondary"><i class="fa fa-fw fa-user"></i>Company Drivers</h3>
-              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-info btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" style="">
-          <div class="row py-2 mx-auto" style="">
-            <div class="col-md-12">
-              <h3 class="text-secondary"><i class="fa fa-fw fa-truck"></i>Owner Operators</h3>
-              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-info btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4" style="">
-          <div class="row applyBanner py-2 mx-auto" style="">
-            <div class="col-md-12">
-              <h3 class="" contenteditable="true"><i class="fa fa-fw fa-search"></i>Find Your Next Job</h3>
-              <p class="lead" style="">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.<br></p><a class="btn btn-block btn-lg btn-warning" href="#"><i class="fa fa-fw fa-search"></i><i class="fa fa-fw fa-truckz"></i>FIND MY NEXT JOB</a>
-              <h5 class="pt-3">NEED TO TALK? Call a recruiter now. 888-888-8888</h5>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-{# JUMBOTRON #}
-{# <div class="container-fluid p-0 jumbo">
-    <div class="img-row"></div>
-    <div class="row heading-row">
-        <div class="col-sm-12 col-md-6 offset-md-3" id="blur-bg">
-            <h1 class="homeHeadline">{{entry.homeHeadline}}</h1>
-            <h4 class="subHeadline">{{entry.subHeadline}}</h4>
-            <div class="row p-2 button_row">
-                 <div class="col-sm-12 col-md-6 pt-3">
-                    <a href="/forms" class="btn btn-lg btn-success"> <i class="fas fa-plus"></i> Apply Now</a>                      
-                </div>
-                <div class="col-sm-12 col-md-6 pt-3">                                     
-                    <a href="/jobs" class="btn btn-lg btn-secondary"><i class="fas fa-search"></i> Search Jobs</a>                    
-                </div>
-            </div>
-        </div>
-    </div>
-</div> #}
-
-{# BANNER IMAGE #}
-<div class="container-fluid p-0" id="banner">
-    <img class="img-fluid" src="/images/banner.png" alt="">
-</div>
-
-
-{# SUMMARY HEADLINE #}
-<div class="container-fluid" id="summary-container">
-    <div class="row summary-header-row">
-        <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-            <h4 class="text-center">CDL-A Local Truck Drivers Earn $1,100+ Per Week ! Get Home Daily</h4>
-        </div>
-    </div>
-    <div class="row" id="summary-content">
-        <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 p-3">
-            <p>{{entry.summaryContent}}</p>
-        </div>
-    </div>
-</div>
-
 
 
 {# JOBS and BENEFITS CONTAINER #}
@@ -141,10 +58,10 @@
     </div>
 </div>
 
-
-
-
-
-
-
 {% endblock %}
+
+{# VIDEO INCLUDES #}
+ {% include "partials/_video" %}
+
+ {# FOOTER INCLUDES #}
+ {% include "partials/_footer" %}
