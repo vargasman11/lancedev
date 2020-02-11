@@ -25,8 +25,9 @@
     background-color: #dc3545;
     color: #fff; }
   .indexCards .applyBannerColumn {
-    background-color: #707070;
     color: #fff; }
+    .indexCards .applyBannerColumn .applyBanner {
+      background-color: #707070; }
 
 #jobs-benefits .jobs-benefits-col {
   background-color: #292F31; }
@@ -52,6 +53,14 @@ footer {
 @media (max-width: 576px) {
   #apply-bottom {
     display: block; } }
+
+.footer .top-footer {
+  background-color: #292F31; }
+
+.footer .bottom-footer {
+  background-color: #707070; }
+  .footer .bottom-footer .footer-logo {
+    height: 3rem; }
 
 .search-again {
   padding: 20px 0px; }
