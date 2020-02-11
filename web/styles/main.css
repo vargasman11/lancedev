@@ -1,5 +1,5 @@
 #main-nav {
-  background: #dc3545; }
+  background: #292f31; }
   #main-nav img {
     height: 2rem; }
   #main-nav #navbar10 ul li {
@@ -21,45 +21,12 @@
   background-color: #fff;
   margin-top: -50px;
   padding: 25px; }
-
-.applyBannerColumn {
-  background-color: #707070;
-  color: #fff; }
-
-#summary-container .summary-header-row {
-  background-color: #9B000D;
-  padding: 20px 10px; }
-  #summary-container .summary-header-row h4 {
-    color: #fff;
-    font-weight: bold; }
-
-#summary-container #summary-content {
-  background-image: url("/images/red-bg.png");
-  background-position: center;
-  padding: 15px; }
-  #summary-container #summary-content p {
-    color: #fff;
-    font-weight: bold;
-    font-size: 1.1em; }
-
-#video-container .video-header-row {
-  background-color: #9B000D;
-  padding: 20px 10px; }
-  #video-container .video-header-row h4 {
-    color: #fff;
-    font-weight: bold; }
-
-#video-container .video-row {
-  background: #9b000d;
-  background: -moz-linear-gradient(180deg, #9b000d 0%, #cd0419 50%, #9b000d 100%);
-  background: -webkit-linear-gradient(180deg, #9b000d 0%, #cd0419 50%, #9b000d 100%);
-  background: linear-gradient(180deg, #9b000d 0%, #cd0419 50%, #9b000d 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9b000d",endColorstr="#9b000d",GradientType=1);
-  padding: 10px 0 50px; }
-
-@media (max-width: 767px) {
-  #video-container .video-row {
-    padding: 0 !important; } }
+  .indexCards .btn-red {
+    background-color: #dc3545;
+    color: #fff; }
+  .indexCards .applyBannerColumn {
+    background-color: #707070;
+    color: #fff; }
 
 #jobs-benefits .jobs-benefits-col {
   background-color: #292F31; }

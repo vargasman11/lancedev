@@ -1,4 +1,11 @@
-{% extends "_layout" %}
+{# {% extends "_layout" %} #}
+{% include "partials/_header" %}
+
+  </head>
+  {# utility-site-container is a utility class located in utility SCSS folder #}
+  <div class="utility-site-container">
+  <body class="container-fluid p-0 utility-site-content" onload="ReadCookie()">    
+{% include "partials/_nav" %}
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
@@ -50,7 +57,7 @@
           <div class="row py-2 mx-auto" style="">
             <div class="col-md-12">
               <h3 class="text-secondary"><i class="fa fa-fw fa-user"></i>Company Drivers</h3>
-              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-info btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
+              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-red btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
             </div>
           </div>
         </div>
@@ -58,7 +65,7 @@
           <div class="row py-2 mx-auto" style="">
             <div class="col-md-12">
               <h3 class="text-secondary"><i class="fa fa-fw fa-truck"></i>Owner Operators</h3>
-              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-info btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
+              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-red btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
             </div>
           </div>
         </div>
@@ -78,59 +85,37 @@
 
 
 
-{# SUMMARY HEADLINE #}
-<div class="container-fluid" id="summary-container">
-    <div class="row summary-header-row">
-        <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-            <h4 class="text-center">CDL-A Local Truck Drivers Earn $1,100+ Per Week ! Get Home Daily</h4>
-        </div>
-    </div>
-    <div class="row" id="summary-content">
-        <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 p-3">
-            <p>{{entry.summaryContent}}</p>
-        </div>
-    </div>
-</div>
-
-{# VIDEO SECTION #}
-<div class="container-fluid" id="video-container">
-    <div class="row video-header-row">
-        <div class="col-sm-10 offset-sm-1 col-md-8 offset-md-2">
-            <h4 class="text-center">{{entry.videoHeadline}}</h4>
-        </div>
-    </div>
-    <div class="row video-row">
-        <div class="col-sm-12 col-md-6 offset-md-3 p-0">
-            <div class="embed-responsive embed-responsive-16by9">
-                <iframe width="560" height="315" src="{{entry.videoEmbed}}" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>             
+  <!-- MAIN -Features -->
+  <div class="p-5 bg-light">
+    <div class="container indexFeatures">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="display-4 text-center text-secondary">Do not wait. Act</h3>
+          <p class="mb-4 text-center lead">I am alone, and feel the charm of existence in this spot.</p>
+          <div class="row">
+            <div class="p-3 col-md-8">
+              <h3>Main feature here </h3>
+              <p class="mb-3">I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies</p> <a class="btn btn-primary mb-3" href="#">Call to action</a>
             </div>
+            <div class="col-md-4"> <img class="img-fluid d-block" src="https://images.pexels.com/photos/1325723/pexels-photo-1325723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260g"> </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-
-
-{# JOBS and BENEFITS CONTAINER #}
-<div class="container-fluid" id="jobs-benefits">
-    <div class="row">
-        {# offerings, left side, top when on mobile #}
-        <div class="col-sm-12 col-md-6 p-0 jobs-benefits-col">
-            <h3 class="jobs-benefits-header text-center">{{entry.offeringHeadline}}</h3>
-            <div class="col-10 offset-1">
-                <div class="jobs-benefits-content py-5">{{entry.offeringContent}}</div>
-            </div>
-        </div>
-
-        {# off, right side, Bottom when on mobile #}
-        <div class="col-sm-12 col-md-6 p-0 jobs-benefits-col">
-            <h3 class="jobs-benefits-header text-center">{{entry.qualificationHeadline}}</h3>
-            <div class="col-10 offset-1">
-                <div class="jobs-benefits-content py-5">{{entry.qualificationContent}}</div>
-            </div>
-        </div>
-    </div>
-</div>
-
+  </div>
 
 {% endblock %}
+
+{# VIDEO INCLUDES #}
+ {% include "partials/_video" %}
+
+ {# FOOTER INCLUDES #}
+ {% include "partials/_footer" %}
+
+
+
+
+
+
+
+
