@@ -31,8 +31,56 @@
 {# UP UNTILL THE FOOTER --> #}
 {% block main %}
 
+<!-- PARALLAX -->
+  <div class="text-center text-md-right pb-5 parallax">
+    <div class="container">
+      <div class="row">
+        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-8 col-md-7">
+          <h3 class="h1 text-white">{{entry.homeHeadline}}</h3>
+          <p class="mb-3 lead text-white">{{entry.subHeadline}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<!--CARDS-->
+  <div class="mb-5" style="">
+    <div class="container jobDetails">
+      <div class="row pb-2">
+        <div class="col-md-4" style="">
+          <div class="row py-2 mx-auto" style="">
+            <div class="col-md-12">
+              <h3 class="text-secondary"><i class="fa fa-fw fa-user"></i>Company Drivers</h3>
+              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-info btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="">
+          <div class="row py-2 mx-auto" style="">
+            <div class="col-md-12">
+              <h3 class="text-secondary"><i class="fa fa-fw fa-truck"></i>Owner Operators</h3>
+              <p class="lead">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.</p><a class="btn btn-info btn-sm" href="#"><i class="fa fa-fw fa-arrow-circle-o-right"></i><i class="fa fa-fw fa-truckz"></i>Learn More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4" style="">
+          <div class="row applyBanner py-2 mx-auto" style="">
+            <div class="col-md-12">
+              <h3 class="" contenteditable="true"><i class="fa fa-fw fa-search"></i>Find Your Next Job</h3>
+              <p class="lead" style="">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.<br></p><a class="btn btn-block btn-lg btn-warning" href="#"><i class="fa fa-fw fa-search"></i><i class="fa fa-fw fa-truckz"></i>FIND MY NEXT JOB</a>
+              <h5 class="pt-3">NEED TO TALK? Call a recruiter now. 888-888-8888</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 {# JUMBOTRON #}
-<div class="container-fluid p-0 jumbo">
+{# <div class="container-fluid p-0 jumbo">
     <div class="img-row"></div>
     <div class="row heading-row">
         <div class="col-sm-12 col-md-6 offset-md-3" id="blur-bg">
@@ -48,7 +96,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> #}
 
 {# BANNER IMAGE #}
 <div class="container-fluid p-0" id="banner">

@@ -8,88 +8,23 @@
     #main-nav #navbar10 ul li a {
       color: #fff; }
 
-.jumbo {
-  position: relative; }
-  .jumbo .img-row {
-    background-image: url("/images/header.jpg");
-    background-position: center center;
-    background-size: cover;
-    height: 600px;
-    background-repeat: no-repeat;
-    position: relative; }
-  .jumbo .heading-row {
-    position: absolute;
-    top: 35%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%; }
-    .jumbo .heading-row #blur-bg {
-      background-color: rgba(93, 93, 93, 0.8);
-      width: 100%;
-      padding: 10px;
-      border-radius: 30px; }
-      .jumbo .heading-row #blur-bg h1,
-      .jumbo .heading-row #blur-bg h4 {
-        color: #fff;
-        font-weight: 700; }
-      .jumbo .heading-row #blur-bg .button_row {
-        width: 100%; }
-
-@media (max-width: 345px) {
-  .jumbo {
-    background-position: center right;
-    background-size: initial; }
-    .jumbo .img-row {
-      height: 400px; }
-    .jumbo .heading-row #blur-bg {
-      margin-top: -10%;
-      transform: translateX(10%);
-      background-color: rgba(93, 93, 93, 0.5);
-      width: 90%;
-      border-radius: 0px !important; }
-      .jumbo .heading-row #blur-bg h1 {
-        font-size: 1.3em; }
-      .jumbo .heading-row #blur-bg h4 {
-        font-size: 1em; } }
-
-@media (min-width: 346px) and (max-width: 500px) {
-  .jumbo {
-    background-position: center right;
-    background-size: initial; }
-    .jumbo .heading-row {
-      transform: translateX(-46%) !important; }
-      .jumbo .heading-row #blur-bg {
-        margin-top: 25%;
-        background-color: rgba(93, 93, 93, 0.5);
-        padding: 5px;
-        border-radius: 0px !important; }
-        .jumbo .heading-row #blur-bg h1 {
-          font-size: 1.8em; }
-        .jumbo .heading-row #blur-bg h4 {
-          font-size: 1.1em; } }
-
-@media (min-width: 501px) and (max-width: 1000px) {
-  .jumbo {
-    background-position: center right;
-    background-size: initial; }
-    .jumbo .heading-row {
-      transform: translateX(-45%) !important;
-      width: 86%; }
-      .jumbo .heading-row #blur-bg {
-        margin-top: 0%;
-        background-color: rgba(93, 93, 93, 0.5); }
-        .jumbo .heading-row #blur-bg h1 {
-          font-size: 1.8em; }
-        .jumbo .heading-row #blur-bg h4 {
-          font-size: 1.1em; } }
-
-#banner {
-  max-height: 300px;
-  padding: 20px 0px;
+.parallax {
+  background-attachment: fixed;
+  background-image: url(https://images.pexels.com/photos/93398/pexels-photo-93398.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-color: black;
-  overflow: hidden; }
-  #banner img {
-    padding-top: 10px; }
+  min-height: 400px; }
+
+.indexCards {
+  background-color: #fff;
+  margin-top: -50px;
+  padding: 25px; }
+
+.applyBannerColumn {
+  background-color: #707070;
+  color: #fff; }
 
 #summary-container .summary-header-row {
   background-color: #9B000D;
