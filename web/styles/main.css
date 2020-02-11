@@ -16,6 +16,8 @@
         #nav-container #nav-top ul li a {
           color: gray;
           font-size: 1.2em; }
+        #nav-container #nav-top ul li img {
+          height: 1.2rem; }
       #nav-container #nav-top ul #seach-trigger {
         color: #fff !important; }
     #nav-container #nav-top #general-search {
