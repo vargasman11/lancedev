@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "7648f9696ecfafa02582c0ad69cbb3b6",
+    "content-hash": "bd71672dc179095e44195ebc6e4d65fd",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -139,6 +139,55 @@
                 "utility"
             ],
             "time": "2020-01-10T15:24:40+00:00"
+        },
+        {
+            "name": "carlcs/craft-redactorcustomstyles",
+            "version": "3.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/carlcs/craft-redactorcustomstyles/zipball/6f19b8cac814e6666e34c949177878a35368b548",
+                "reference": "6f19b8cac814e6666e34c949177878a35368b548",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "craftcms/redactor": "^2.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor Custom Styles",
+                "handle": "redactor-custom-styles",
+                "changelogUrl": "https://github.com/carlcs/craft-redactorcustomstyles/raw/v3/CHANGELOG.md",
+                "downloadUrl": "https://github.com/carlcs/craft-redactorcustomstyles/archive/v3.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "carlcs\\redactorcustomstyles\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "carlcs",
+                    "homepage": "https://github.com/carlcs"
+                }
+            ],
+            "description": "Redactor Custom Styles plugin for Craft CMS",
+            "keywords": [
+                "buttons",
+                "craftcms",
+                "redactor",
+                "styles"
+            ],
+            "support": {
+                "issues": "https://github.com/carlcs/craft-redactorcustomstyles/issues?state=open",
+                "source": "https://github.com/carlcs/craft-redactorcustomstyles",
+                "docs": "https://github.com/carlcs/craft-redactorcustomstyles",
+                "rss": "https://github.com/carlcs/craft-redactorcustomstyles/commits/v3.atom"
+            },
+            "time": "2018-06-07T15:36:35+00:00"
         },
         {
             "name": "cebe/markdown",
@@ -535,11 +584,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.4.1",
+            "version": "3.4.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/f595178873bf02ace57d8bd9d056af5f486d0912",
-                "reference": "f595178873bf02ace57d8bd9d056af5f486d0912",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/6ebc29ebbf3ee0b79527aef965b552212127f3c1",
+                "reference": "6ebc29ebbf3ee0b79527aef965b552212127f3c1",
                 "shasum": ""
             },
             "require": {
@@ -620,7 +669,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-02-06T14:47:41+00:00"
+            "time": "2020-02-07T20:26:40+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -4189,6 +4238,61 @@
             "time": "2019-08-29T16:56:12+00:00"
         },
         {
+            "name": "svenjungnickel/redactor-font-awesome",
+            "version": "2.1.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/svenjungnickel/craft-redactor-font-awesome/zipball/2826cdff1cb0d1a01013717ff8c5e322f96e2310",
+                "reference": "2826cdff1cb0d1a01013717ff8c5e322f96e2310",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0-RC15",
+                "craftcms/redactor": "^2.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor Font Awesome",
+                "handle": "redactor-font-awesome",
+                "developer": "Sven Jungnickel",
+                "developerUrl": "https://github.com/svenjungnickel/",
+                "schemaVersion": "2.0",
+                "description": "Craft redactor font awesome plugin for Craft 3",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "documentationUrl": "https://github.com/svenjungnickel/craft-redactor-font-awesome/blob/master/README.md",
+                "changelogUrl": "https://github.com/svenjungnickel/craft-redactor-font-awesome/blob/master/CHANGELOG.md",
+                "class": "svenjungnickel\\redactorfontawesome\\RedactorFontAwesome"
+            },
+            "autoload": {
+                "psr-4": {
+                    "svenjungnickel\\redactorfontawesome\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sven Jungnickel",
+                    "homepage": "https://github.com/svenjungnickel"
+                }
+            ],
+            "description": "Craft redactor font awesome plugin for Craft 3",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "redactorfontawesome"
+            ],
+            "support": {
+                "docs": "https://github.com/svenjungnickel/craft-redactor-font-awesome/blob/master/README.md",
+                "issues": "https://github.com/svenjungnickel/craft-redactor-font-awesome/issues"
+            },
+            "time": "2019-07-31T18:22:51+00:00"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v6.2.3",
             "dist": {
@@ -5462,21 +5566,17 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.12.3",
+            "version": "v2.12.5",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/97b6311585cae66a26833b14b33785f5797f7d39",
-                "reference": "97b6311585cae66a26833b14b33785f5797f7d39",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/18772e0190734944277ee97a02a9a6c6555fcd94",
+                "reference": "18772e0190734944277ee97a02a9a6c6555fcd94",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.0",
                 "symfony/polyfill-ctype": "^1.8",
                 "symfony/polyfill-mbstring": "^1.3"
-            },
-            "require-dev": {
-                "psr/container": "^1.0",
-                "symfony/phpunit-bridge": "^4.4|^5.0"
             },
             "type": "library",
             "extra": {
@@ -5492,7 +5592,6 @@
                     "Twig\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "BSD-3-Clause"
             ],
@@ -5518,7 +5617,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-12-28T07:12:03+00:00"
+            "time": "2020-02-11T15:31:23+00:00"
         },
         {
             "name": "verbb/redactor-tweaks",
@@ -5628,19 +5727,16 @@
         },
         {
             "name": "voku/anti-xss",
-            "version": "4.1.21",
+            "version": "4.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/anti-xss/zipball/a96c8d4e688128dd9b98d2796c9cfcad399c25db",
-                "reference": "a96c8d4e688128dd9b98d2796c9cfcad399c25db",
+                "url": "https://api.github.com/repos/voku/anti-xss/zipball/4c23b8b88430834ee3eaee30d2bc373ef1ba19eb",
+                "reference": "4c23b8b88430834ee3eaee30d2bc373ef1ba19eb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0",
                 "voku/portable-utf8": "~5.4.27"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "extra": {
@@ -5653,7 +5749,6 @@
                     "voku\\helper\\": "src/voku/helper/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5676,7 +5771,7 @@
                 "security",
                 "xss"
             ],
-            "time": "2019-12-30T14:57:06+00:00"
+            "time": "2020-02-06T14:46:13+00:00"
         },
         {
             "name": "voku/arrayy",
@@ -5780,11 +5875,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.4.7",
+            "version": "1.4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/a691852adbf7518370332fd7921292d8dad34e7e",
-                "reference": "a691852adbf7518370332fd7921292d8dad34e7e",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/a3801f5facf187a28cc2cae7b98a540c36406dc4",
+                "reference": "a3801f5facf187a28cc2cae7b98a540c36406dc4",
                 "shasum": ""
             },
             "require": {
@@ -5816,7 +5911,7 @@
                 "clean",
                 "php"
             ],
-            "time": "2020-01-27T08:58:33+00:00"
+            "time": "2020-02-06T21:46:48+00:00"
         },
         {
             "name": "voku/portable-utf8",
