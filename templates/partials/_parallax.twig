@@ -2,19 +2,20 @@
   <div class="text-center text-md-right pb-5 parallax">
     <div class="container">
       <div class="row">
-        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-8 col-md-7">
-        {# {% if condition %}{% endif %} #}
-        
-          <h3 class="h1 text-white">{{entry.title}}</h3>
-          {# <h3 class="h1 text-white">OTR Truck Driving Job In Nashville, TN</h3> #}
-          {# <p class="mb-3 lead text-white">Of existence in this spot, which was created for the 
-          bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.</p> #}
-        
-            {% if entry.jobHeadline %}
-                <p class="mb-3 lead text-white">{{entry.jobHeadline}}</p>
-            {% elseif entry.homeHeadline %}
-             <p class="mb-3 lead text-white">{{entry.homeHeadline}}</p>
-             {% endif %}
+        <div class="p-5 mx-auto mx-md-0 ml-md-auto col-8 col-md-7">        
+        {# HEADLINE #}
+          {% if entry.homeHeadline %}
+          <h3 class="h1 text-white">{{entry.homeHeadline}}</h3>
+          {% else %}
+          <h3 class="h1 text-white">{{global.homeHeadline}}</h3>
+          {% endif %}
+
+          {# subHeadline #}
+          {% if entry.subHeadline %}
+          <p class="mb-3 lead text-white">{{entry.subHeadline}}</p>
+          {% else %}
+          <p class="mb-3 lead text-white">{{global.subHeadline}}</p>
+          {% endif %}
 
         </div>
       </div>

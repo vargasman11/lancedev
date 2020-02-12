@@ -58,8 +58,11 @@ UP UNTILL THE FOOTER --> #}
             <div class="card-body">
               <div class="tab-content mt-2">
                 <div class="tab-pane fade" id="tabone" role="tabpanel">
-                  <p class="">When I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms.</p>
-                  <p class="">Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.</p>
+                    {% if entry.jobOverview %}
+                                <p class="">{{entry.jobOverview}}</p>
+                            {% else %}
+                                <p class="">{{global.jobOverview}}</p>
+                            {% endif %}
                 </div>
 
                 {# JOB REQUIREMENTS #}
@@ -123,6 +126,7 @@ UP UNTILL THE FOOTER --> #}
 </div>
 {% endblock %}
 
-
+{# VIDEO INCLUDES #}
+ {% include "partials/_video" %}
  {# FOOTER INCLUDES #}
  {% include "partials/_footer" %}
