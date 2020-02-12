@@ -17,16 +17,16 @@
   background-color: black;
   min-height: 400px; }
 
-.indexCards {
+.cards-section {
   background-color: #fff;
   margin-top: -50px;
   padding: 25px; }
-  .indexCards .btn-red {
+  .cards-section .btn-red {
     background-color: #dc3545;
     color: #fff; }
-  .indexCards .applyBannerColumn {
+  .cards-section .applyBannerColumn {
     color: #fff; }
-    .indexCards .applyBannerColumn .applyBanner {
+    .cards-section .applyBannerColumn .applyBanner {
       background-color: #707070; }
 
 #jobs-benefits .jobs-benefits-col {

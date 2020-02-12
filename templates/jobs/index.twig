@@ -1,4 +1,9 @@
-{% extends "_layout" %}
+{# {% extends "_layout" %} #}
+
+
+{% include "partials/_header" %}
+{% include "partials/_nav" %}
+{% include "partials/_parallax" %}
 
 {# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
 {% block SEO %}
@@ -30,112 +35,11 @@
 {% endblock %}
 
 
-
-{# THIS IS THE CONTENT UNDER THE NAV #}
-{% block main %}
-
-{# SEARCH FOR JOBS HEADER #}
-<div class="container-fluid" id="search-header">
-    <div class="row">
-        <div class="col-sm-10 offset-sm-1 col-md-6 offset-md-3">
-            <h3 class="text-center">Kick Start Your Career</h3>
-        </div>
-    </div>
-</div>
+{% include "jobs/searchjobs/search-controller" %}
 
 
-{# This is where the search form lives #}
-{# The styles for the search controller are in the _search-controller.scss file under jobs folder in the SCSS Directory 
-#}
-<div class="container-fluid search-controller-container">
-    <div class="row">
-        <div class="col-sm-12 col-md-10 offset-md-1">
-            <h3 class="text-center">Search by city, <br> state and/or truck type</h3>
-            {% include "jobs/searchjobs/search-controller" %}
-        </div>
-    </div>
-</div>
+{# VIDEO INCLUDES #}
+ {% include "partials/_video" %}
 
-
-{# CONTENT UNDER "SEARCH FOR TRUCK JOBS" #}
-<div class="container-fluid pt-5 pb-1 jobs-index">
-    <h3 class="text-center">Available Opportunities</h3>
-    {% set query = craft.entries()
-    .section('jobListings')
-    .limit(10) %}
-
-    {% paginate query as pageInfo, pageEntries %}
-
-    {% for entry in pageEntries %}
-    <div class="row p-4">
-        <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 bg-light p-2">
-            <div class="row">
-                <div class="col-sm-12 col-md-6">
-                    <h3 class="job-header">{{entry.jobType}}</h3>
-                    <p><strong><em>State</em></strong> {{entry.state}}</p>
-                    <p><strong><em>City</em></strong> {{entry.city}}</p>
-                    {# ZIP #}
-                    <p><strong><em>Zip</em></strong> {{entry.jobAddress.zip}}</p>
-                    <a class="btn btn-small btn-details" href="/jobs/{{entry.slug}}">Get More Details &nbsp; <i
-                            class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="col-sm-12 col-md-6">
-                    <div class="container">
-                        <div class="row">
-                            <p><strong>Driver Type:</strong> <br>{{entry.driverType}} </p> &nbsp;&nbsp;&nbsp;
-                            <p><strong>Truck Type:</strong><br>{{entry.truckType}}</p> &nbsp;&nbsp;&nbsp;
-                            <p><strong> Job Type:</strong><br>{{entry.jobType}}</p> &nbsp;&nbsp;&nbsp;
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <p class="pt-2"><strong>Benefits: </strong> <br>
-                                {% for option in entry.jobBenefits %}
-                                {{ option.label }},
-                                {% endfor %}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-
-    <div class="container text-center">
-        {% if pageInfo.prevUrl %}<a href='{{ pageInfo.prevUrl }}'
-            class='btn btn-small btn-success text-center'>&lt;</a>{% endif %}
-
-        {% if pageInfo.currentPage > 2 %}
-        <a class='btn btn-small btn-success text-center' href='{{ pageInfo.firstUrl }}'>{{ 1 }}</a>
-        {% endif %}
-
-        {% if pageInfo.currentPage > 3 %}
-        <span>...</span>
-        {% endif %}
-
-        {% for page, url in pageInfo.getPrevUrls(1) %}
-        <a class='btn btn-small btn-success text-center' href='{{ url }}'>{{ page }}</a>
-        {% endfor %}
-        <span class='btn btn-small btn-success text-center'>{{ pageInfo.currentPage }}</span>
-
-        {% for page, url in pageInfo.getNextUrls(1) %}
-        <a class='btn btn-small btn-success text-center' href='{{ url }}'>{{ page }}</a>
-        {% endfor %}
-
-
-        {% if pageInfo.currentPage < pageInfo.totalPages-2 %}
-        <span>...</span>
-        {% endif %}
-
-        {% if pageInfo.currentPage < pageInfo.totalPages-1 %}
-        <a class='btn btn-small btn-success text-center' href='{{ pageInfo.lastUrl }}'>{{ pageInfo.totalPages }}</a>
-        {% endif %}
-
-        {% if pageInfo.nextUrl %}<a href='{{ pageInfo.nextUrl }}'
-            class='btn btn-small btn-success text-center'>&gt;</a>{% endif %}
-
-
-    </div>
-</div>
-{% endblock %}
+ {# FOOTER INCLUDES #}
+ {% include "partials/_footer" %}
