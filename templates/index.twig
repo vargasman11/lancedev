@@ -26,8 +26,12 @@
             <title>{{global.titleTag}}</title>
     {% endif %}            
 {% endblock %}
-   
+
+{# Card INCLUDES #}
 {% include "partials/_cards" %}
+
+{# feature includes #}
+{% include "partials/_feature" %}
 
 
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
@@ -35,25 +39,6 @@
 {% block main %}
 
 
-
-  <!-- MAIN -Features -->
-  <div class="p-5">
-    <div class="container indexFeatures">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="display-4 text-center text-secondary">Do not wait. Act</h3>
-          <p class="mb-4 text-center lead">I am alone, and feel the charm of existence in this spot.</p>
-          <div class="row">
-            <div class="p-3 col-md-8">
-              <h3>Main feature here </h3>
-              <p class="mb-3">I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies</p> <a class="btn btn-primary mb-3" href="#">Call to action</a>
-            </div>
-            <div class="col-md-4"> <img class="img-fluid d-block" src="https://images.pexels.com/photos/1325723/pexels-photo-1325723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260g"> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 {% endblock %}
 

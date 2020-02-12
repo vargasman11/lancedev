@@ -31,32 +31,13 @@
 
 {% include "partials/_cards" %}
 
+{# feature includes #}
+{% include "partials/_feature" %}
 
 {# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
 {# UP UNTILL THE FOOTER --> #}
 {% block main %}
 
-
-{# JOBS and BENEFITS CONTAINER #}
-<div class="container-fluid" id="jobs-benefits">
-    <div class="row">
-        {# offerings, left side, top when on mobile #}
-        <div class="col-sm-12 col-md-6 p-0 jobs-benefits-col">
-            <h3 class="jobs-benefits-header text-center">{{entry.offeringHeadline}}</h3>
-            <div class="col-10 offset-1">
-                <div class="jobs-benefits-content py-5">{{entry.offeringContent}}</div>
-            </div>
-        </div>
-
-        {# off, right side, Bottom when on mobile #}
-        <div class="col-sm-12 col-md-6 p-0 jobs-benefits-col">
-            <h3 class="jobs-benefits-header text-center">{{entry.qualificationHeadline}}</h3>
-            <div class="col-10 offset-1">
-                <div class="jobs-benefits-content py-5">{{entry.qualificationContent}}</div>
-            </div>
-        </div>
-    </div>
-</div>
 
 {% endblock %}
 

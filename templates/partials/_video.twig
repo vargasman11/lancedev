@@ -8,8 +8,21 @@
           </div>
         </div>
         <div class="col-md-6">
-          <h1 class="display-4 text-secondary" style="">ABC is second to none for professional truck drivers.</h1>
-          <p class="">Paragraph. Then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing.</p>
+
+        {# VIDEO HEADLINE #}
+        {% if entry.videoHeadline %}
+        <h1 class="display-4 text-secondary" style="">{{entry.videoHeadline}}</h1>
+        {% else %}
+          <h1 class="display-4 text-secondary" style="">{{global.videoHeadline}}</h1>
+        {% endif %}
+
+        {# VIDEO CONTENT #}
+        {% if entry.videoContent %}
+        <p class="">{{entry.videoContent}}</p>
+        {% else %}
+        <p class="">{{global.videoContent}}</p>
+        {% endif %}        
+                    
         </div>
       </div>
     </div>

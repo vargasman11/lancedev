@@ -1,0 +1,30 @@
+  <!-- MAIN -Features -->
+  <div class="p-5">
+    <div class="container feature-section">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="display-4 text-center text-secondary">Do not wait. Act</h3>
+          <p class="mb-4 text-center lead">I am alone, and feel the charm of existence in this spot.</p>
+          <div class="row">
+            <div class="p-3 col-md-8">
+            {# HEADER #}
+                {% if entry.summaryHeadline %}                
+                    <h3>{{entry.summaryHeadline}}</h3>
+                {% else %}
+                    <h3>{{global.summaryHeadline}}</h3>
+                {% endif %}
+                {# CONTENT #}
+              {% if entry.summaryContent %}
+                <p class="mb-3">{{entry.summaryContent}}</p>
+                {% else %}
+                <p class="mb-3">{{global.summaryContent}}</p>
+              {% endif %}
+              
+              </p> <a class="btn btn-primary mb-3" href="#">Call to action</a>
+            </div>
+            <div class="col-md-4"> <img class="img-fluid d-block" src="https://images.pexels.com/photos/1325723/pexels-photo-1325723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260g"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
