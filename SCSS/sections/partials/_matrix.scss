@@ -1,0 +1,25 @@
+.matrix-container {
+
+    .matrix-textBlock {}
+
+    .matrix-image {
+        max-height: 400px;
+        overflow: hidden;
+    }
+
+    .matrix-right {
+        
+        img{
+        max-height: 400px;
+        overflow: hidden;
+        text-emphasis: center;
+        }
+    }
+
+    .matrix-left {
+        img{
+        max-height: 400px;
+        overflow: hidden;
+        }
+    }
+}

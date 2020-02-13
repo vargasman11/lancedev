@@ -1,3 +1,5 @@
+{# INDIVIDUAL PAGE ENTRY TEMPLATE #}
+
 {% include "partials/_header" %}
 {% include "partials/_nav" %}
 {% include "partials/_parallax" %}
@@ -5,46 +7,54 @@
 {% include "partials/_feature" %}
 
 
-<div class="container-fluid matrix-container bg-warning">
+<div class="container-fluid matrix-container">
 {% for block in entry.pageContent.all() %}
 {% switch block.type %}
 
 {% case "textBlock" %}
-<div class="container bg-info matirx-textBlock-contaier">
-    <h1>{{block.header}}</h1>
-    <p>{{block.textArea}}</p>
+<div class="pb-5">
+<div class="container matirx-textBlock pb-5">
+    <h3 class="display-4">{{block.header}}</h3>
+    <p class="">{{block.textArea}}</p>
+</div>
 </div>
 
 {% case "imageblock" %}
-<div class="container matrix-image-container">
+<div class="pb-5">
+<div class="container matrix-image pb-5">
     <div class="row">
         <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
         <p class="caption">{{block.imageCaption}}</p>
     </div>
 </div>
+</div>
 
 {% case "textLeft" %}
-<div class="container">
+<div class="pb-5">
+<div class="container matrix-left pb-5">
     <div class="row">
         <div class="col-sm-12 col-md-8">
-            {{block.textarea}}
+            {{block.textArea}}
         </div>
-        <div class="col-sm-12 col-md-4">
-            <img src="{{block.imageright.one().getUrl() }}" alt="" class="img-fluid">
+        <div class="col-sm-12 col-md-4 text-center">
+            <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid">
         </div>
     </div>
 </div>
+</div>
 
 {% case "textRight" %}
-<div class="container">
+<div class="pb-5">
+<div class="container matrix-right pb-5">
     <div class="row">
-        <div class="col-sm-12 col-md-4">
-            <img src="{{block.imageleft.one().getUrl() }}" alt="" class="img-fluid">
+        <div class="col-sm-12 col-md-4 text-center">
+            <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid">
         </div>
         <div class="col-sm-12 col-md-8">
-            {{block.textarea}}
+            {{block.textArea}}
         </div>
     </div>
+</div>
 </div>
 
 

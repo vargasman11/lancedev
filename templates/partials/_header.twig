@@ -1,3 +1,13 @@
+{# IN ORDER TO FIND THE CLOSING HEADER TAGS, YOU WILL HAVE TO GO TO THE NAV PARTIALS IN
+	partials/_nav.twig. THIS IS DONE BECAUSE IF INCLUDE IT HERE THE SEARCH JOBS RESULTS PAGE WILL THROW AN ERROR. WE OMMIT IT ON THE SEARCH RESULTS PAGE BY OMITTING IT IN THE ICLUDE TAGES.  THE STRUTCUE IN OTHER TEMPLATES MUST BE AS FOLLOWING...
+	 include "partials/_header" 
+	 include "partials/_seo" 
+	 include "partials/_nav" 
+
+	 in search RESULTS it will be as FOLLOWING
+	 	include "partials/_header" 
+		include "partials/_nav"  #}
+		
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +15,6 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  {# HERE WE INCLUDE OUR SEO TEMPLATE #}
-  {% include "partials/_seo" %}
-
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -200,7 +206,4 @@
 </script>
 
 
-  </head>
-  {# utility-site-container is a utility class located in utility SCSS folder #}
-  <div class="utility-site-container">
-  <body class="container-fluid p-0 utility-site-content" onload="ReadCookie()">   
+ 

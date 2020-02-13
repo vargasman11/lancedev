@@ -1,31 +1,11 @@
+{# INDIVIDUAL JOB ENTRY TEMPLATE #}
+
 {% include "partials/_header" %}
+{% include "partials/_seo" %}
 {% include "partials/_nav" %}
 {% include "partials/_parallax" %}
 
-{# <!-- THIS IS FOR SEO, PARTIALLY TAKEN OUT OF HEAD TAG --> #}
-{% block SEO %}
-    {# keywords #}
-    {% if entry.keywordTags is not empty %}      
-        {% set entries = entry %}
-            <meta name="keywords" content="{% for tag in craft.tags.relatedTo(entries) %}{{ tag.title }} {% endfor %}">
-        {% else %}   
-            {% set myTagQuery = craft.tags().group('globalTags') %}
-            {% set tags = myTagQuery.all() %} 
-        <meta name="keywords"  content="{% for tag in tags %} {{ tag.title }} {% endfor %}">
-    {% endif %}
-    {# meta description #}
-    {% if entry.metaDescription %}
-            <meta name="description" content="{{entry.metaDescription}}">
-        {% else %}
-            <meta name="description" content="{{global.metaDescription}}">
-    {% endif %}
-    {# title tag #}
-    {% if entry.titleTag %}
-            <title>{{entry.titleTag}}</title>
-        {% else %}
-            <title>{{global.titleTag}}</title>
-    {% endif %}            
-{% endblock %}
+
 
 
 

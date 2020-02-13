@@ -29,6 +29,9 @@
     .cards-section .applyBannerColumn .applyBanner {
       background-color: #707070; }
 
+.video-container .video-content {
+  background-color: #fff; }
+
 #jobs-benefits .jobs-benefits-col {
   background-color: #292F31; }
   #jobs-benefits .jobs-benefits-col .jobs-benefits-header {
@@ -54,13 +57,34 @@ footer {
   #apply-bottom {
     display: block; } }
 
-.footer .top-footer {
-  background-color: #292F31; }
+#cta {
+  background-color: #343a40;
+  color: #fff; }
+  #cta h1 {
+    padding: 20px 0 40px; }
 
-.footer .bottom-footer {
+.footer {
   background-color: #707070; }
-  .footer .bottom-footer .footer-logo {
+  .footer .nav-link {
+    color: #fff !important; }
+  .footer .nav-link:hover {
+    color: #28a745 !important;
+    font-weight: bold; }
+  .footer .footer-logo {
     height: 3rem; }
+
+.matrix-container .matrix-image {
+  max-height: 400px;
+  overflow: hidden; }
+
+.matrix-container .matrix-right img {
+  max-height: 400px;
+  overflow: hidden;
+  text-emphasis: center; }
+
+.matrix-container .matrix-left img {
+  max-height: 400px;
+  overflow: hidden; }
 
 .search-again {
   padding: 20px 0px; }

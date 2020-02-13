@@ -1,12 +1,15 @@
 .footer {
-    .top-footer {
-        background-color: #292F31;
+    background-color: #707070;
+
+    .nav-link{
+        color: #fff !important;
+    }
+    .nav-link:hover{
+        color: #28a745!important;
+        font-weight: bold;
     }
 
-    .bottom-footer {
-        background-color: #707070;
-        .footer-logo {
-            height: 3rem;
-        }
+    .footer-logo {
+        height: 3rem;
     }
 }
