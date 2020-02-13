@@ -4,13 +4,55 @@
 {% include "partials/_cards" %}
 {% include "partials/_feature" %}
 
-{# <!-- THIS IS THE MAIN CONTENT THAT YOU WILL SEE ON THE HOME PAGE  #}
-{# UP UNTILL THE FOOTER --> #}
-{% block main %}
+
+<div class="container-fluid matrix-container bg-warning">
+{% for block in entry.pageContent.all() %}
+{% switch block.type %}
+
+{% case "textBlock" %}
+<div class="container bg-info matirx-textBlock-contaier">
+    <h1>{{block.header}}</h1>
+    <p>{{block.textArea}}</p>
+</div>
+
+{% case "imageblock" %}
+<div class="container matrix-image-container">
+    <div class="row">
+        <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
+        <p class="caption">{{block.imageCaption}}</p>
+    </div>
+</div>
+
+{% case "textLeft" %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            {{block.textarea}}
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <img src="{{block.imageright.one().getUrl() }}" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+{% case "textRight" %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <img src="{{block.imageleft.one().getUrl() }}" alt="" class="img-fluid">
+        </div>
+        <div class="col-sm-12 col-md-8">
+            {{block.textarea}}
+        </div>
+    </div>
+</div>
 
 
-{% endblock %}
+{% endswitch %}
 
+
+{% endfor %}
+</div>
 
 {% include "partials/_video" %}
 {% include "partials/_footer" %}
