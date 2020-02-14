@@ -1,0 +1,59 @@
+
+<div class="container-fluid matrix-container p-0">
+{% for block in entry.pageContent.all() %}
+{% switch block.type %}
+
+{% case "textBlock" %}
+<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="container matirx-textBlock py-5">
+    <h3 class="display-4">{{block.header}}</h3>
+    <p class="">{{block.textArea}}</p>
+</div>
+</div>
+
+{% case "imageblock" %}
+<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="container matrix-image py-5" >
+    <div class="row">
+        <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
+        <p class="caption">{{block.imageCaption}}</p>
+    </div>
+</div>
+</div>
+
+{% case "textLeft" %}
+<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="container matrix-left py-5" >
+    <div class="row">
+        <div class="col-sm-12 col-md-7">
+            <h1 class="">{{block.header}}</h1>
+            {{block.textArea}}
+        </div>
+        <div class="col-sm-12 col-md-4 offset-md-1 text-center">
+            <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid">
+        </div>
+    </div>
+</div>
+</div>
+
+{% case "textRight" %}
+<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="container matrix-right py-5">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 text-center">
+            <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid">
+        </div>
+        <div class="col-sm-12 col-md-7 offset-md-1">
+            <h1 class="">{{block.header}}</h1>
+            {{block.textArea}}
+        </div>
+    </div>
+</div>
+</div>
+
+
+{% endswitch %}
+
+
+{% endfor %}
+</div>
