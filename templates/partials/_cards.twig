@@ -25,10 +25,12 @@
             <div class="col-md-12">
               <h3 class="" contenteditable="true"><i class="fa fa-fw fa-search"></i>Find Your Next Job</h3>
               <p class="lead" style="">We've made it easy to find your next job. Search from hundreds of jobs throughout the country and learn why ABC is the best.<br></p>
-              
-              <a class="btn btn-block btn-lg btn-success" href="/jobs"><i class="fa fa-search"></i> &nbsp;FIND MY NEXT JOB</a>
-              
-              <h5 class="pt-3">NEED TO TALK? Call a recruiter now. 888-888-8888</h5>
+              <a class="btn btn-block btn-lg btn-success" href="/jobs"><i class="fa fa-search"></i> &nbsp;FIND MY NEXT JOB</a> 
+               {% if entry.phone %}                  
+              <h5 class="pt-3">NEED TO TALK? Call a recruiter now. {{entry.phone}}</h5>                           
+              {% else %}
+              <h5 class="pt-3">NEED TO TALK? Call a recruiter now. {{global.phone}}</h5>
+              {% endif %}
             </div>
           </div>
         </div>

@@ -68,7 +68,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
         <div class="text-center">
             <a href="/jobs" class="btn btn-success btn-sm">Previous Page</a>
         </div>
-        <h1 class="text-center">Search Results</h1>
+        <h1 class="text-center">Your Job Matches</h1>
 
 
 
@@ -82,34 +82,26 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 <div class="col-sm-12 col-md-4 py-4">
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">{{result.title}}</h5>
-    <p class="card-text">
-    <strong>Driver Type:</strong> &nbsp;{{result.driverType}} &nbsp;
-    <strong>Job Type:</strong> &nbsp;{{result.jobType}}  &nbsp; <br>
-    <strong>Truck Type:</strong> &nbsp;{{result.truckType}}
-    </p>
+    <h5 class="card-title">{{result.title}}</h5>   
   </div>
   
-    {# City and state #}
     <ul class="list-group list-group-flush">
-    <li class="list-group-item">{{result.city}}, {{result.state}}</li>    
+
+    {# driver, job and truck types #}
+    <li class="list-group-item">    
+        <strong>Driver Type:</strong> &nbsp;{{result.driverType}} &nbsp;
+        <strong>Job Type:</strong> &nbsp;{{result.jobType}}  &nbsp; <br>
+        <strong>Truck Type:</strong> &nbsp;{{result.truckType}}
+    </li>
+    
+    {# City and state #}
+    <li class="list-group-item"><strong>City/State: &nbsp;</strong>{{result.city}}, {{result.state}}</li>    
 
     {# If there is a zip #}
     {% if result.jobAddress.zip is not empty %}
-    <li class="list-group-item">{{result.jobAddress.zip}}</li>
+    <li class="list-group-item"><strong>Zip: &nbsp;</strong>{{result.jobAddress.zip}}</li>
     {% endif %}
-    
-    
-    {# If there are job benefits #}
-    {% if result.jobBenefits is not empty %}
-    <li class="list-group-item">
-    {% for option in result.jobBenefits %}
-        {{ option.label }},
-    {% endfor %}
-    </li>
-    {% endif %}
-    
-                        
+                                        
     {# if Zip Code range DISPLAY #}
     {% if target is not empty and range is not empty %}                    
     <li class="list-group-item">{{ result.jobAddress.distance | number_format(1) }} miles away</li>
@@ -135,8 +127,8 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
         <div class="col-sm-6 offset-sm-3">
             {{ craft.pagination.render(pageInfo, 'firstNext', {
                     ulClass: 'pagination d-flex justify-content-center',
-                    liClass: 'page-item',
-                    aClass: 'page-link',
+                    liClass: 'page-item px-3',
+                    aClass: ' btn btn-light',
                     showPageInfo : true,
                     prevText: '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev',
                     nextText: 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>'

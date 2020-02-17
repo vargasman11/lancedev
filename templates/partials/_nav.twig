@@ -20,16 +20,12 @@
       <ul class="navbar-nav ml-auto">
         {% set pages = craft.entries.section('navigation').all() %}
         {% nav page in pages %}
-        <li class="list-inline-item" data-target="#carouselExampleIndicators" data-slide-to="0"><a
-            href="/{{page.slug}}">
-            {% if page.slug == "otr" %}
-            <i class="jumbo__icon fas fa-road"></i>
-            {% elseif page.slug  == "local" %}
-            <i class="jumbo__icon fas fa-briefcase"></i>
-            {% elseif page.slug  == "ltl" %}
-            <i class="jumbo__icon fas fa-route"></i>
+        <li class="list-inline-item"><a href="/{{page.slug}}">
+            {% if page.icons is not empty %}
+            <i class="jumbo__icon {{page.icons.value}}"></i>                
             {% endif %}
-            {{page.slug}}</a></li>
+            {{page.title}}                             
+            </a></li>
         {% endnav %}
         <li>{% include "search/index" %}</li>
       </ul>
