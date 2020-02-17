@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9979fa0a882d30a6465eaf2a6b614e5f",
+    "content-hash": "4e2ed3c27d10c0ec0a8a37caf4bcbd8f",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -866,11 +866,11 @@
         },
         {
             "name": "craftcms/redactor",
-            "version": "2.6.0",
+            "version": "2.6.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/redactor/zipball/26c484287a39530dadf5c250465d8a0c424a57f5",
-                "reference": "26c484287a39530dadf5c250465d8a0c424a57f5",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/c8cc5b6bd6ac0258666744a4a530496da8d966c3",
+                "reference": "c8cc5b6bd6ac0258666744a4a530496da8d966c3",
                 "shasum": ""
             },
             "require": {
@@ -911,7 +911,7 @@
                 "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
                 "rss": "https://github.com/craftcms/redactor/commits/v2.atom"
             },
-            "time": "2020-02-13T12:48:41+00:00"
+            "time": "2020-02-17T15:25:01+00:00"
         },
         {
             "name": "craftcms/server-check",
@@ -3024,11 +3024,11 @@
         },
         {
             "name": "nystudio107/craft-cookies",
-            "version": "1.1.11",
+            "version": "1.1.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-cookies/zipball/4efba05e2800143f91152f5f3bb5ce26f12b0055",
-                "reference": "4efba05e2800143f91152f5f3bb5ce26f12b0055",
+                "url": "https://api.github.com/repos/nystudio107/craft-cookies/zipball/faa909cf7006f245d2a0ff1e63d14c67c04dc384",
+                "reference": "faa909cf7006f245d2a0ff1e63d14c67c04dc384",
                 "shasum": ""
             },
             "require": {
@@ -3070,10 +3070,10 @@
                 "craftcms"
             ],
             "support": {
-                "docs": "https://github.com/nystudio107/craft-cookies/blob/v1/README.md",
-                "issues": "https://github.com/nystudio107/craft-cookies/issues"
+                "docs": "https://nystudio107.com/plugins/cookies/documentation",
+                "issues": "https://nystudio107.com/plugins/cookies/support"
             },
-            "time": "2018-12-07T01:04:54+00:00"
+            "time": "2020-02-14T03:31:27+00:00"
         },
         {
             "name": "opis/closure",

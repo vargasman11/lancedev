@@ -28,7 +28,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     } %}
 
     {# Pass the criteria object to the query builder: #}
-    {% set query = craft.entries(criteria).limit(5)%}
+    {% set query = craft.entries(criteria).limit(6)%}
 
         {% if target is not empty and range is not empty %}
             {% set params = {
@@ -70,49 +70,66 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
         </div>
         <h1 class="text-center">Search Results</h1>
 
-    {% for result in results %}    
-    <div class="row p-4">
-        <div class="col-sm-8 offset-sm-2 col-md-8 offset-md-2 bg-light p-4">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 p-1">
-                    <h3 class="job-header">{{result.title}}</h3>
-                    <p><strong><em>State</em></strong> {{result.state}}</p>
-                    <p><strong><em>City</em></strong> {{result.city}}</p>
-                    <a class="btn btn-small btn-details" href="/jobs/{{result.slug}}">Get More Details &nbsp; <i
-                            class="fas fa-arrow-right"></i></a>
-                    
-                    {# zip #}
-                    <p><strong> zip:</strong><br>{{result.jobAddress.zip}}</p> 
 
-                    {# Show the Radius #}
-                    {% if target is not empty and range is not empty %}
-                    <div class="container mt-3">
-                    <p><strong>{{ result.jobAddress.distance | number_format(1) }} miles away</strong></p>
-                    </div>
-                    {% endif %}
-                </div>
-                <div class="col-sm-12 col-md-6 p-1">
-                    <div class="container">
-                        <div class="row">
-                            <p><strong>Driver Type:</strong> <br>{{result.driverType}} </p> &nbsp;&nbsp;&nbsp;
-                            <p><strong>Truck Type:</strong><br>{{result.truckType}}</p> &nbsp;&nbsp;&nbsp;
-                            <p><strong> Job Type:</strong><br>{{result.jobType}}</p> &nbsp;&nbsp;&nbsp;
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <p class="pt-2"><strong>Benefits: </strong> <br>
-                                {% for option in result.jobBenefits %}
-                                {{ option.label }},
-                                {% endfor %}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>    
+
+    <div class=" container">
+    <div class="row">
+    <div class="card-group">
+
+{% for result in results %} 
+
+{% set singleJobParams =  result.jobAddress %} 
+<div class="col-sm-12 col-md-4 py-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">{{result.title}}</h5>
+    <p class="card-text">
+    <strong>Driver Type:</strong> &nbsp;{{result.driverType}} &nbsp;
+    <strong>Job Type:</strong> &nbsp;{{result.jobType}}  &nbsp; <br>
+    <strong>Truck Type:</strong> &nbsp;{{result.truckType}}
+    </p>
+  </div>
+  
+    {# City and state #}
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item">{{result.city}}, {{result.state}}</li>    
+
+    {# If there is a zip #}
+    {% if result.jobAddress.zip is not empty %}
+    <li class="list-group-item">{{result.jobAddress.zip}}</li>
+    {% endif %}
+    
+    
+    {# If there are job benefits #}
+    {% if result.jobBenefits is not empty %}
+    <li class="list-group-item">
+    {% for option in result.jobBenefits %}
+        {{ option.label }},
     {% endfor %}
+    </li>
+    {% endif %}
+    
+                        
+    {# if Zip Code range DISPLAY #}
+    {% if target is not empty and range is not empty %}                    
+    <li class="list-group-item">{{ result.jobAddress.distance | number_format(1) }} miles away</li>
+    {% endif %}
+
+  </ul>
+  <div class="card-body">
+    <a href="/jobs/{{result.slug}}" class="card-link btn btn-success">Get More Details</a>
+  </div>
+    </div>
+    </div>
+
+    {% endfor %}
+    </div>
+    </div>
+    </div>
+
+
+
+    {# PAGINATION #}
     <div class="container">
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
