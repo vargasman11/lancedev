@@ -28,7 +28,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     } %}
 
     {# Pass the criteria object to the query builder: #}
-    {% set query = craft.entries(criteria).limit(6)%}
+    {% set query = craft.entries(criteria) %}
 
         {% if target is not empty and range is not empty %}
             {% set params = {
@@ -39,8 +39,12 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 
         {% endif %}
 
+
     {# Set up pagination, and let it grab the current page's results: #}
-    {% paginate query as pageInfo, results %}
+    {# Here we limit the cards by ever 6 entries but the map shows all jobs in searcg criteria #}
+    {% set newQuery = craft.entries(criteria).limit(6)%}
+
+    {% paginate newQuery as pageInfo, results %}
         
     {# CONDITIONAL IF THERE ARE RESULTS #}
     {% if results|length %}
