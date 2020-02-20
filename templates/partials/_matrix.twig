@@ -32,7 +32,7 @@
             {{block.textArea}}
             <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
         </div>
-        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="background-image:({{block.imageRight.one().getUrl() }})">
+        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat;">
             {% if block.imageRight is not empty %}                        
             {# <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid"> #}
             {% endif %}
@@ -45,7 +45,7 @@
 <div class="py-5" style="background-color:{{block.bgColor}}">
 <div class="container matrix-right py-5">
     <div class="row">
-        <div class="col-sm-12 col-md-4 text-center" style="background-image:({{block.imageLeft.one().getUrl() }})">
+        <div class="col-sm-12 col-md-4 text-center" style="background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat;">
             {% if block.imageLeft is not empty %}                        
             {# <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid"> #}
             {% endif %}
