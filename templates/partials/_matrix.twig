@@ -3,36 +3,50 @@
 {% for block in entry.pageContent.all() %}
 {% switch block.type %}
 
+{# TEXT BLOCK #}
+
 {% case "textBlock" %}
-<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="p-2" style="background-color:{{block.bgColor}}">
 <div class="container matirx-textBlock py-5">
     <h3 class="display-4 text-secondary">{{block.header}}</h3>
     <p class="">{{block.textArea}}</p>
+    {% if block.ctaLink is not empty %}    
     <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+    {% endif %}
 </div>
 </div>
 
+{# IMAGE BLOCK #}
+
 {% case "imageBlock" %}
-<div class="py-5" style="background-color:{{block.bgColor}}">
-<div class="container matrix-image py-5" >
-    <div class="row">
+<div class="pb-5" style="background-color:{{block.bgColor}}; -webkit-box-shadow: 0px 26px 34px -12px #000000; 
+box-shadow: 0px 26px 34px -12px #000000;">
+<div class="container matrix-image" >
+    <div class="row py-4">
         <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
         <p class="caption">{{block.imageCaption}}</p>
+        {% if block.ctaLink is not empty %}    
         <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+        {% endif %}    
     </div>
 </div>
 </div>
 
+{# TEXT LEFT #}
+
 {% case "textLeft" %}
-<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="p-2" style="background-color:{{block.bgColor}}">
 <div class="container matrix-left py-5" >
     <div class="row">
-        <div class="col-sm-12 col-md-7">
+        <div class="col-sm-12 col-md-7 py-3">
             <h3 class="display-4 text-secondary">{{block.header}}</h3>
             {{block.textArea}}
-            <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+             {% if block.ctaLink is not empty %}    
+                <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+            {% endif %}
         </div>
-        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat;">
+        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="min-height:200px; background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; 
+box-shadow: 0px 26px 34px -12px #000000;">
             {% if block.imageRight is not empty %}                        
             {# <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid"> #}
             {% endif %}
@@ -41,19 +55,24 @@
 </div>
 </div>
 
+{# TEXT RIGHT #}
+
 {% case "textRight" %}
-<div class="py-5" style="background-color:{{block.bgColor}}">
+<div class="p-2" style="background-color:{{block.bgColor}}">
 <div class="container matrix-right py-5">
     <div class="row">
-        <div class="col-sm-12 col-md-4 text-center" style="background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat;">
+        <div class="col-sm-12 col-md-4 text-center" style="margin-top:-10px; min-height:200px; background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; 
+box-shadow: 0px 26px 34px -12px #000000;">
             {% if block.imageLeft is not empty %}                        
             {# <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid"> #}
             {% endif %}
         </div>
-        <div class="col-sm-12 col-md-7 offset-md-1">
-            <h3 class="display-4 text-secondary">{{block.header}}</h3>
+        <div class="col-sm-12 col-md-7 offset-md-1 pt-3">
+            <h3 class="display-4 text-secondary pt-5">{{block.header}}</h3>
             {{block.textArea}}
-            <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+            {% if block.ctaLink is not empty %}    
+                <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+            {% endif %}
         </div>
     </div>
 </div>
