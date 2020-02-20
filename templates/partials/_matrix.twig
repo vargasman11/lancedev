@@ -6,8 +6,9 @@
 {% case "textBlock" %}
 <div class="py-5" style="background-color:{{block.bgColor}}">
 <div class="container matirx-textBlock py-5">
-    <h3 class="display-4">{{block.header}}</h3>
+    <h3 class="display-4 text-secondary">{{block.header}}</h3>
     <p class="">{{block.textArea}}</p>
+    <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
 </div>
 </div>
 
@@ -17,6 +18,7 @@
     <div class="row">
         <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
         <p class="caption">{{block.imageCaption}}</p>
+        <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
     </div>
 </div>
 </div>
@@ -26,11 +28,14 @@
 <div class="container matrix-left py-5" >
     <div class="row">
         <div class="col-sm-12 col-md-7">
-            <h1 class="">{{block.header}}</h1>
+            <h3 class="display-4 text-secondary">{{block.header}}</h3>
             {{block.textArea}}
+            <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
         </div>
-        <div class="col-sm-12 col-md-4 offset-md-1 text-center">
-            <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid">
+        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="background-image:({{block.imageRight.one().getUrl() }})">
+            {% if block.imageRight is not empty %}                        
+            {# <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid"> #}
+            {% endif %}
         </div>
     </div>
 </div>
@@ -40,12 +45,15 @@
 <div class="py-5" style="background-color:{{block.bgColor}}">
 <div class="container matrix-right py-5">
     <div class="row">
-        <div class="col-sm-12 col-md-4 text-center">
-            <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid">
+        <div class="col-sm-12 col-md-4 text-center" style="background-image:({{block.imageLeft.one().getUrl() }})">
+            {% if block.imageLeft is not empty %}                        
+            {# <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid"> #}
+            {% endif %}
         </div>
         <div class="col-sm-12 col-md-7 offset-md-1">
-            <h1 class="">{{block.header}}</h1>
+            <h3 class="display-4 text-secondary">{{block.header}}</h3>
             {{block.textArea}}
+            <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
         </div>
     </div>
 </div>
