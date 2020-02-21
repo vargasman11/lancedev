@@ -68,11 +68,8 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     </div>
 
     {# DISPLAY Search Results #}
-    <div class="container-fluid pt-5 pb-1 jobs-index">
-        <div class="text-center">
-            <a href="/jobs" class="btn btn-success btn-sm">Previous Page</a>
-        </div>
-        <h1 class="text-center">Your Job Matches</h1>
+    <div class="container-fluid pt-5 pb-1 jobs-index">       
+        <h1 class="text-center display-4 pb-5">Your Job Matches</h1>
 
 
 
@@ -112,7 +109,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     {% endif %}
 
   </ul>
-  <div class="card-body">
+  <div class="card-body text-center">
     <a href="/jobs/{{result.slug}}" class="card-link btn btn-success">Get More Details</a>
   </div>
     </div>
@@ -126,13 +123,13 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 
 
     {# PAGINATION #}
-    <div class="container">
+    <div class="container p-5">
     <div class="row">
         <div class="col-sm-6 offset-sm-3">
             {{ craft.pagination.render(pageInfo, 'firstNext', {
                     ulClass: 'pagination d-flex justify-content-center',
                     liClass: 'page-item px-3',
-                    aClass: ' btn btn-light',
+                    aClass: ' btn btn-secondary',
                     showPageInfo : true,
                     prevText: '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Prev',
                     nextText: 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>'
@@ -140,8 +137,10 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
         </div> 
         </div> 
     </div>
-
-
+      <div class="text-center pb-5">
+      <p class="display-4">Didnt Find what you're looking for?</p>
+            <a href="/jobs" class="btn btn-info btn-lg">Search Again</a>
+        </div> 
     </div>    
 
 

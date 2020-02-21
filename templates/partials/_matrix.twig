@@ -1,85 +1,103 @@
-
 <div class="container-fluid matrix-container p-0">
-{% for block in entry.pageContent.all() %}
-{% switch block.type %}
+    {% for block in entry.pageContent.all() %}
+    {% switch block.type %}
 
-{# TEXT BLOCK #}
+    {# TEXT BLOCK #}
 
-{% case "textBlock" %}
-<div class="p-2" style="background-color:{{block.bgColor}}">
-<div class="container matirx-textBlock py-5">
-    <h3 class="display-4 text-secondary">{{block.header}}</h3>
-    <div>{{block.textArea}}</div>
-    {% if block.ctaLink is not empty %}    
-    <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
-    {% endif %}
-</div>
-</div>
-
-{# IMAGE BLOCK #}
-
-{% case "imageBlock" %}
-<div class="pb-5" style="background-color:{{block.bgColor}};">
-<div class="container matrix-image" >
-    <div class="row py-4">
-    <div class="col">   
-            <p class="display-4 text-secondary text-center">{{block.imageCaption}}</p>
-        <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
-        {% if block.ctaLink is not empty %}    
-        <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
-        {% endif %}    
-    </div>
-    </div>
-</div>
-</div>
-
-{# TEXT LEFT #}
-
-{% case "textLeft" %}
-<div class="p-2" style="background-color:{{block.bgColor}}">
-<div class="container matrix-left py-5" >
-    <div class="row">
-        <div class="col-sm-12 col-md-7 py-3">
+    {% case "textBlock" %}
+    <div class="p-2" style="background-color:{{block.bgColor}}">
+        <div class="container matirx-textBlock py-5">
             <h3 class="display-4 text-secondary">{{block.header}}</h3>
             <div>{{block.textArea}}</div>
-             {% if block.ctaLink is not empty %}    
-                <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
-            {% endif %}
-        </div>
-        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="min-height:200px; background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
-            {% if block.imageRight is not empty %}                        
-            {# <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid"> #}
+            {% if block.ctaLink is not empty %}
+            <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
             {% endif %}
         </div>
     </div>
-</div>
-</div>
 
-{# TEXT RIGHT #}
+    {# IMAGE BLOCK #}
 
-{% case "textRight" %}
-<div class="p-2" style="background-color:{{block.bgColor}}">
-<div class="container matrix-right py-5">
-    <div class="row">
-        <div class="col-sm-12 col-md-4 text-center" style="margin-top:-10px; min-height:200px; background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
-            {% if block.imageLeft is not empty %}                        
-            {# <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid"> #}
-            {% endif %}
-        </div>
-        <div class="col-sm-12 col-md-7 offset-md-1 pt-3">
-            <h3 class="display-4 text-secondary pt-5">{{block.header}}</h3>
-            <div>{{block.textArea}}</div>
-            {% if block.ctaLink is not empty %}    
-                <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
-            {% endif %}
+    {% case "imageBlock" %}
+    <div class="pb-5" style="background-color:{{block.bgColor}};">
+        <div class="container matrix-image">
+            <div class="row py-4">
+                <div class="col">
+                    <p class="display-4 text-secondary text-center">{{block.imageCaption}}</p>
+                    <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
+                    {% if block.ctaLink is not empty %}
+                    <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
-</div>
-</div>
+
+    {# TEXT LEFT #}
+
+    {% case "textLeft" %}
+    <div class="p-2" style="background-color:{{block.bgColor}}">
+        <div class="container matrix-left py-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-7 py-3">
+                    <h3 class="display-4 text-secondary">{{block.header}}</h3>
+                    <div>{{block.textArea}}</div>
+                    {% if block.ctaLink is not empty %}
+                    <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+                    {% endif %}
+                </div>
+                <div class="col-sm-12 col-md-4 offset-md-1 text-center"
+                    style="min-height:200px; background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
+                    {% if block.imageRight is not empty %}
+                    {# <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid"> #}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {# TEXT RIGHT #}
+
+    {% case "textRight" %}
+    <div class="p-2" style="background-color:{{block.bgColor}}">
+        <div class="container matrix-right py-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-4 text-center"
+                    style="margin-top:-10px; min-height:200px; background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
+                    {% if block.imageLeft is not empty %}
+                    {# <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid"> #}
+                    {% endif %}
+                </div>
+                <div class="col-sm-12 col-md-7 offset-md-1 pt-3">
+                    <h3 class="display-4 text-secondary pt-5">{{block.header}}</h3>
+                    <div>{{block.textArea}}</div>
+                    {% if block.ctaLink is not empty %}
+                    <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% case "applyBlock" %}
+
+    <div class="p-2 matrix-applyBlock" style="background-color:{{block.bgColor}}">
+          <div class="py-5 text-center">
+          <div class="container">
+              <div class="row">
+                  <div class="mx-auto col-md-12">
+                      <h1 class="display-4">{{block.applyHeader}}</h1> 
+                      <p>{{block.applyContent}}</p>
+                      <a class="btn btn-success btn-lg" href="{{block.applyLink}}"><i class="fas fa-handshake"></i> &nbsp;{{block.applyText}}</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </div>
 
 
-{% endswitch %}
+
+    {% endswitch %}
 
 
-{% endfor %}
+    {% endfor %}
 </div>

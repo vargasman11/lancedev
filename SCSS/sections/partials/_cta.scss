@@ -1,7 +1,12 @@
 #cta{
-    background-color: #343a40;
+    // background-color: #343a40;
+    background-color: #6c757d;
     color: #fff;
     h1{
         padding: 20px 0 40px;
+    }
+    a{
+        -webkit-box-shadow: 0px 23px 26px -11px rgba(0,0,0,0.85); 
+        box-shadow: 0px 23px 26px -11px rgba(0,0,0,0.85);
     }
 }
