@@ -16,18 +16,36 @@
   background-repeat: no-repeat;
   background-color: black;
   min-height: 400px; }
+  .parallax h1 {
+    text-shadow: 0px 0px 13px #000000; }
+  .parallax p {
+    font-size: 2em;
+    color: #fff; }
 
 .cards-section {
   background-color: #fff;
   margin-top: -50px;
-  padding: 25px; }
+  padding: 25px;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6); }
+  .cards-section .header-shadow {
+    -webkit-box-shadow: inset 0px 0px 62px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: inset 0px 0px 62px 0px rgba(0, 0, 0, 0.05);
+    box-shadow: inset 0px 0px 62px 0px rgba(0, 0, 0, 0.05);
+    border-radius: 10px; }
   .cards-section .btn-red {
     background-color: #dc3545;
     color: #fff; }
   .cards-section .applyBannerColumn {
     color: #fff; }
     .cards-section .applyBannerColumn .applyBanner {
-      background-color: #707070; }
+      background-color: #707070;
+      border-radius: 10px; }
+
+.feature-section img {
+  -webkit-box-shadow: 0px 26px 34px -12px #000000;
+  box-shadow: 0px 26px 34px -12px #000000; }
 
 #jobs-benefits .jobs-benefits-col {
   background-color: #292F31; }
@@ -73,6 +91,9 @@ footer {
 .matrix-container .matrix-image {
   max-height: 400px;
   overflow: hidden; }
+  .matrix-container .matrix-image img {
+    -webkit-box-shadow: 0px 26px 34px -12px #000000;
+    box-shadow: 0px 26px 34px -12px #000000; }
 
 .matrix-container .matrix-right img {
   max-height: 400px;

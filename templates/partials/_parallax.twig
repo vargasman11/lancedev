@@ -5,16 +5,16 @@
         <div class="p-5 mx-auto mx-md-0 ml-md-auto col-8 col-md-7">        
         {# HEADLINE #}
           {% if entry.homeHeadline %}
-          <h3 class="h1 text-white">{{entry.homeHeadline}}</h3>
+          <h1 class="h1 text-white">{{entry.homeHeadline}}</h1>
           {% else %}
-          <h3 class="h1 text-white">{{global.homeHeadline}}</h3>
+          <h1 class="h1 text-white">{{global.homeHeadline}}</h1>
           {% endif %}
 
           {# subHeadline #}
           {% if entry.subHeadline %}
-          <p class="mb-3 lead text-white">{{entry.subHeadline}}</p>
+          <p class="mb-3">{{entry.subHeadline}}</p>
           {% else %}
-          <p class="mb-3 lead text-white">{{global.subHeadline}}</p>
+          <p class="mb-3">{{global.subHeadline}}</p>
           {% endif %}
 
         </div>

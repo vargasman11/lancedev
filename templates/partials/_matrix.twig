@@ -22,11 +22,13 @@
 <div class="pb-5" style="background-color:{{block.bgColor}};">
 <div class="container matrix-image" >
     <div class="row py-4">
-        <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid" style="-webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
-        <p class="caption">{{block.imageCaption}}</p>
+    <div class="col">   
+            <p class="display-4 text-secondary text-center">{{block.imageCaption}}</p>
+        <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
         {% if block.ctaLink is not empty %}    
         <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
         {% endif %}    
+    </div>
     </div>
 </div>
 </div>
@@ -44,8 +46,7 @@
                 <a href="{{block.ctaLink}}" class="btn btn-primary btn-lg">{{block.cta}}</a>
             {% endif %}
         </div>
-        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="min-height:200px; background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; 
-box-shadow: 0px 26px 34px -12px #000000;">
+        <div class="col-sm-12 col-md-4 offset-md-1 text-center" style="min-height:200px; background-image:url({{block.imageRight.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
             {% if block.imageRight is not empty %}                        
             {# <img src="{{block.imageRight.one().getUrl() }}" alt="" class="img-fluid"> #}
             {% endif %}
@@ -60,8 +61,7 @@ box-shadow: 0px 26px 34px -12px #000000;">
 <div class="p-2" style="background-color:{{block.bgColor}}">
 <div class="container matrix-right py-5">
     <div class="row">
-        <div class="col-sm-12 col-md-4 text-center" style="margin-top:-10px; min-height:200px; background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; 
-box-shadow: 0px 26px 34px -12px #000000;">
+        <div class="col-sm-12 col-md-4 text-center" style="margin-top:-10px; min-height:200px; background-image:url({{block.imageLeft.one().getUrl()}}); background-size:cover; background-position:center;  background-repeat: no-repeat; -webkit-box-shadow: 0px 26px 34px -12px #000000; box-shadow: 0px 26px 34px -12px #000000;">
             {% if block.imageLeft is not empty %}                        
             {# <img src="{{block.imageLeft.one().getUrl()}}" alt="" class="img-fluid"> #}
             {% endif %}
