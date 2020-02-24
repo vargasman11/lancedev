@@ -1,4 +1,9 @@
 .video-container{
+    .video-shadow{
+        box-shadow: 0px 26px 34px -12px #000000;
+        -webkit-box-shadow: 0px 26px 34px -12px #000000;
+
+    }
     .video-content{
         // background-color: #fff;
         h1{
