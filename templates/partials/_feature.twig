@@ -3,15 +3,15 @@
     <div class="container feature-section">
       <div class="row">
         <div class="col-md-12">
-          <h3 class="display-4 text-center text-secondary">Needs to be a header</h3>
-          <p class="mb-4 text-center lead">Need to be a subheader</p>
+          {# <h3 class="display-4 text-center text-secondary">Needs to be a header</h3> #}
+          {# <p class="mb-4 text-center lead">Need to be a subheader</p> #}
           <div class="row">
-            <div class="p-3 col-md-8">
+            <div class="p-3 col-md-7">
             {# HEADER #}
                 {% if entry.summaryHeadline %}                
-                    <h3>{{entry.summaryHeadline}}</h3>
+                    <h3 class="display-4 text-secondary">{{entry.summaryHeadline}}</h3>
                 {% else %}
-                    <h3>{{global.summaryHeadline}}</h3>
+                    <h3 class="display-4 text-secondary">{{global.summaryHeadline}}</h3>
                 {% endif %}
                 {# CONTENT #}
               {% if entry.summaryContent %}
@@ -20,9 +20,9 @@
                 <p class="mb-3">{{global.summaryContent}}</p>
               {% endif %}
               
-              </p> <a class="btn btn-primary mb-3" href="#">Call to action</a>
+              </p> <a class="btn btn-success btn-lg mb-3" href="/forms"><i class="fas fa-handshake"></i>Apply Now!</a>
             </div>
-            <div class="col-md-4"> <img class="img-fluid d-block" src="https://images.pexels.com/photos/1325723/pexels-photo-1325723.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260g"> </div>
+            <div class="col-md-4 offset-md-1"> <img class="img-fluid d-block" src="/images/stock-1.jpeg"> </div>
           </div>
         </div>
       </div>

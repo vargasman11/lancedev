@@ -40,16 +40,21 @@
   .cards-section .applyBannerColumn {
     color: #fff; }
     .cards-section .applyBannerColumn .applyBanner {
-      background-color: #707070;
-      border-radius: 10px; }
+      background-color: #707070; }
+
+.feature-section .display-4 {
+  font-weight: 500 !important; }
 
 .feature-section img {
-  -webkit-box-shadow: 0px 26px 34px -12px #000000;
-  box-shadow: 0px 26px 34px -12px #000000; }
+  -webkit-box-shadow: 0px 26px 34px -30px #000000;
+  box-shadow: 0px 26px 34px -30px #000000; }
 
 .video-container .video-shadow {
-  box-shadow: 0px 26px 34px -12px #000000;
-  -webkit-box-shadow: 0px 26px 34px -12px #000000; }
+  box-shadow: 0px 26px 34px -30px #000000;
+  -webkit-box-shadow: 0px 26px 34px -30px #000000; }
+
+.video-container .video-content .display-4 {
+  font-weight: 400 !important; }
 
 #jobs-benefits .jobs-benefits-col {
   background-color: #292F31; }
@@ -82,8 +87,8 @@ footer {
   #cta h1 {
     padding: 20px 0 40px; }
   #cta a {
-    -webkit-box-shadow: 0px 23px 26px -11px rgba(0, 0, 0, 0.85);
-    box-shadow: 0px 23px 26px -11px rgba(0, 0, 0, 0.85); }
+    -webkit-box-shadow: 0px 23px 26px -30px rgba(0, 0, 0, 0.85);
+    box-shadow: 0px 23px 26px -30px rgba(0, 0, 0, 0.85); }
 
 .footer {
   background-color: #707070; }

@@ -2,13 +2,13 @@
   <div class="py-5 bg-white">
     <div class="container video-container">
       <div class="row">
-        <div class="col-md-6 p-0 video-shadow">
-          <div class="embed-responsive embed-responsive-16by9">
+        <div class="col-md-6 p-0">
+          <div class="embed-responsive embed-responsive-16by9 video-shadow">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/q_N7telJgRA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
           </div>
         </div>
         
-        <div class="col-md-6 video-content">
+        <div class="col-md-5  offset-md-1 video-content">
         {# VIDEO HEADLINE #}
         {% if entry.videoHeadline %}
         <h1 class="display-4 text-secondary" style="">{{entry.videoHeadline}}</h1>
