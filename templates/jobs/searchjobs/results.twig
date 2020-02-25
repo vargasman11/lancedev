@@ -23,7 +23,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
         jobType: jobtype,
         city: city,   
         jobAddress:{
-            zip:target
+            zip:target,
         }                
     } %}
 
@@ -71,11 +71,9 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     <div class="container-fluid pt-5 pb-1 jobs-index">       
         <h1 class="text-center display-4 pb-5">Your Job Matches</h1>
 
-
-
     <div class=" container">
-    <div class="row">
-    <div class="card-group">
+    <div class="row card-group">
+    {# <div class="card-group"> #}
 
 {% for result in results %} 
 
@@ -116,7 +114,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     </div>
 
     {% endfor %}
-    </div>
+    {# </div> #}
     </div>
     </div>
 
@@ -139,7 +137,7 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     </div>
       <div class="text-center pb-5">
       <p class="display-4">Didnt Find what you're looking for?</p>
-            <a href="/jobs" class="btn btn-info btn-lg">Search Again</a>
+            <a href="/jobs" class="btn btn-success btn-lg">Search Again</a>
         </div> 
     </div>    
 

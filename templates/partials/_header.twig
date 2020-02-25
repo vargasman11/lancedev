@@ -76,134 +76,134 @@
 <!-- End Facebook Pixel Code -->
 
 <script type="text/javascript">
-			$(document).ready(function() {
-							document.cookie="urlParams=utm_campaign=cd_nashville; path=/";
-							$("a").not(".noR").attr("href", function(i, oldHref) {
+// 			$(document).ready(function() {
+// 							document.cookie="urlParams=utm_campaign=cd_nashville; path=/";
+// 							$("a").not(".noR").attr("href", function(i, oldHref) {
 								
-								// Skip blank links
-								if(!oldHref) {
-									return oldHref;
-								}
+// 								// Skip blank links
+// 								if(!oldHref) {
+// 									return oldHref;
+// 								}
 								
-								// Skip fragment links
-								if(oldHref.indexOf("#") != -1){
-									// console.log(oldHref);
-									return oldHref;
-								} else {
-									// console.log(oldHref);
-									// Determine if the leading ? is needed
-									if(oldHref.indexOf("?") != -1){
+// 								// Skip fragment links
+// 								if(oldHref.indexOf("#") != -1){
+// 									// console.log(oldHref);
+// 									return oldHref;
+// 								} else {
+// 									// console.log(oldHref);
+// 									// Determine if the leading ? is needed
+// 									if(oldHref.indexOf("?") != -1){
 										
-										// oldHref has existing parameters.
+// 										// oldHref has existing parameters.
 										
-										// Split up existing url and params.
-										var paramSplitLoc = oldHref.indexOf("?");
-										var rawURL = oldHref.slice(0, paramSplitLoc);
-										var rawParams = oldHref.slice(paramSplitLoc + 1);
+// 										// Split up existing url and params.
+// 										var paramSplitLoc = oldHref.indexOf("?");
+// 										var rawURL = oldHref.slice(0, paramSplitLoc);
+// 										var rawParams = oldHref.slice(paramSplitLoc + 1);
 										
-										// Get params broken into an array of params with an array of the key and value.
-										var existingParamArray = splitParams(rawParams);
-										var incomingParamArray = splitParams("utm_campaign=cd_nashville");
+// 										// Get params broken into an array of params with an array of the key and value.
+// 										var existingParamArray = splitParams(rawParams);
+// 										var incomingParamArray = splitParams("utm_campaign=cd_nashville");
 										
-										// Combine the params into a single array. New params go first!
-										var combinedParamArray = incomingParamArray.concat(existingParamArray);
+// 										// Combine the params into a single array. New params go first!
+// 										var combinedParamArray = incomingParamArray.concat(existingParamArray);
 										
-										var newParamArray = [];
+// 										var newParamArray = [];
 										
-										// Loop through the combined params.
-										for (var x = 0; x < combinedParamArray.length; x++) {
+// 										// Loop through the combined params.
+// 										for (var x = 0; x < combinedParamArray.length; x++) {
 											
-											// If this is the first pass...
-											if(newParamArray.length == 0) {
-												// ...just add the param to the new list.
-												newParamArray.push(combinedParamArray[x]);	
-											} else {
-												// Otherwise, compare the current param to those already added to the new list.
-												var noMatch = true;
-												for (var i = 0; i < newParamArray.length; i++) {
+// 											// If this is the first pass...
+// 											if(newParamArray.length == 0) {
+// 												// ...just add the param to the new list.
+// 												newParamArray.push(combinedParamArray[x]);	
+// 											} else {
+// 												// Otherwise, compare the current param to those already added to the new list.
+// 												var noMatch = true;
+// 												for (var i = 0; i < newParamArray.length; i++) {
 													
-													// If any params match, that means a newer version of that param already exists.
-													if(combinedParamArray[x][0] == newParamArray[i][0]) {
-														// Flag it and bail out!
-														noMatch = false;
-														break;														
-													}											
-												}	
+// 													// If any params match, that means a newer version of that param already exists.
+// 													if(combinedParamArray[x][0] == newParamArray[i][0]) {
+// 														// Flag it and bail out!
+// 														noMatch = false;
+// 														break;														
+// 													}											
+// 												}	
 												
-												// If the current param does not have a flag, add it to the new list.
-												if(noMatch) {
-													newParamArray.push(combinedParamArray[x]);
-												}
-											}											
-										}	
+// 												// If the current param does not have a flag, add it to the new list.
+// 												if(noMatch) {
+// 													newParamArray.push(combinedParamArray[x]);
+// 												}
+// 											}											
+// 										}	
 										
-										// Take the array of params and convert it back to a string.
-										var newParams = "";
-										for (var i = 0; i < newParamArray.length; i++) {
-											newParams += newParamArray[i][0] + "=" + newParamArray[i][1] + "&";
-										}
+// 										// Take the array of params and convert it back to a string.
+// 										var newParams = "";
+// 										for (var i = 0; i < newParamArray.length; i++) {
+// 											newParams += newParamArray[i][0] + "=" + newParamArray[i][1] + "&";
+// 										}
 										
-										// Re-combine the original url with the new param list!
-										return rawURL + "?" + newParams.slice(0, -1) ;
+// 										// Re-combine the original url with the new param list!
+// 										return rawURL + "?" + newParams.slice(0, -1) ;
 										
-									} else {
+// 									} else {
 										
-										// oldHref does NOT have existing parameters.
+// 										// oldHref does NOT have existing parameters.
                                         
-                                        // Is this link R Value only?
-                                        if($(this).hasClass("r_value_only")) {
-                                            var incomingParamArray = splitParams("utm_campaign=cd_nashville");
+//                                         // Is this link R Value only?
+//                                         if($(this).hasClass("r_value_only")) {
+//                                             var incomingParamArray = splitParams("utm_campaign=cd_nashville");
                                             
-                                            for (var x = 0; x < incomingParamArray.length; x++) {
+//                                             for (var x = 0; x < incomingParamArray.length; x++) {
                                                 
-                                                if(incomingParamArray[x][0] == "r") {
-                                                    return oldHref + "?r=" + incomingParamArray[x][1];
-                                                }
+//                                                 if(incomingParamArray[x][0] == "r") {
+//                                                     return oldHref + "?r=" + incomingParamArray[x][1];
+//                                                 }
                                                 
-                                            }
+//                                             }
                                             
-                                        } else 
-                                        // Is this link Referrer only?
-                                        if($(this).hasClass("referrer_only")) {
-                                            var incomingParamArray = splitParams("utm_campaign=cd_nashville");
+//                                         } else 
+//                                         // Is this link Referrer only?
+//                                         if($(this).hasClass("referrer_only")) {
+//                                             var incomingParamArray = splitParams("utm_campaign=cd_nashville");
                                             
-                                            for (var x = 0; x < incomingParamArray.length; x++) {
+//                                             for (var x = 0; x < incomingParamArray.length; x++) {
                                                 
-                                                if(incomingParamArray[x][0] == "r") {
-                                                    return oldHref + "?referrer=" + incomingParamArray[x][1];
-                                                }
+//                                                 if(incomingParamArray[x][0] == "r") {
+//                                                     return oldHref + "?referrer=" + incomingParamArray[x][1];
+//                                                 }
                                                 
-                                            }
+//                                             }
                                             
-                                        } else {
+//                                         } else {
                                             
-    										// Otherwise, add all the new params to the oldHref.
-    										return oldHref + "?utm_campaign=cd_nashville";
-                                        }
+//     										// Otherwise, add all the new params to the oldHref.
+//     										return oldHref + "?utm_campaign=cd_nashville";
+//                                         }
                                         
-									}
-								}
-							});
-							//splitParams(window.location.href.slice(window.location.href.indexOf("?") + 1));
+// 									}
+// 								}
+// 							});
+// 							//splitParams(window.location.href.slice(window.location.href.indexOf("?") + 1));
 							
-						});
+// 						});
 						
-						function splitParams(paramString) {
-							var params = [], hash;
-							var paramList = paramString.split("&");
+// 						function splitParams(paramString) {
+// 							var params = [], hash;
+// 							var paramList = paramString.split("&");
 														
-							for(var i = 0; i < paramList.length; i++) {
-								hash = paramList[i].split("=");
+// 							for(var i = 0; i < paramList.length; i++) {
+// 								hash = paramList[i].split("=");
 								
-								if(hash.length > 1) {								
-									var param = [hash[0], hash[1]];
-									params.push(param);
-								}
-							}
-							//console.log(params);
-							return params;
-						}
-</script>
+// 								if(hash.length > 1) {								
+// 									var param = [hash[0], hash[1]];
+// 									params.push(param);
+// 								}
+// 							}
+// 							//console.log(params);
+// 							return params;
+// 						}
+ </script>
 
 
  

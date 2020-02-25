@@ -24,7 +24,7 @@
         <div class="container matrix-image">
             <div class="row py-4">
                 <div class="col">
-                    <p class="display-4 text-secondary text-center">{{block.imageCaption}}</p>
+                    <p class="display-4 text-secondary text-center p-4">{{block.imageCaption}}</p>
                     <img src=" {{block.image.one().getUrl() }} " alt="" class="img-fluid">
                     {% if block.ctaLink is not empty %}
                     <a href="{{block.ctaLink}}" class="btn btn-success btn-lg"><i class="fas fa-handshake"></i>&nbsp; {{block.cta}}</a>

@@ -82,7 +82,7 @@ footer {
     display: block; } }
 
 #cta {
-  background-color: #6c757d;
+  background-image: linear-gradient(to right bottom, #000000, #140b11, #1b1520, #1a1e31, #082941);
   color: #fff; }
   #cta h1 {
     padding: 20px 0 40px; }
@@ -104,8 +104,8 @@ footer {
   max-height: 400px;
   overflow: hidden; }
   .matrix-container .matrix-image img {
-    -webkit-box-shadow: 0px 26px 34px -12px #000000;
-    box-shadow: 0px 26px 34px -12px #000000; }
+    -webkit-box-shadow: 0px 26px 34px -30px #000000;
+    box-shadow: 0px 26px 34px -30px #000000; }
 
 .matrix-container .matrix-right img {
   max-height: 400px;
@@ -134,8 +134,8 @@ footer {
     background-size: cover; }
 
 .card {
-  -webkit-box-shadow: 0px 26px 34px -12px #000000;
-  box-shadow: 0px 26px 34px -12px #000000; }
+  -webkit-box-shadow: 0px 26px 34px -40px #000000;
+  box-shadow: 0px 26px 34px -40px #000000; }
   .card .card-title {
     color: #6c757d; }
 

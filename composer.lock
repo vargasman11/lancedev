@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a324cad37c762eec2fa86cf63fd9705",
+    "content-hash": "0171bde7d3557cc41519d915a36114f5",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -580,11 +580,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.4.7.1",
+            "version": "3.4.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/f4c55edfef8fd03ca3efd9e6fb197fc58eccd5aa",
-                "reference": "f4c55edfef8fd03ca3efd9e6fb197fc58eccd5aa",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/eca660ae7dde806bba54cc69d7a67d50e7745a76",
+                "reference": "eca660ae7dde806bba54cc69d7a67d50e7745a76",
                 "shasum": ""
             },
             "require": {
@@ -665,7 +665,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2020-02-20T22:28:20+00:00"
+            "time": "2020-02-22T01:20:21+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -4245,11 +4245,11 @@
         },
         {
             "name": "solspace/craft-freeform",
-            "version": "3.6.3",
+            "version": "3.6.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/42559e986c695cd15da8d2734499b79211b3c474",
-                "reference": "42559e986c695cd15da8d2734499b79211b3c474",
+                "url": "https://api.github.com/repos/solspace/craft3-freeform/zipball/88ac3aa7f09befea6769d70ba79ae32f9824dd87",
+                "reference": "88ac3aa7f09befea6769d70ba79ae32f9824dd87",
                 "shasum": ""
             },
             "require": {
@@ -4289,7 +4289,7 @@
                 }
             ],
             "description": "The most reliable, intuitive and powerful form builder for Craft.",
-            "time": "2020-02-19T16:31:25+00:00"
+            "time": "2020-02-21T20:07:33+00:00"
         },
         {
             "name": "solspace/craft3-commons",
@@ -6019,11 +6019,11 @@
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.39",
+            "version": "5.4.40",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/e462e8985a80cbd927765fd7e09f52bb103c9797",
-                "reference": "e462e8985a80cbd927765fd7e09f52bb103c9797",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/1b558059a84d566843c8d0a2ba1d9c3051764565",
+                "reference": "1b558059a84d566843c8d0a2ba1d9c3051764565",
                 "shasum": ""
             },
             "require": {
@@ -6080,7 +6080,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2020-01-30T15:12:06+00:00"
+            "time": "2020-02-22T23:18:32+00:00"
         },
         {
             "name": "voku/stop-words",
