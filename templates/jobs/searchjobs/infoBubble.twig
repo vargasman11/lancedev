@@ -2,9 +2,9 @@
 
 {% set directionsUrl = element.jobAddress.directionsUrl(element.jobAddress, element.title) %}
 
-<h3>{{ element.title }}</h3>
 
-<div class="div">
+<div class="div text-center">
+<h5 style="width:60%;" class="mx-auto">{{ element.title }}</h5>
   <a class="btn btn-small btn-success" href="/jobs/{{element.slug}}">See Job Details</a>
 </div>
 
