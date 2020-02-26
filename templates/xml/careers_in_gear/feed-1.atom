@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<publisher>{{ siteName }}</publisher>
+<publisherurl>{{ siteUrl }}</publisherurl>
+<lastBuildDate>{{ now|atom }}</lastBuildDate>
+
+{% for entry in craft.entries().section('jobListings').all() %}
+
+<job>
+    <title>{{entry.title}}</title>
+    <date>{{ entry.postDate|date('M j, Y') }}</date>
+    <referencenumber>{{entry.id}}</referencenumber>
+    <url>{{entry.url}}</url>
+    <city>{{entry.city}}</city>
+    <state>{{entry.state}}</state>
+    <postalcode>{{entry.jobAddress.zip}}</postalcode>
+    <description>{{entry.jobOverview}}</description>
+</job>
+
+{% endfor %}
