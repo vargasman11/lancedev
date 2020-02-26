@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<source xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<publisher>{{ siteName }}</publisher>
+<publisherurl>{{ siteUrl }}</publisherurl>
+<lastBuildDate>{{ now|atom }}</lastBuildDate>
+
+ {% for entry in craft.entries().section('jobListings').sponsoredJob(['indeed', 'talroo']).all() %} 
+<job>
+<jobReferenceNumber>{{entry.id}}</jobReferenceNumber>
+<title>{{ entry.title }}</title>
+<date>{{ entry.postDate|date('M j, Y') }}</date>
+<hiringAreas>
+    <location type="cityState">
+        <city>{{ entry.city}}</city>
+        <state>{{ entry.state}}</state>
+    </location>
+</hiringAreas>
+<jobDescription>{{entry.jobOverview}}</jobDescription>
+<landingPageUrl>{{entry.url}}</landingPageUrl>
+<applicationUrl>{{entry.jobApplicationLink}}</applicationUrl>
+</job>
+
+{% endfor %}

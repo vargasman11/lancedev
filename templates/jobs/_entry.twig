@@ -16,9 +16,9 @@ UP UNTILL THE FOOTER --> #}
 
 
  {# main row here #}
-  <div class="mb-5" style="">
+  <div class="mb-5" style="padding-bottom:40px;">
     <div class="container" id="jobs-entry__details">
-      <div class="row negative-margin-row">
+      <div class="row negative-margin-row bg-light">
         {# Left side, details, tabs etc #}
         <div class="col-md-8 tabs-column" style="">
           <div class="card text-left" style="">
@@ -87,7 +87,7 @@ UP UNTILL THE FOOTER --> #}
  {% include "partials/_video" %}
 
 
-  <div class="py-5 callToActionBanner">
+  {# <div class="py-5 callToActionBanner">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -101,10 +101,13 @@ UP UNTILL THE FOOTER --> #}
         </div>
       </div>
     </div>
-  </div>
+  </div> #}
 {# end jobs entry #}
 </div>
 {% endblock %}
+
+{# FOOTER INCLUDES #}
+ {% include "partials/_cta" %}
 
  {# FOOTER INCLUDES #}
  {% include "partials/_footer" %}
