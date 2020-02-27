@@ -16,30 +16,72 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 {% set range = craft.app.request.getParam('range') %}
 
 {# Here we set the criteria and combine all the parameter variables #}
-{% set criteria ={  
-    jobAddress:{ 
-        target:target,
-        range:range  
-    }       
-    } %}
+{% set criteria ={} %}
+
+{# if variables exists #}
+{# if state #}
+{% if state is defined and state is not empty %}
+    {% set criteria = criteria|merge({
+            state:state        
+    }) %}    
+{% endif %}
+
+{# if city #}
+{% if city is defined and city is not empty %}
+    {% set criteria = criteria|merge({
+            city:city        
+    }) %}    
+{% endif %}
+
+{# if trucktype #}
+{% if trucktype is defined and trucktype is not empty %}
+    {% set criteria = criteria|merge({
+            truckType:trucktype
+    }) %}    
+{% endif %}
+
+{# if jobtype #}
+{% if jobtype is defined and jobtype is not empty %}
+    {% set criteria = criteria|merge({
+            jobType:jobtype
+    }) %}    
+{% endif %}
+
+{# if zip aka target as required by the plugin naming convention #}
+{% if target is defined and target is not empty %}
+    {% set criteria = criteria|merge({
+            jobAddress:{
+                target:target
+            }
+    }) %}    
+{% endif %}
+
+{# if zip #}
+{% if range is defined and range is not empty %}
+    {% set criteria = ({
+            jobAddress:{
+                target:target,
+                range:range
+            }
+    }) %}    
+{% endif %}
+
+
+
+
+
+
 
     {# Pass the criteria object to the query builder: #}
-    {% set query = craft.entries.jobAddress(criteria) %}
+    {# {% set query = craft.entries.jobAddress(criteria) %} #}
    
 
-        {# {% if target is not empty and range is not empty %}
-            {% set params = {
-                jobAddress:{
-                target: target,
-                range: range
-                }
-            } %}
-        {% set query = craft.entries.jobAddress(params) %}
-
-        {% endif %} #}
-
+    
+    
     {# We build the map location based on criteria #}
     {% set mapQuery = craft.entries(criteria) %}
+    {% if mapQuery|length > 0 %}
+    
     <div class="container-fluid" id="map">
         <div class="row bg-secondary">
             <div class="col-sm-12 p-0">
@@ -58,10 +100,11 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
         </div>
     </div>
 
+    {% endif %}
+
     {# Set up pagination, and let it grab the current page's results: #}
     {# Here we limit the cards by ever 6 entries but the map shows all jobs in searcg criteria #}
     {% set newQuery = craft.entries(criteria).limit(6)%}
-    {{newQuery.count()}}
 
     {% paginate newQuery as pageInfo, results %}
         
