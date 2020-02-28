@@ -5,73 +5,46 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 {% include "partials/_header" %}
 {% include "partials/_nav" %}
 
-{% block main %}
 
 {# Set variables for each possible param: #}
-{% set state = craft.app.request.getParam('state') %}
-{% set trucktype = craft.app.request.getParam('trucktype') %}
-{% set jobtype = craft.app.request.getParam('jobtype') %}
-{% set city = craft.app.request.getParam('city') %}
 
+{% set target = craft.app.request.getParam('zip') %}
+{% set range = craft.app.request.getParam('range') %}
 
 {# Here we set the criteria and combine all the parameter variables #}
 {% set criteria ={ 
-        section:'jobListings'
-    } %}
+            section:'jobListings',
+            jobAddress:{
+                target:target,
+                range:range
+            }                  
+        } %}
 
-{# if variables exists #}
-{# if state #}
-{% if state is defined and state is not empty %}
-    {% set criteria = criteria|merge({        
-        state:state
-    }) %}    
-{% endif %}
-
-{# if city #}
-{% if city is defined and city is not empty %}
-    {% set criteria = criteria|merge({
-            city:city      
-    }) %}    
-{% endif %}
-
-{# if trucktype #}
-{% if trucktype is defined and trucktype is not empty %}
-    {% set criteria = criteria|merge({
-            truckType:trucktype
-    }) %}    
-{% endif %}
-
-{# if jobtype #}
-{% if jobtype is defined and jobtype is not empty %}
-    {% set criteria = criteria|merge({
-            jobType:jobtype
-    }) %}    
-{% endif %}
-   
+{# Pass the criteria object to the query builder: #}
+{# {% set query = craft.entries.jobAddress(criteria) %} #}
+        
+{# We build the map location based on criteria #}
+{% set mapQuery = craft.entries(criteria) %}
+{% if mapQuery|length > 0 %}
     
-    {# We build the map location based on criteria #}
-    {% set mapQuery = craft.entries(criteria) %}
-    {% if mapQuery|length > 0 %}
-    
-    <div class="container-fluid" id="map">
-        <div class="row bg-secondary">
-            <div class="col-sm-12 p-0">
-                {% set locations = mapQuery %}
-                {% set options = {     
-                    height:400,
-                    zoom: 5,
-                    'markerInfo': 'jobs/searchjobs/infoBubble',
-                markerOptions: {
-                    icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
-                        }
-                } %}
-                {{ craft.smartMap.map(locations, options) }}
-
-            </div>
+<div class="container-fluid" id="map">
+    <div class="row bg-secondary">
+        <div class="col-sm-12 p-0">
+        {% set locations = mapQuery %}
+        {% set options = {     
+            height:400,
+            zoom: 5,
+            'markerInfo': 'jobs/searchjobs/infoBubble',
+             markerOptions: {
+                icon: 'https://maps.google.com/mapfiles/ms/icons/green-dot.png'
+                }
+             } %}
+       {{ craft.smartMap.map(locations, options) }}
         </div>
     </div>
+</div>
 
-    {% endif %}
+{% endif %}
 
     {# Set up pagination, and let it grab the current page's results: #}
     {# Here we limit the cards by ever 6 entries but the map shows all jobs in searcg criteria #}
@@ -118,7 +91,9 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     {% endif %}
                                         
     {# if Zip Code range DISPLAY #}
- 
+    {% if target is not empty and range is not empty %}                    
+    <li class="list-group-item">{{ result.jobAddress.distance | number_format(1) }} miles away</li>
+    {% endif %}
 
   </ul>
   <div class="card-body text-center">
@@ -166,6 +141,5 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     </div>
 
 {% endif %}
-{% endblock %}
 
 {% include "partials/_footer" %}

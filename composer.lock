@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0171bde7d3557cc41519d915a36114f5",
+    "content-hash": "a2cdfaf2466b701cc18eda06b702e61f",
     "packages": [
         {
             "name": "albertofem/rsync-lib",
@@ -1218,15 +1218,15 @@
         },
         {
             "name": "enupal/stripe",
-            "version": "2.2.1",
+            "version": "2.3.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/enupal/stripe/zipball/bebc21aca260df9abc2feca956eca3bd672e2d5c",
-                "reference": "bebc21aca260df9abc2feca956eca3bd672e2d5c",
+                "url": "https://api.github.com/repos/enupal/stripe/zipball/6a32cbad77ff8a082e67c14d494a74debe5217fc",
+                "reference": "6a32cbad77ff8a082e67c14d494a74debe5217fc",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^3.1.0",
+                "craftcms/cms": "^3.4.0",
                 "phpoffice/phpspreadsheet": "^1.4",
                 "stripe/stripe-php": "^6.6.0"
             },
@@ -1281,7 +1281,7 @@
                 "issues": "https://github.com/enupal/stripe/issues",
                 "docs": "https://enupal.com/craft-plugins/stripe-payments/docs"
             },
-            "time": "2020-02-17T23:04:10+00:00"
+            "time": "2020-02-26T20:10:58+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -3274,6 +3274,55 @@
                 "random"
             ],
             "time": "2018-07-02T15:55:56+00:00"
+        },
+        {
+            "name": "pdaleramirez/super-filter",
+            "version": "1.0.4",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdaleramirez/super-filter/zipball/e382e3ccf5be5f70d0d57c47f375eab6287dfd1f",
+                "reference": "e382e3ccf5be5f70d0d57c47f375eab6287dfd1f",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Super Filter",
+                "handle": "super-filter",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/pdaleramirez/super-filter/master/CHANGELOG.md",
+                "class": "pdaleramirez\\superfilter\\SuperFilter"
+            },
+            "autoload": {
+                "psr-4": {
+                    "pdaleramirez\\superfilter\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dale Ramirez",
+                    "homepage": "https://github.com/pdaleramirez"
+                }
+            ],
+            "description": "A Craft CMS 3 plugin that lets you build your search page with search filters from your element fields and filter element entries by categories, tags, element relations and other fields.",
+            "keywords": [
+                "cms",
+                "craft",
+                "craft-plugin",
+                "craftcms",
+                "search filter"
+            ],
+            "support": {
+                "docs": "https://github.com/pdaleramirez/super-filter/blob/master/README.md",
+                "issues": "https://github.com/pdaleramirez/super-filter/issues"
+            },
+            "time": "2020-02-25T15:24:27+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",

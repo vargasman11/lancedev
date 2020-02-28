@@ -1,21 +1,19 @@
-<div class="pb-5 bg-light" style="">
+ <div class="pb-5 bg-light" style="">
      <!-- Job controller -->
      <div class="container jobDetails pb-5 cards-section bg-white">
-         <div class="row">
-
-             {# left side #}
-             <div class="col-md-6" style="">
-                 <form action="{{ url('jobs/searchjobs/results') }}">
-                     <div class="bg-light p-3">
+         <form action="{{ url('jobs/searchjobs/results') }}">
+             <div class="row">
+                 <div class="col-md-12" style="">
+                     <form class="bg-light p-3">
                          <div class="row">
-                             <div class="col-md-12">
+                             <div class="col-md-6">
                                  <div class="form-row">
-                                     <div class="form-group col-md-12">
+                                     <div class="form-group col-md-4">
                                          <label for="city" hidden="">City</label>
                                          <input id="city" name="city" type="text" class="form-control"
                                              placeholder="city" />
                                      </div>
-                                     <div class="form-group col-md-12">
+                                     <div class="form-group col-md-4">
                                          <label for="inputState" hidden="">State</label>
                                          <select name="state" class="form-control" id="">
                                              <option value="" selected="selected">Select a State</option>
@@ -71,54 +69,52 @@
                                              <option value="WI">Wisconsin</option>
                                              <option value="WY">Wyoming</option>
                                          </select>
-                                     </div>                                     
-                                         {# Select Truck Type #}
-                                         <div class="form-group col-md-12">
-                                             <select name="trucktype" class="form-control">
-                                                 <option value="">Select truck type</option>
-                                                 <option value="tanker">tanker</option>
-                                                 <option value="van">van</option>
-                                                 <option value="reefer">reefer</option>
-                                             </select>
-                                         </div>
-                                         {# Select Job Type #}
-                                         <div class="form-group col-md-12">
-                                             <select name="jobtype" class="form-control">
-                                                 <option value="">Select job type type</option>
-                                                 <option value="otr">OTR</option>
-                                                 <option value="regional">Regional</option>
-                                                 <option value="dedicated">Dedicated</option>
-                                                 <option value="local">Local</option>
-                                             </select>
-                                         </div>                                     
+                                     </div>
+                                     <div class="col text-center py-1">-OR- </div>
+                                     <div class="form-group col-md-3">
+                                         <label for="zip" hidden="">Zip</label>
+                                         <input id="zip" name="zip" type="number" pattern="[0-9]*" class="form-control" placeholder="zip code" />
+                                     </div>
                                  </div>
                                  <div class="form-group">
-                                     <button type="submit" value="Search" class="btn btn-success btn-lg btn-block">
-                                         <i class="fas fa-search"></i> Search</button>
+                                     {# <select class="form-control">
+                                         <option value="Select A City Radius">Select A City Radius</option>
+                                     </select> #}
+                                     <input id="range" name="range" type="number" pattern="[0-9]*" class="form-control bg-gray"
+                                  placeholder="range in miles" />
+                                 </div>
+                             </div>                            
+                             <div class="col-md-6">
+                             {# Select Truck Type #}
+                                 <div class="form-group">
+                                     <select name="trucktype" class="form-control">
+                                        <option value="">Select truck type</option>
+                                        <option value="tanker">tanker</option>
+                                        <option value="van">van</option>
+                                        <option value="reefer">reefer</option>
+                                     </select>
+                                 </div>
+                                 {# Select Job Type #}
+                                 <div class="form-group">
+                                     <select name="jobtype" class="form-control">
+                                        <option value="">Select job type type</option>
+                                        <option value="otr">OTR</option>
+                                        <option value="regional">Regional</option>
+                                        <option value="dedicated">Dedicated</option>
+                                        <option value="local">Local</option>
+                                     </select>
+                                 </div>
+                             </div>
+                             <div class="col-md-4 offset-md-4">
+                                 <div class="form-group">
+                                     <button type="submit" value="Search" class="btn btn-success btn-lg btn-block"> 
+                                     <i class="fas fa-search"></i> Search</button>
                                  </div>
                              </div>
                          </div>
-                     </div>
-                 </form>
+                     </form>
+                 </div>
              </div>
-
-             {# right Side #}
-             <div class="col-md-6">
-                 <form class="form searchByRadius" action="{{ url('jobs/searchjobs/radius-results') }}">
-                     <div class="form-group col-md-12">
-                         <label for="zip" hidden="">Zip</label>
-                         <input id="zip" name="zip" type="number" pattern="[0-9]*" class="form-control" placeholder="zip code" required/>
-                     </div>
-                     <div class="form-group col-md-12">
-                         <input id="range" name="range" type="number" pattern="[0-9]*" class="form-control bg-gray" placeholder="range in miles" required />
-                     </div>
-                      <div class="form-group col-md-12">
-                        <button type="submit" value="Search" class="btn btn-success btn-lg btn-block"> <i class="fas fa-search"></i> Search</button>
-                    </div>
-                 </form>
-             </div>
-
-
-        </div>
-    </div>
-</div>
+         </form>
+     </div>
+ </div>
