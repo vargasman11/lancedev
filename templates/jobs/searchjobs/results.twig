@@ -5,7 +5,6 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 {% include "partials/_header" %}
 {% include "partials/_nav" %}
 
-{% block main %}
 
 {# Set variables for each possible param: #}
 {% set state = craft.app.request.getParam('state') %}
@@ -166,6 +165,5 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
     </div>
 
 {% endif %}
-{% endblock %}
 
 {% include "partials/_footer" %}
