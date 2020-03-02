@@ -9,13 +9,10 @@
 <title>{{ entry.title }}</title>
 <date>{{ entry.postDate|date('M j, Y') }}</date>
 <referencenumber><![CDATA[unique123131]]></referencenumber>
-<url>{{ craft.app.request.absoluteUrl }}</url>
-<city>{{ entry.city}}</city>
-<state>{{ entry.state}}</state>
-<country>{{ entry.jobAddress.country}}</country>
+<url>{{ craft.app.request.absoluteUrl }}{{global.rValue}}</url>
+<company>Conversion Interactive</company>
+<postalcode>{{ entry.jobAddress.zip}}</postalcode>
 <description>{{ entry.jobOverview }}</description>
 </job>
-
 {% endfor %}
-
 </source>

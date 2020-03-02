@@ -4,12 +4,12 @@
 <publisherurl>{{ siteUrl }}</publisherurl>
 <lastBuildDate>{{ now|atom }}</lastBuildDate>
 
-{% for entry in craft.entries().section('jobListings').all() %}
+ {% for entry in craft.entries().section('jobListings').sponsoredJob(['indeed', 'talroo']).all() %} 
 <job>
 <title>{{ entry.title }}</title>
 <date>{{ entry.postDate|date('M j, Y') }}</date>
 <referencenumber><![CDATA[unique123131]]></referencenumber>
-<url>{{ craft.app.request.absoluteUrl }}</url>
+<url>{{ craft.app.request.absoluteUrl }}{{global.rValue}}</url>
 <city>{{ entry.city}}</city>
 <state>{{ entry.state}}</state>
 <country>{{ entry.jobAddress.country}}</country>

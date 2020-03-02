@@ -6,24 +6,28 @@
                 <h1 class="display-4 text-secondary text-center">Find Your Dream Job!</h1>
             </div>            
         </div>
-
-        <div class="row">
-                <div class="col-md-6">
+        {# BUTTONS #}
+        <div class="row py-3">
+                <div class="col-md-5">
                  <!-- Button trigger modal CITY STATE-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cityStateModal">
-                    Search by City &amp; State
+                <button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="modal" data-target="#cityStateModal">
+                   <i class="fas fa-arrow-circle-right"></i> Search by City &amp; State
                 </button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-2">
+                <h2 class="text-center text-secondary">&dash;OR&dash;</h2>
+                </div>
+                <div class="col-md-5">
                 <!-- Button trigger modal RADIUS-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#radiusZipModal">
-                    Search by ZIP &amp; Radius
+                <button type="button" class="btn btn-outline-success btn-lg btn-block" data-toggle="modal" data-target="#radiusZipModal">
+                   <i class="fas fa-arrow-circle-right"></i> Search by ZIP &amp; Radius
                 </button></div>
         </div>
 
        
 
-<!-- Modal -->
+<!-- MODALS -->
+{# CITY and STATE MODAL #}
 <div class="modal fade" id="cityStateModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="cityStateLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -152,18 +156,39 @@
                     <div class="bg-light p-3">
                         <div class="row">
                             <div class="col-md-12">
-                                <div class="form-group">
+                            {# Zip Code #}
+                                <div class="form-group col-md-12">
                                          <label for="zip" hidden="">Zip</label>
                                          <input id="zip" name="zip" type="number" pattern="[0-9]*" class="form-control" placeholder="zip code" />
                                  </div>
-                                 <div class="form-group">                                     
+                                 {# Range in miles #}
+                                 <div class="form-group col-md-12">                                     
                                      <input id="range" name="range" type="number" pattern="[0-9]*" class="form-control bg-gray"
                                   placeholder="range in miles" />
                                  </div>
+                                  {# Select Truck Type #}
+                                    <div class="form-group col-md-12">
+                                        <select name="trucktype" class="form-control">
+                                            <option value="">Select truck type</option>
+                                            <option value="tanker">tanker</option>
+                                            <option value="van">van</option>
+                                            <option value="reefer">reefer</option>
+                                        </select>
+                                    </div>
+                                    {# Select Job Type #}
+                                    <div class="form-group col-md-12">
+                                        <select name="jobtype" class="form-control">
+                                            <option value="">Select job type type</option>
+                                            <option value="otr">OTR</option>
+                                            <option value="regional">Regional</option>
+                                            <option value="dedicated">Dedicated</option>
+                                            <option value="local">Local</option>
+                                        </select>
+                                    </div>
                                 <div class="form-group">
                                     <button type="submit" value="Search" class="btn btn-success btn-lg btn-block">
                                     <i class="fas fa-search"></i> Search</button>
-                                </div>
+                                </div>                                
                             </div>
                         </div>
                     </div>

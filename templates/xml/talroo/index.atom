@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
 <source>
 <publisher>{{ siteName }}</publisher>
 <publisherurl>{{ siteUrl }}</publisherurl>
@@ -11,10 +10,10 @@
 <date>{{ entry.postDate|date('M j, Y') }}</date>
 <referencenumber><![CDATA[unique123131]]></referencenumber>
 <url>{{ craft.app.request.absoluteUrl }}{{global.rValue}}</url>
-<company>Conversion Interactive<company>
+<company>Conversion Interactive</company>
 <postalcode>{{ entry.jobAddress.zip}}</postalcode>
 <description>{{ entry.jobOverview }}</description>
 </job>
+
 {% endfor %}
 </source>
-<feed>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source>
+<publisher>{{ siteName }}</publisher>
+<publisherurl>{{ siteUrl }}</publisherurl>
+<lastBuildDate>{{ now|atom }}</lastBuildDate>
+
+{% for entry in craft.entries().section('jobListings').all() %}
+<job>
+<jobID></jobID>
+<JobTitle>{{entry.title}}</JobTitle>
+<JobCity>{{entry.city}}</JobCity>
+<JobState>{{entry.state}}</JobState>
+<JobCompany></JobCompany>
+<JobUrl>{{entry.applyLink}}</JobUrl>
+<JobDescription>{{entry.jobOverview}}</JobDescription>
+</job>
+
+
+{% endfor %}
+
+</source>

@@ -4,7 +4,7 @@
 <publisherurl>{{ siteUrl }}</publisherurl>
 <lastBuildDate>{{ now|atom }}</lastBuildDate>
 
-{% for entry in craft.entries().section('jobListings').all() %}
+ {% for entry in craft.entries().section('jobListings').sponsoredJob(['indeed', 'talroo']).all() %} 
 <job>
 <title>{{ entry.title }}</title>
 <date>{{ entry.postDate|date('M j, Y') }}</date>

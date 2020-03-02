@@ -10,10 +10,14 @@ IN ORDER TO PREVENT TEMPLATE ERROR #}
 
 {% set target = craft.app.request.getParam('zip') %}
 {% set range = craft.app.request.getParam('range') %}
+{% set trucktype = craft.app.request.getParam('trucktype') %}
+{% set jobtype = craft.app.request.getParam('jobtype') %}
 
 {# Here we set the criteria and combine all the parameter variables #}
 {% set criteria ={ 
             section:'jobListings',
+            truckType:trucktype,
+            jobType:jobtype,
             jobAddress:{
                 target:target,
                 range:range
